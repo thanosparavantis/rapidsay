@@ -2,6 +2,6 @@
 Easy, simple and fast social network.
 
 ## Links: ##
-* rapidsay.com
+* www.rapidsay.com
 * facebook.com/rapidsay
 * twitter.com/rapidsay
