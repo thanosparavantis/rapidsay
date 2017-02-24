@@ -4,17 +4,17 @@ namespace Forum\Http\Controllers\Topic;
 
 use Forum\Post;
 use Forum\Traits\UploadsImages;
-use Forum\Http\Controllers\Controller;
 use Forum\Http\Requests\Topic\PostRequest;
 use Forum\Http\Requests\Topic\PostEditRequest;
 use Forum\Events\Topic\PostCreated;
 use Forum\Events\Topic\PostEdited;
 use Forum\Events\Topic\PostDeleted;
+use Forum\Http\Controllers\Controller;
 
 /**
  * Handles post creation, editing and deletion.
  */
-class PostController extends TopicController
+class PostController extends Controller
 {
     use UploadsImages; // This controller can upload images.
 

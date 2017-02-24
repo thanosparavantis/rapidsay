@@ -16,7 +16,7 @@ use Forum\Http\Controllers\Controller;
 /**
  * Handles comment creation, editing and deletion.
  */
-class CommentController extends TopicController
+class CommentController extends Controller
 {
     use UploadsImages; // This controller can upload images.
 

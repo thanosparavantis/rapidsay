@@ -7,13 +7,13 @@ use Forum\ModelHelper;
 use Forum\Rating;
 use Forum\Events\Topic\RatingCreated;
 use Forum\Events\Topic\RatingDeleted;
-use Forum\Http\Controllers\Controller;
 use Forum\Http\Requests\Topic\RateRequest;
+use Forum\Http\Controllers\Controller;
 
 /**
  * Handles all content ratings.
  */
-class RatingController extends TopicController
+class RatingController extends Controller
 {
     /**
      * Setup authentication middleware.

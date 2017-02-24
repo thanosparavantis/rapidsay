@@ -17,7 +17,7 @@ use Forum\Http\Controllers\Controller;
 /**
  * Handles reply creation, editing and deletion.
  */
-class ReplyController extends TopicController
+class ReplyController extends Controller
 {
     use UploadsImages; // This controller can upload images.
 
