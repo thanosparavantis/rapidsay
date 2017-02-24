@@ -9,12 +9,15 @@
 
 @if (!isset($editType) || $editType != $post->getType())
     <div class="discussion">
+
+        @if (auth()->guest())
+            @include('topic.partials.register-tip')
+        @endif
+
         <h2>{{ trans('post.comments') }}</h2>
 
         @if (auth()->check())
             @include('topic.partials.form.comment')
-        @else
-            @include('topic.partials.register-tip')
         @endif
 
         @include('topic.partials.comments')

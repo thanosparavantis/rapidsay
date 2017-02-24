@@ -7,6 +7,10 @@
     box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.08);
 }
 
+.tip-box > *:not(:last-child) {
+    margin-right: 10px;
+}
+
 .tip-box.blue {
     background-color: #3498db;
     border-color: #2283c3;
