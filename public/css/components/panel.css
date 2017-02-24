@@ -1,0 +1,21 @@
+.panel > h1 {
+    margin: 0;
+    padding: 10px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    text-align: center;
+    background-color: #ccc;
+    color: #333;
+}
+
+.panel .content {
+    background-color: #fff;
+    padding: 10px;
+}
+
+.panel .btn {
+    width: 100%;
+    margin: 0;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}

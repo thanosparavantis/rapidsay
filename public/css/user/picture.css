@@ -1,0 +1,71 @@
+.profile-picture {
+    max-width: 50px;
+    max-height: 50px;
+    vertical-align: middle;
+    border-radius: 2px;
+}
+
+.profile-picture.large {
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.profile-picture.medium {
+    max-width: 40px;
+    max-height: 40px;
+}
+
+.profile-picture.small {
+    max-width: 30px;
+    max-height: 30px;
+}
+
+.profile-picture.preview {
+    max-width: 25px;
+    max-height: 25px;
+}
+
+.profile-picture-container {
+    display: inline-block;
+}
+
+.profile-picture-container img,
+.profile-picture-container a {
+    display: inline-block;
+}
+
+.profile-picture-container .online-container {
+    display: inline-block;
+    position: relative;
+}
+
+.profile-picture-container .online {
+    position: absolute;
+    background-color: #2ecc71;
+    border-radius: 50%;
+    width: 7px;
+    height: 7px;
+    bottom: 5%;
+    right: 5%;
+    -webkit-animation: 3s onlinePulse ease-in-out infinite;
+    animation: 3s onlinePulse ease-in-out infinite;
+}
+
+@keyframes onlinePulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.profile-picture-container .online.large {
+    width: 10px;
+    height: 10px;
+}

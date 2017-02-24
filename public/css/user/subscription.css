@@ -1,0 +1,17 @@
+.subscription {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.subscription:last-child {
+    border-bottom: none;
+}
+
+.subscription h1 {
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.subscription h1 a {
+    color: #333;
+}

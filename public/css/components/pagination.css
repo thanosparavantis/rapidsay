@@ -1,0 +1,80 @@
+.pager,
+.pagination {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+}
+
+.pager li,
+.pagination li {
+    font-size: 14px;
+}
+
+.pager a,
+.pagination a {
+    transition: background 0.1s;
+}
+
+.pager a:hover,
+.pagination a:hover {
+    text-decoration: none;
+}
+
+.pager li {
+    display: inline-block;
+    width: 50%;
+    font-size: 0;
+}
+
+.pager a,
+.pager span {
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    display: block;
+    text-align: center;
+    padding: 5px 0;
+    background-color: #0398e2;
+}
+
+.pager a:hover {
+    background-color: #04a9fb;
+}
+
+.pager .disabled {
+    cursor: default;
+    opacity: .5;
+}
+
+.pagination {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.pagination li {
+    display: inline-block;
+    margin: 0 10px;
+    background-color: #0398e2;
+}
+
+.pagination .active,
+.pagination .disabled {
+    cursor: default;
+}
+
+.pagination .active {
+    background-color: #4fc3fc;
+}
+
+.pagination a,
+.pagination span {
+    display: inline-block;
+    padding: 5px 10px;
+    color: #fff;
+}
+
+.pagination a:hover {
+    background-color: #04a9fb;
+}
+

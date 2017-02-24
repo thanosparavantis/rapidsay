@@ -1,0 +1,40 @@
+.admin-dashboard-page .stats {
+    font-size: 16px;
+    font-weight: 700;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.admin-dashboard-page .stats li:after {
+    content: "/";
+    margin: 0 15px;
+    color: #ddd;
+}
+
+.admin-dashboard-page .stats li:last-child:after {
+    content: none;
+    margin: 0;
+}
+
+.admin-dashboard-page .section {
+    margin-top: 25px;
+}
+
+@media all and (max-width: 425px) {
+    .admin-dashboard-page .stats {
+        font-size: 15px;
+    }
+
+    .admin-dashboard-page .stats li:after {
+        margin: 0 10px;
+    }
+}
+
+@media all and (max-width: 320px) {
+    .admin-dashboard-page .stats {
+        font-size: 13px;
+    }
+    .admin-dashboard-page .stats li:after {
+        margin: 0 5px;
+    }
+}

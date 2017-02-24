@@ -1,0 +1,15 @@
+@include('topic.partials.form.creator', [
+    'relativeItem' => $item,
+    'action' => route('post-edit-' . $editType, $editId),
+    'id' => $editType . '-creator',
+    'bodyName' => $editType . '_edit_body',
+    'bodyId' => $editType . '-edit-body',
+    'bodyPlaceholder' => 'comment.creator.body',
+    'imagesName' => $editType . '_edit_image' . ($item instanceof Forum\Post ? 's' : ''),
+    'imagesSingle' => !$item instanceof Forum\Post,
+    'maxLength' => 10000,
+    'spamName' => $editType . '_edit_name',
+    'spamTime' => $editType . '_edit_time',
+    'submitIcon' => 'pencil-square-o',
+    'submitText' => $item->getType() . '.button.finish_editing',
+])

@@ -1,0 +1,125 @@
+.profile header {
+    display: flex;
+    align-items: stretch;
+    background-color: #fff;
+}
+
+.profile header .profile-picture-container {
+    padding: 10px;
+    border-right: 1px solid #ddd;
+}
+
+.profile header .details {
+    flex: 1;
+    min-width: 50%;
+}
+
+.profile header .details .name {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.profile header .details .name > div {
+    margin: -10px 0 0 -10px;
+}
+
+.profile header .details .name > div,
+.profile header .details .name .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.profile header .details .name h1 {
+    margin-right: auto;
+    margin-bottom: 0;
+    font-size: 30px;
+    word-wrap: break-word;
+    margin: 10px auto 0 10px;
+}
+
+.profile header .details .name .btn {
+    margin: 10px 0 0 10px;
+}
+
+.profile header .details .items-inline {
+    font-size: 15px;
+    font-weight: 700;
+    flex-wrap: wrap;
+}
+
+.profile header .details .items-inline li {
+    padding: 10px;
+}
+
+.profile header .details p {
+    padding: 0 10px 10px 10px;
+    font-size: 15px;
+    line-height: 24px;
+    word-wrap: break-word;
+}
+
+@media all and (max-width: 768px) {
+    .profile header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile header > div {
+        width: 100%;
+    }
+
+    .profile header .profile-picture-container {
+        padding: 10px 10px 0 10px;
+        border-right: 0;
+        border-bottom: 0;
+    }
+
+    .profile header .details .name .btn,
+    .profile header .details .name > div {
+        margin: 0;
+    }
+
+    .profile header .details .name {
+        flex-direction: column;
+    }
+
+    .profile header .details .name h1 {
+        margin: 0 0 10px 0;
+        width: 100%;
+    }
+
+    .profile header .details .name h1:nth-last-child(1) {
+        margin: 0;
+    }
+
+    .profile header .details .name .hide-mobile {
+        display: none;
+    }
+
+    .profile header .details .name .buttons,
+    .profile header .details .name .btn,
+    .profile header .details .name form {
+        width: 100%;
+    }
+
+    .profile header .details .name .btn:not(:first-child) {
+        margin-top: 5px;
+        margin-left: 0;
+    }
+
+    .profile header .details .items-inline {
+        justify-content: center;
+    }
+
+    .profile main > h1 {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+@media all and (max-width: 468px) {
+    .profile main > h1 {
+        text-align: center;
+    }
+}

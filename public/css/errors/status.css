@@ -1,0 +1,14 @@
+.status-page h1 {
+    font-size: 44px;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+.status-page p {
+    color: #555;
+    font-size: 24px;
+}
+
+.status-page .btn {
+    margin-top: 40px;
+}

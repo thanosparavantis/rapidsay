@@ -1,0 +1,7 @@
+.discussion h2 {
+    margin-top: 20px;
+}
+
+.discussion h2 ~ .user-content {
+    margin-top: 0;
+}

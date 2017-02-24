@@ -1,0 +1,188 @@
+@import 'https://fonts.googleapis.com/css?family=PT+Sans:400,700';
+@import 'font-awesome.min.css';
+@import 'normalize.css';
+@import 'layouts.css';
+@import 'admin/dashboard.css';
+@import 'admin/report.css';
+
+@import 'components/alerts.css';
+@import 'components/animations.css';
+@import 'components/buttons.css';
+@import 'components/content-group.css';
+@import 'components/forms.css';
+@import 'components/items.css';
+@import 'components/navbar.css';
+@import 'components/notifications.css';
+@import 'components/pagination.css';
+@import 'components/panel.css';
+@import 'components/tip-box.css';
+@import 'components/tooltip.css';
+@import 'components/uploader.css';
+
+@import 'errors/status.css';
+
+@import 'help/help.css';
+
+@import 'home/explore.css';
+@import 'home/welcome.css';
+
+@import 'topic/creator.css';
+@import 'topic/discussion.css';
+@import 'topic/item-bar.css';
+@import 'topic/media-gallery.css';
+@import 'topic/user-content.css';
+
+@import 'user/community-preview.css';
+@import 'user/dashboard.css';
+@import 'user/picture.css';
+@import 'user/profile.css';
+@import 'user/subscription.css';
+@import 'user/user-preview.css';
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+body {
+    background-color: #f2f2f2;
+    margin: 0;
+}
+
+a {
+    color: #025D8C;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 17px;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Content */
+
+.content {
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.03);
+}
+
+.border {
+    margin-bottom: 20px;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.content.border h1:nth-last-child(1) {
+    margin-bottom: 0;
+}
+
+.logo-container {
+    padding: 20px;
+    display: inline-block;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+.like-link {
+    cursor: pointer;
+}
+
+.space-right {
+    margin-right: 4px;
+}
+
+.space-left {
+    margin-left: 4px;
+}
+
+.empty-content,
+.loading {
+    font-size: 15px;
+    font-weight: 700;
+    background-color: #fff;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.empty-content {
+    display: block;
+    padding: 20px;
+    color: #666;
+}
+
+.loading {
+    display: none;
+    padding: 15px;
+}
+
+span + .loading {
+    margin-top: 20px;
+}
+
+.document {
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.document p:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.document ul {
+    padding-left: 40px;
+    margin: 0 0 10px 0;
+}
+
+.document .back {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.document .back h1 {
+    margin-bottom: 0;
+    margin-right: auto;
+}
+
+.document .back a {
+    display: block;
+    padding: 5px 10px;
+    background-color: #eee;
+    border-radius: 3px;
+}
+
+.document .back a:not(:last-child) {
+    margin-right: 10px;
+}

@@ -1,0 +1,34 @@
+.items-inline {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    align-items: center;
+}
+
+.items-inline.with-space {
+    margin: 0 -10px -10px 0;
+}
+
+.items-inline.with-space li {
+    margin: 0 10px 10px 0;
+}
+
+.items-inline .seperator:before {
+    content: '|';
+}
+
+.flex-left {
+    margin-left: auto !important;
+}
+
+.flex-right {
+    margin-right: auto !important;
+}
+
+@media all and (max-width: 425px) {
+    .items-inline .hide-mobile {
+        display: none;
+    }
+}

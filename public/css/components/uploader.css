@@ -1,0 +1,9 @@
+.media {
+    padding: 0;
+}
+
+.uploader {
+    padding: 8px 15px;
+    cursor: pointer;
+    display: block;
+}

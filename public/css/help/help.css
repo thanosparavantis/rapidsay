@@ -1,0 +1,133 @@
+.help-content {
+    display: flex;
+}
+
+.help-page .sidebar {
+    width: 25%;
+}
+
+.help-page .content {
+    flex: 1;
+}
+
+.help-page .sidebar {
+    padding-top: 50px;
+    background-color: #3498db;
+    text-align: center;
+}
+
+.help-page .sidebar .logo-container img {
+    width: 96px;
+    height: 96px;
+}
+
+.help-page .sections,
+.help-page .sub-section {
+    list-style-type: none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+.help-page .sidebar .logo-container {
+    margin-bottom: 25px;
+}
+
+.help-page .sidebar h1 a {
+    color: #fff;
+    display: block;
+    padding: 5px 0;
+    margin-bottom: 15px;
+}
+
+.help-page .sidebar a:hover {
+    text-decoration: none;
+}
+
+.help-page .sections h2,
+.help-page .sections a {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 0;
+    padding: 15px;
+    color: #444;
+    background-color: #b3e1ff;
+    transition: background-color 0.1s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.help-page .sidebar .active,
+.help-page .sidebar h2:hover,
+.help-page .sections a:hover {
+    color: #111;
+    background-color: #e6f5ff;
+}
+
+.help-page .sub-section {
+    background-color: #b3e1ff;
+    transition: background 0.1s;
+}
+
+.help-page .sub-section a {
+    font-size: 14px;
+    margin-left: 20px;
+}
+
+.help-page .header {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.help-page .header h1 {
+    margin-bottom: 5px;
+}
+
+.help-page .header .login {
+    color: #666;
+    font-size: 14px;
+}
+
+.help-page .content {
+    font-size: 15px;
+    line-height: 24px;
+    word-wrap: break-word;
+}
+
+.help-page .content p {
+    margin-bottom: 10px;
+}
+
+.help-page .content p:last-child {
+    margin-bottom: 0;
+}
+
+.help-page .content .fb-like span {
+    max-width: 100px !important;
+}
+
+.help-page #last-update {
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+@media all and (max-width: 1024px) {
+    .help-page .sidebar {
+        width: 30%;
+    }
+}
+
+@media all and (max-width: 768px) {
+    .help-page {
+        flex-direction: column;
+    }
+
+    .help-page .sidebar {
+        width: initial;
+    }
+}

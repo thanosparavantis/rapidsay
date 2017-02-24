@@ -1,0 +1,222 @@
+.navbar {
+    background-color: #333;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+}
+
+.navbar .container {
+    margin: auto;
+    display: flex;
+}
+
+.navbar .items-inline {
+    flex-wrap: nowrap;
+}
+
+.navbar .menu {
+    flex: 1;
+}
+
+.navbar .logo {
+    padding: 13px 20px;
+    font-weight: 700;
+}
+
+.navbar.christmas .logo {
+    padding-left: 40px;
+    background: url("../../img/christmas-tree.png");
+    background-size: 40px 38px;
+    background-repeat: no-repeat;
+}
+
+.navbar .toggle-menu {
+    cursor: pointer;
+}
+
+.navbar li {
+    white-space: nowrap;
+}
+
+.navbar a,
+.navbar .toggle-menu {
+    padding: 13px 10px;
+    display: block;
+    color: #fff;
+    transition: background-color 0.1s;
+}
+
+.navbar .with-picture a {
+    padding: 7px 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar .with-picture .profile-picture-container {
+    margin-right: 5px;
+}
+
+.navbar .with-picture .profile-picture {
+    background-color: #eee;
+}
+
+.navbar .menu a:hover,
+.navbar .toggle-menu:hover {
+    background-color: #545454;
+}
+
+.navbar a:hover {
+    text-decoration: none;
+}
+
+.navbar .toggle-menu {
+    display: none !important;
+}
+
+.navbar .menu a.active,
+.navbar .toggle-menu.active {
+    background-color: #6d6d6d;
+}
+
+.navbar select {
+    background-color: transparent;
+    color: #fff;
+    padding: 0 10px;
+    margin: 0 10px;
+    border: 1px solid #ddd;
+    outline: 0;
+    cursor: pointer;
+}
+
+.navbar option {
+    color: #333;
+}
+
+.navbar .count {
+    display: inline;
+    font-weight: 700;
+    background-color: #0398e2;
+    border-radius: 3px;
+    padding: 2px;
+}
+
+.navbar .toggle-menu.active .count {
+    display: none;
+}
+
+.navbar .mobile-only {
+    display: none;
+}
+
+.navbar .menu li:nth-child(1) {
+    order: 1;
+}
+
+.navbar .menu li:nth-child(2) {
+    order: 2;
+}
+
+.navbar .menu li:nth-child(3) {
+    order: 3;
+}
+
+.navbar .menu li:nth-child(4) {
+    order: 4;
+}
+
+.navbar .menu li:nth-child(5) {
+    order: 5;
+}
+
+.navbar .menu li:nth-child(6) {
+    order: 6;
+}
+
+.navbar .menu li:nth-child(7) {
+    order: 7;
+}
+
+.navbar .menu li:nth-child(8) {
+    order: 8;
+}
+
+@media all and (max-device-width: 768px) {
+    .navbar .main {
+        flex: 1;
+    }
+
+    .navbar .menu {
+        display: none;
+    }
+
+    .navbar .toggle-menu {
+        display: flex !important;
+        align-items: center;
+    }
+
+    .navbar select {
+        margin: 10px 0;
+    }
+
+    .navbar.expanded .container {
+        flex-direction: column;
+    }
+
+    .navbar.expanded .menu {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+    }
+
+    .navbar.expanded .menu li {
+        text-align: center;
+        width: 100%;
+    }
+
+    .navbar.expanded .menu .flex-left {
+        margin-left: 0;
+    }
+
+    .navbar.expanded select {
+        margin: 10px 0;
+    }
+
+    .navbar .mobile-only {
+        display: inline-block;
+    }
+
+    .navbar .menu li:nth-child(1) {
+        order: 3;
+    }
+
+    .navbar .menu li:nth-child(2) {
+        order: 4;
+    }
+
+    .navbar .menu li:nth-child(3) {
+        order: 5;
+    }
+
+    .navbar .menu li:nth-child(4) {
+        order: 1;
+    }
+
+    .navbar .menu li:nth-child(5) {
+        order: 2;
+    }
+
+    .navbar .menu li:nth-child(6) {
+        order: 6;
+    }
+
+    .navbar .menu li:nth-child(7) {
+        order: 7;
+    }
+
+    .navbar .menu li:nth-child(8) {
+        order: 8;
+    }
+}

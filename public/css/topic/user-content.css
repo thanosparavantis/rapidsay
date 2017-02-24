@@ -1,0 +1,149 @@
+/*
+Preview Order:
+ 1. Left Image
+ 2. Right Text
+ 3. Right Footer
+
+ Expanded Order:
+ 1. Text
+ 2. Image(s)
+ 3. Footer
+*/
+
+/* Main Box */
+
+.user-content {
+    display: flex;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.03);
+}
+
+.user-content:target {
+    border-left: 2px solid #3498db;
+}
+
+.user-content:not(:first-child) {
+    margin-top: 20px;
+}
+
+.alert ~ .user-content {
+    margin-top: 0;
+}
+
+.user-content.expanded {
+    flex-direction: column;
+}
+
+.user-content.expanded.nested {
+    margin-left: 30px;
+}
+
+/* Order changes when expanded */
+
+.user-content.expanded .text {
+    order: 1;
+}
+
+.user-content.expanded .media-gallery {
+    order: 2;
+}
+
+.user-content.expanded .footer {
+    order: 3;
+}
+
+/* Main */
+/* This class is only used on preview to seperate the media from text since we're using flexbox. */
+
+.user-content .main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Text */
+
+.user-content .text {
+    padding: 20px;
+    margin-bottom: auto;
+}
+
+.user-content .media-gallery ~ .text {
+    padding: 20px 20px 0 20px; /* Remove extra bottom padding when expanded because of the media gallery. */
+}
+
+/* Header */
+
+.user-content .header {
+    margin-bottom: 15px;
+}
+
+.user-content .name {
+    font-weight: 700;
+    color: #333;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.user-content .time a {
+    color: #666;
+}
+
+/* Body */
+
+.user-content .body {
+    word-wrap: break-word;
+    line-height: 24px;
+    font-size: 15px;
+}
+
+.user-content a.body {
+    color: #333;
+    text-decoration: none;
+}
+
+.user-content.expanded .body {
+    white-space: pre-line;
+}
+
+/* References */
+
+.user-content .references {
+    padding-top: 10px;
+}
+
+.user-content .references .item {
+    color: #555;
+    line-height: 24px;
+}
+
+/* Footer */
+
+.user-content .footer {
+    padding: 0 20px 20px 20px;
+}
+
+.user-content .footer .btn {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+@media all and (max-width: 768px) {
+    .user-content {
+        flex-direction: column;
+    }
+}
+
+@media all and (max-width: 425px) {
+    .user-content .footer li {
+        flex-basis: 50%;
+        flex-grow: 1;
+        margin: 0 !important;
+    }
+
+    .items-inline.footer li .btn {
+        width: 100%;
+        border-radius: 0px;
+    }
+}

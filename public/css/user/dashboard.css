@@ -1,0 +1,62 @@
+.dashboard-page h2 {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.dashboard-navbar {
+    display: flex;
+}
+
+.dashboard-navbar h1 {
+    margin-bottom: 0;
+}
+
+.dashboard-navbar .items-inline li a.active {
+    font-weight: 700;
+}
+
+.profile-picture-update {
+    display: flex;
+    margin: 10px 0;
+}
+
+.profile-picture-update .upload {
+    flex: 1;
+    align-self: center;
+    margin-left: 10px;
+}
+
+.profile-picture-update .upload input {
+    display: block;
+    cursor: pointer;
+}
+
+.profile-picture-update .upload a {
+    margin-top: 10px;
+    font-weight: 300;
+    display: block;
+}
+
+.responsive-button {
+    margin: 10px 0;
+    display: none;
+}
+
+@media all and (max-width: 768px) {
+    .dashboard-navbar {
+        flex-direction: column;
+    }
+
+    .dashboard-navbar .items-inline {
+        margin-top: 10px;
+        margin-left: 0 !important;
+    }
+
+    .responsive-button {
+        display: block;
+    }
+
+    .preferences-buttons {
+        display: none;
+    }
+}
