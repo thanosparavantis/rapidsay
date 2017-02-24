@@ -1,5 +1,5 @@
 @extends('layouts.full-page')
-@section('title', trans('page.title.welcome'))
+@section('title', trans('app.name') . ' - ' . trans('app.tagline-short'))
 @section('bodyClasses', 'mobile-no-margin')
 
 @section('content')
@@ -7,7 +7,7 @@
 <div class="features">
     <div class="section welcome">
         <div class="display">
-            <img src="{{ asset('img/logo.png') }}">
+            <img src="{{ asset('img/logo.png') }}" alt="{{ trans('app.name') }}">
         </div>
         <div class="description">
             <h1>{{ trans('home.welcome.title') }}</h1>

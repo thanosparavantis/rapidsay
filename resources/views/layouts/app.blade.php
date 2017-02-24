@@ -9,7 +9,7 @@
 
         {{-- Display --}}
         @if (request()->path() == "/")
-            <title>{{ trans('app.name') }}</title>
+            <title>@yield('title')</title>
         @elseif (isset($post))
             <title>@raw(str_limit($post->body, 70))</title>
         @else
@@ -17,7 +17,7 @@
         @endif
 
         <meta name="application-name"                   content="{{ trans('app.name') }}">
-        <meta name="keywords"                           content="rapidsay, social network, post, image, share, profile, minecraft">
+        {{-- <meta name="keywords"                      content="rapidsay, social network, post, image, share, profile, minecraft"> --}}
 
         {{-- Open Graph --}}
         <meta property="og:url"                         content="{{ request()->url() }}">
