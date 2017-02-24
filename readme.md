@@ -1,3 +1,7 @@
 # Rapidsay #
 Easy, simple and fast social network.
-www.rapidsay.com
+
+## Links: ##
+* rapidsay.com
+* facebook.com/rapidsay
+* twitter.com/rapidsay
