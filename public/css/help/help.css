@@ -123,11 +123,11 @@
 }
 
 @media all and (max-width: 768px) {
-    .help-page {
+    .help-content {
         flex-direction: column;
     }
 
-    .help-page .sidebar {
+    .help-content .sidebar {
         width: initial;
     }
 }
