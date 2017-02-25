@@ -46,13 +46,13 @@ return [
                     'title'     => 'How can I customize my profile?',
                     'body'      =>
                         '<p>Click on <strong>' . (auth()->check() ? auth()->user()->fullName() : 'your name') . '</strong> in the navigation bar above to visit your profile.</p>
-                        <p>Afterwards, click on the <strong><i class="fa fa-cog space-right" aria-hidden="true"></i>Preferences</strong> button at your right to visit the user dashboard.</p>',
+                        <p>Afterwards, click on the <strong><i class="fa fa-cog" aria-hidden="true"></i> Preferences</strong> button at the right-hand side of your name to visit the user dashboard.</p>',
                 ],
                 'placement'     => [
                     'title'     => 'What is my placement?',
                     'body'      =>
                         '<p>Placement is displayed with the <i class="fa fa-' . config('glyphicons.placement') . '" aria-hidden="true"></i> icon and represents your current position in the community list.</p>
-                        <p>You may increase your reputation in order to gain a higher position in the community list.</p>',
+                        <p>You may increase your reputation in order to gain a higher position.</p>',
                 ],
                 'reputation'    => [
                     'title'     => 'What is my reputation?',
@@ -69,14 +69,14 @@ return [
             'article'   => [
                 'all'           => [
                     'title'     => 'How can I view all of my activity?',
-                    'body'      => [
-
-                    ],
+                    'body'      =>
+                        '<p>Your activity consists of all your posts, comments and ratings. To visit your profile, click <strong>' . (auth()->check() ? auth()->user()->fullName() : 'on your name') . '</strong> in the navigation bar above.</p>
+                        <p>Keep in mind that your ratings are private. If you want to make them public, you can modify your privacy settings <a href="' . route('privacy') . '">here</a>.</p>',
                 ],
                 'create'        => [
                     'title'     => 'How can I create a post?',
                     'body'      =>
-                        '<p>To create a new post, click the <strong><i class="fa fa-home space-right" aria-hidden="true"></i>' . trans('page.title.home') . '</strong> link in the navigation bar above.</p>
+                        '<p>To create a new post, click the <strong><i class="fa fa-home" aria-hidden="true"></i> ' . trans('page.title.home') . '</strong> link in the navigation bar above.</p>
                         <p>Afterwards, locate the post creation form at the top of the page. There you can write the body of the post and upload images.</p>
                         <p>Make sure that the contents of your post abide with our <a href="' . route('terms-of-use') . '">Terms of Use</a>. All posts are publicly available and anyone can interact with them.</p>',
                 ],
@@ -123,18 +123,16 @@ return [
                 'interact'      => [
                     'title'     => 'How do I know if someone interacted with my content?',
                     'body'      =>
-                        '<p>You will get notified when:</p>
+                        '<p>When someone interacts with your content or profile, you will receive a notification. The number of unread notifications will appear near the <i class="fa fa-' . config('glyphicons.notification') . '" aria-hidden="true"></i> icon. If one or more notifications refer to deleted content, they will be removed automatically.</p>
+                        <p>You will get notified when:</p>
                         <ul>
                             <li>Another user rates one of your posts, comments or replies.</li>
                             <li>Another user comments in one of your posts.</li>
                             <li>Another user replies in one of your comments.</li>
                             <li>Another user subscribers to you.</li>
                             <li>An administrator accepts or denies one of your reports.</li>
-                            <li>An administrator edits one of your posts, comments or replies.</li>
-                            <li>An administrator deletes one of your posts, comments or replies.</li>
-                        </ul>
-
-                        <p>The number of new notifications will appear in the navigation bar near the <i class="fa fa-' . config('glyphicons.notification') . '" aria-hidden="true"></i> icon. If one or more notifications refer to deleted content, they will be removed automatically.</p>',
+                            <li>An administrator edits or deletes one of your posts/comments.</li>
+                        </ul>',
                 ],
             ],
         ],
@@ -145,13 +143,14 @@ return [
                 'create'        => [
                     'title'     => 'How can I subscribe to someone?',
                     'body'      =>
-                        '<p>To subscribe to someone, click on their name to visit their profile. Afterwards look on your right and click the <strong>Subscribe</strong> button.</p>',
+                        '<p>If you want to encrich your feed with content you prefer, have a look on the <strong><i class="fa fa-trophy aria-hidden="true"></i> Community</strong> page in the navigation bar above to see the list of registered users. If you are searching for a specific user, click on the <strong><i class="fa fa-map-o aria-hidden="true"></i> Explore</strong> page to search for their name.</p>
+                        <p>To subscribe click on the <strong><i class="fa fa-' . config('glyphicons.subscriber') . '" aria-hidden="true"></i> Subscribe</strong> button. Keep in mind, you can subscribe directly from a users profile, by clicking the same button located on the right-hand side of their name.</p>',
                 ],
                 'delete'        => [
                     'title'     => 'How can I unsubscribe from someone?',
                     'body'      =>
-                        '<p>To unsubscribe from someone, click on your <strong>name</strong> in the navigation bar above. Afterwards, click on the <strong>Preferences</strong> button at your right. Then click on the <strong>Subscriptions</strong> link at the top, to view the list of your subscriptions. There you can choose to unsubscribe from one or more users.</p>
-                        <p>Keep in mind that if you are in the user\'s profile you\'d like to unsubscribe from, you can click the <strong>Unsubscribe</strong> button at your right.</p>',
+                        '<p>To unsubscribe from someone, click on <strong>' . (auth()->check() ? auth()->user()->fullName() : 'on your name') . '</strong> in the navigation bar above. Afterwards, click on the <strong><i class="fa fa-cog" aria-hidden="true"></i> Preferences</strong> button at the right-hand side of your name. Then click on the <strong>Subscriptions</strong> link at the top, to view the list of your subscriptions. There you can choose to unsubscribe from one or more users.</p>
+                        <p>Keep in mind that if you are in the user\'s profile you\'d like to unsubscribe from, you can click the <strong><i class="fa fa-times" aria-hidden="true"></i> Unsubscribe</strong> button on the right-hand side of their name.</p>',
                 ],
             ],
         ],
@@ -162,8 +161,8 @@ return [
                 'create'        => [
                     'title'     => 'How can I report someone\'s content?',
                     'body'      =>
-                        '<p>If you think a certain post, comment or reply is breaking one of our rules, you have the option to report it. To do that, click on the <i class="fa fa-' . config('glyphicons.report') . '" aria-hidden="true"></i> icon in the interaction bar below to be redirected to the report page. There, you need to fill out the text area with any additional details you think we should know about the post. Afterwards click on the <strong>Submit Report</strong> to submit your report for review.</p>
-                        <p>It may take a while until we review your report. Once we do, you will receive a notification about whether or not we performed any actions on the content you reported. If we weren\'t able to find anything that can break the rules, the report will be denied.</p>',
+                        '<p>If you think a certain post or comment violates one of our <a href="' . route('terms-of-use') . '">Terms of Use</a>, you have the option to report it. To do that, click on the <strong><i class="fa fa-' . config('glyphicons.report') . '" aria-hidden="true"></i> Report</strong> button below their content to be redirected to the report page. There, you need to provide additional information you think we should know about your report. Afterwards click on the <strong>Submit Report</strong> button to submit your report for review.</p>
+                        <p>It may take a while until we review your report. Once we do, you will receive a notification about whether or not we performed any actions on the content you reported.</p>',
                 ],
             ],
         ],

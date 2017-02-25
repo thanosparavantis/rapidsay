@@ -1,5 +1,5 @@
 @extends('layouts.full-page', ['announcements' => true])
-@section('title', trans('page.title.home'))
+@section('title', trans('app.name'))
 
 @section('content')
 
