@@ -3,9 +3,7 @@
 return [
 
     'title'             => 'Help Center',
-    'login'             => 'You may need to be :link, in order to follow the instructions included on this help page.',
-    'logged-in'         => 'logged in',
-    'here'              => 'here',
+    'login'             => 'You may need to be <a href="' . route('login') . '">logged in</a>, in order to follow the instructions included on this help page.',
 
     'greeting'          =>
         '<p>Hello! welcome to our help center. Here you can find answers to frequently asked questions.</p>
@@ -15,9 +13,9 @@ return [
         'account'       => [
             'title'     => 'Account',
             'article'   => [
-                'not-activated'     => [
-                    'title'         => 'I cannot access my account because it\'s not activated.',
-                    'body'          =>
+                'not-activated'    => [
+                    'title'        => 'I cannot access my account because it\'s not activated.',
+                    'body'         =>
                         '<p>If your account is not activated, you will not be able to login successfully. That\'s because you need to verify that you have access to the email address you supplied during registration.</p>
                         <p>Normally, after registration, an email should arrive on your inbox. To active your account, open the email and follow the instructions included.</p>
                         <p>In case the email never arrives, try to login after <strong>24 hours</strong>, in order for a new activation email to be sent. If you still experience problems, please make sure to contact with us.</p>',
@@ -31,7 +29,7 @@ return [
                 'blocked'           => [
                     'title'         => 'I can no longer access my account because it\'s blocked.',
                     'body'          =>
-                        '<p>Unfortunate, a blocked account can no longer be accessed. This may have happened, because the user that controls this account has violated one of our community rules. Usually, this action cannot be revoked, unless the account ban was placed by accident.</p>
+                        '<p>Unfortunate, a blocked account can no longer be accessed. This may have happened, because the user that controls this account has violated one of our <a href="' . route('terms-of-use') . '">' . trans('about.terms-of-use') . '</a>. Usually, this action cannot be revoked, unless the account ban was placed by accident.</p>
                         <p>If you believe your account account was blocked by accident, please make sure to contact with us.</p>',
                 ],
             ],
@@ -44,7 +42,7 @@ return [
                     'title'     => 'How can I customize my profile?',
                     'body'      =>
                         '<p>Click on <strong>' . (auth()->check() ? auth()->user()->fullName() : 'your name') . '</strong> in the navigation bar above to visit your profile.</p>
-                        <p>Afterwards, click on the <strong><i class="fa fa-cog" aria-hidden="true"></i> Preferences</strong> button at the right-hand side of your name to visit the user dashboard.</p>',
+                        <p>Afterwards, click on the <strong><i class="fa fa-cog" aria-hidden="true"></i> ' . trans('page.title.preferences') . '</strong> button at the right-hand side of your name to visit the user dashboard.</p>',
                 ],
                 'placement'     => [
                     'title'     => 'What is my placement?',
@@ -81,8 +79,8 @@ return [
                 'comment'       => [
                     'title'     => 'How can I comment on existing content?',
                     'body'      =>
-                        '<p>To comment on a post, click on the <strong>Comment</strong> button below the preview. You will be redirected to the post page, where the comment form will be visible.</p>
-                        <p>Keep in mind, you can also respond to other comments, by clicking the <strong>Reply</strong> button. You can only upload one image on every comment.</p>
+                        '<p>To comment on a post, click on the <strong>' . trans('comment.button.comment') . '</strong> button below the preview. You will be redirected to the post page, where the comment form will be visible.</p>
+                        <p>Keep in mind, you can also respond to other comments, by clicking the <strong>Reply</strong> button.</p>
                         <p>Make sure that the contents of your comment abide with our <a href="' . route('terms-of-use') . '">Terms of Use</a>. All comments are publicly available and anyone can interact with them.</p>',
                 ],
                 'image'         => [
@@ -105,7 +103,7 @@ return [
                             <li>www.rapidsay.com will be converted to an active link <a href="http://www.rapidsay.com">www.rapidsay.com</a>.</li>
                         </ul>
 
-                        <p>Keep in mind, you can use special formatting on both posts and comments.</p>',
+                        <p>Keep in mind, you can use special formatting on comments as well.</p>',
                 ],
             ],
         ],
@@ -129,7 +127,7 @@ return [
                             <li>Another user replies in one of your comments.</li>
                             <li>Another user subscribers to you.</li>
                             <li>An administrator accepts or denies one of your reports.</li>
-                            <li>An administrator edits or deletes one of your posts/comments.</li>
+                            <li>An administrator edits or deletes one of your posts or comments.</li>
                         </ul>',
                 ],
             ],
@@ -141,14 +139,14 @@ return [
                 'create'        => [
                     'title'     => 'How can I subscribe to someone?',
                     'body'      =>
-                        '<p>If you want to encrich your feed with content you prefer, have a look on the <strong><i class="fa fa-trophy aria-hidden="true"></i> Community</strong> page in the navigation bar above to see the list of registered users. If you are searching for a specific user, click on the <strong><i class="fa fa-map-o aria-hidden="true"></i> Explore</strong> page to search for their name.</p>
-                        <p>To subscribe click on the <strong><i class="fa fa-' . config('glyphicons.subscriber') . '" aria-hidden="true"></i> Subscribe</strong> button. Keep in mind, you can subscribe directly from a users profile, by clicking the same button located on the right-hand side of their name.</p>',
+                        '<p>If you want to enrich your feed with content you prefer, have a look on the <strong><i class="fa fa-trophy aria-hidden="true"></i> ' . trans('page.title.community') . '</strong> page in the navigation bar above to see the list of registered users. If you are searching for a specific user, click on the <strong><i class="fa fa-map-o aria-hidden="true"></i> ' . trans('page.title.explore') . '</strong> page to search for their name.</p>
+                        <p>To subscribe click on the <strong><i class="fa fa-' . config('glyphicons.subscriber') . '" aria-hidden="true"></i> ' . trans('user.button.subscribe') . '</strong> button. Keep in mind, you can subscribe directly from a users profile, by clicking the same button located on the right-hand side of their name.</p>',
                 ],
                 'delete'        => [
                     'title'     => 'How can I unsubscribe from someone?',
                     'body'      =>
-                        '<p>To unsubscribe from someone, click on <strong>' . (auth()->check() ? auth()->user()->fullName() : 'on your name') . '</strong> in the navigation bar above. Afterwards, click on the <strong><i class="fa fa-cog" aria-hidden="true"></i> Preferences</strong> button at the right-hand side of your name. Then click on the <strong>Subscriptions</strong> link at the top, to view the list of your subscriptions. There you can choose to unsubscribe from one or more users.</p>
-                        <p>Keep in mind that if you are in the user\'s profile you\'d like to unsubscribe from, you can click the <strong><i class="fa fa-times" aria-hidden="true"></i> Unsubscribe</strong> button on the right-hand side of their name.</p>',
+                        '<p>To unsubscribe from someone, click on <strong>' . (auth()->check() ? auth()->user()->fullName() : 'on your name') . '</strong> in the navigation bar above. Afterwards, click on the <strong><i class="fa fa-cog" aria-hidden="true"></i> ' . trans('page.title.preferences') . '</strong> button at the right-hand side of your name. Then click on the <strong>' . trans('page.title.subscriptions') . '</strong> link at the top, to view the list of your subscriptions. There you can choose to unsubscribe from one or more users.</p>
+                        <p>Keep in mind that if you are in the user\'s profile you\'d like to unsubscribe from, you can click the <strong><i class="fa fa-times" aria-hidden="true"></i> ' . trans('user.button.unsubscribe') . '</strong> button on the right-hand side of their name.</p>',
                 ],
             ],
         ],
@@ -159,7 +157,7 @@ return [
                 'create'        => [
                     'title'     => 'How can I report someone\'s content?',
                     'body'      =>
-                        '<p>If you think a certain post or comment violates one of our <a href="' . route('terms-of-use') . '">Terms of Use</a>, you have the option to report it. To do that, click on the <strong><i class="fa fa-' . config('glyphicons.report') . '" aria-hidden="true"></i> Report</strong> button below their content to be redirected to the report page. There, you need to provide additional information you think we should know about your report. Afterwards click on the <strong>Submit Report</strong> button to submit your report for review.</p>
+                        '<p>If you think a certain post or comment violates one of our <a href="' . route('terms-of-use') . '">' . trans('about.terms-of-use') . '</a>, you have the option to report it. To do that, click on the <strong><i class="fa fa-' . config('glyphicons.report') . '" aria-hidden="true"></i> ' . trans('report.button.report') . '</strong> button below their content to be redirected to the report page. There, you need to provide additional information you think we should know about your report. Afterwards click on the <strong>' . trans('report.button.submit') . '</strong> button to submit your report for review.</p>
                         <p>It may take a while until we review your report. Once we do, you will receive a notification about whether or not we performed any actions on the content you reported.</p>',
                 ],
             ],

@@ -17,7 +17,7 @@ use Forum\Http\Controllers\Controller;
 /**
  * Handles reports.
  */
-class TopicController extends Controller
+class ReportController extends Controller
 {
     public function __construct()
     {
