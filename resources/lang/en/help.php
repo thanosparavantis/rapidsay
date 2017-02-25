@@ -7,11 +7,9 @@ return [
     'logged-in'         => 'logged in',
     'here'              => 'here',
 
-    'greeting'          => [
-        'line1'         => 'Hello! welcome to our help center. Here you can find answers to frequently asked questions.',
-        'line2'         => 'In case you need additional help, or can\'t find what you are looking for, feel free to send an email at :link.',
-        'line3'         => trans('app.name') . ' also has a <a href="https://www.facebook.com/rapidsay/" target="_blank">Facebook</a> page, you can ask questions there too.'
-    ],
+    'greeting'          =>
+        '<p>Hello! welcome to our help center. Here you can find answers to frequently asked questions.</p>
+        <p>In case you need additional help, or can\'t find what you are looking for, feel free to send an email at <a href="mailto:' . env('MAIL_USERNAME') . '">' . env('MAIL_USERNAME') . '</a>.</p>',
 
     'section'           => [
         'account'       => [
