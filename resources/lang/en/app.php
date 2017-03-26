@@ -3,8 +3,7 @@
 return [
 
     'name'              => 'Rapidsay',
-    'tagline'           => 'Rapidsay is an easy, simple and fast social network for people who want to share great and important things.',
-    'tagline_seo'       => 'Rapidsay is an easy, simple and fast social network for people who want to share great and important things.',
+    'tagline'           => 'The alternative social network',
     'last-update'       => 'Last Rapidsay update: :time.',
     'loading'           => 'Loading...',
     'processing'        => 'Please wait...',

@@ -14,31 +14,22 @@ use Carbon\Carbon;
 use Forum\Http\Requests\Topic\ReportRequest;
 use Forum\Http\Controllers\Controller;
 
-class TopicController extends Controller
+/**
+ * Handles reports.
+ */
+class ReportController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth', ['only' => ['deleteImage', 'showReport', 'report']]);
+        $this->middleware('auth', [
+            'only' => [
+                'showReport',
+                'report'
+            ]
+        ]);
     }
 
-    public function deleteImage($type, $id, $url)
-    {
-        $item = ModelHelper::resolve($type, $id);
-        $image = $item->images()->where('url', $url)->firstOrFail();
-
-        if ($this->authorize('edit', $item))
-        {
-            Storage::disk('images')->delete($image->url . '.png');
-            $image->delete();
-
-            $item->updated_at = Carbon::now()->toDateTimeString();
-            $item->save();
-
-            return redirect()->back();
-        }
-    }
-
-    public function showReport($type, $id)
+    public function show($type, $id)
     {
         $item = ModelHelper::resolve($type, $id);
 
@@ -47,7 +38,7 @@ class TopicController extends Controller
         }
     }
 
-    public function report(ReportRequest $request, $type, $id)
+    public function create(ReportRequest $request, $type, $id)
     {
         $item = ModelHelper::resolve($type, $id);
 

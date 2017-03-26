@@ -21,10 +21,10 @@ class SubscriptionController extends Controller
 
     public function show()
     {
-        $subscriptions = auth()->user()->getSubscriptionPaginator();
-
         if (request()->ajax())
         {
+            $subscriptions = auth()->user()->getSubscriptionPaginator();
+
             return response()->json([
                 'html' => view('user.partials.subscription.list', ['subscriptions' => $subscriptions])->render(),
                 'end' => !$subscriptions->hasMorePages(),
@@ -32,7 +32,7 @@ class SubscriptionController extends Controller
         }
         else
         {
-            return view('user.subscriptions', ['subscriptions' => $subscriptions]);
+            return view('user.subscriptions');
         }
     }
 

@@ -15,8 +15,8 @@
                 <span class="error">{{ $errors->first('description') }}</span>
             @endif
             <div class="btn-group">
-                <input type="submit" name="submit" value="{{ trans('report.creator.button.submit') }}" class="btn green flex-left">
-                <a href="{{ $item->route() }}" class="btn gray">{{ trans('report.creator.button.back') }}</a>
+                <a href="{{ $item->route() }}" class="btn gray flex-left">{{ trans('report.button.back') }}</a>
+                <input type="submit" name="submit" value="{{ trans('report.button.submit') }}" class="btn green">
             </div>
         </form>
     </div>

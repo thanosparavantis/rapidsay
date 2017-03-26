@@ -169,7 +169,6 @@ class Post extends Model implements Redirectable, AcceptsImages, CanBeSearched
         });
 
         if (auth()->check()) $query->where('user_id', '!=', auth()->user()->id);
-
         return $query->orderBy('created_at', 'desc')->take(1)->first();
     }
 

@@ -1,0 +1,109 @@
+/* Section */
+
+.features,
+.features .btn {
+    font-size: 17px;
+}
+
+.features .section {
+    background-color: #fff;
+}
+
+.features h1,
+.features h2 {
+    margin-bottom: 0;
+}
+
+.features h1 {
+    font-size: 34px;
+}
+
+.features h2 {
+    font-size: 27px;
+    font-weight: 400;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.features .section:first-child + .section h2 {
+    border-top: none;
+}
+
+.features h2 .fa {
+    margin-right: 10px;
+}
+
+.features ul {
+    padding: 30px;
+    margin: 0 0 0 30px;
+    list-style-type: square;
+    color: #555;
+    line-height: 40px;
+}
+
+.features .btn {
+    padding: 15px 50px;
+}
+
+/* Welcome, register sections */
+
+.features .section:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    color: #fff;
+    background-color: #3498db;
+}
+
+.features .section:first-child .app-logo {
+    margin-bottom: 20px;
+}
+
+.features .section:first-child .point-group {
+    margin: 20px 0 30px 0;
+}
+
+.features .section:first-child h1,
+.features .section:first-child p,
+.features .section:first-child .green {
+    text-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
+}
+
+.features .section:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 80px;
+    color: #fff;
+    background-color: #e4e4e4;
+}
+
+@media all and (max-width: 768px) {
+    .features,
+    .features .btn {
+        font-size: 16px;
+    }
+
+    .features .section:first-child {
+        text-align: center;
+    }
+
+    .features h1 {
+        font-size: 29px;
+    }
+
+    .features h2 {
+        font-size: 24px;
+    }
+
+    .features .btn .fa {
+        display: none;
+    }
+
+    .features .section:last-child {
+        padding: 50px 30px;
+    }
+}

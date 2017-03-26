@@ -46,11 +46,11 @@ Route::get('reply/{id}/delete', ['as' => 'delete-reply', 'uses' => 'Topic\ReplyC
 Route::post('{type}/{id}/rate', ['as' => 'rate', 'uses' => 'Topic\RatingController@rate',]);
 
 // Media
-Route::get('{type}/{id}/image/{url}/delete', ['as' => 'delete-image', 'uses' => 'Topic\TopicController@deleteImage']);
+Route::get('{type}/{id}/image/{url}/delete', ['as' => 'delete-image', 'uses' => 'Topic\MediaController@deleteImage']);
 
 // Report
-Route::get('{type}/{id}/report', ['as' => 'report', 'uses' => 'Topic\TopicController@showReport']);
-Route::post('{type}/{id}/report', ['as' => 'post-report', 'uses' => 'Topic\TopicController@report']);
+Route::get('{type}/{id}/report', ['as' => 'report', 'uses' => 'Topic\ReportController@show']);
+Route::post('{type}/{id}/report', ['as' => 'post-report', 'uses' => 'Topic\ReportController@create']);
 
 // Auth
 Route::get('login', ['as' => 'login', 'uses' => 'Auth\AuthController@showLoginForm',]);

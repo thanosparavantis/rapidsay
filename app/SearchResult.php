@@ -60,7 +60,7 @@ class SearchResult
             abort(404);
         }
 
-        return trim($query);
+        return preg_replace('!\s+!', ' ', trim($query));
     }
 
     public function getTotal()

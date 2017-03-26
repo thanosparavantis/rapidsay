@@ -12,8 +12,12 @@ class HelpController extends Controller
     {
         $articleView = 'help.sections.' . $section . '.' . $article;
 
-        if ($article && view()->exists($articleView)) {
-            return view($articleView);
+        if ($section || $article)
+        {
+            if (view()->exists($articleView))
+                return view($articleView);
+            else
+                abort(404);
         }
 
         return view('help.default');

@@ -13,7 +13,7 @@ return [
     ],
 
     'edited'                => 'edited',
-    'register'              => 'Sign up for an account to comment and rate this post.',
+    'register'              => 'Sign up for an account to create posts, comments and give ratings to content.',
     'rated'                 => 'Rated by :name.',
     'recommended'           => 'Similar post',
     'comments'              => 'Comments',
