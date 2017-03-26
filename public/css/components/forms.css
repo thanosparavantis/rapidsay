@@ -105,3 +105,9 @@ form .field.error {
 .form-page .alert {
     margin-bottom: 30px;
 }
+
+/* Google Recaptcha */
+
+form .g-recaptcha div {
+    margin: auto;
+}
