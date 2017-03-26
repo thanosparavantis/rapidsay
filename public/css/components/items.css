@@ -11,16 +11,8 @@
     margin: 0 -10px -10px 0;
 }
 
-.items-inline.with-large-space {
-    margin: 0 -20px -20px 0;
-}
-
 .items-inline.with-space li {
     margin: 0 10px 10px 0;
-}
-
-.items-inline.with-large-space li {
-    margin: 0 20px 20px 0;
 }
 
 .items-inline .seperator:before {
