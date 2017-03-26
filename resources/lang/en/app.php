@@ -3,9 +3,7 @@
 return [
 
     'name'              => 'Rapidsay',
-    'tagline'           => 'Rapidsay is an easy, simple and fast social network.',
-    'tagline-short'     => 'Easy, simple and fast social network',
-    'tagline_seo'       => 'Rapidsay is an easy, simple and fast social network.',
+    'tagline'           => 'The alternative social network',
     'last-update'       => 'Last Rapidsay update: :time.',
     'loading'           => 'Loading...',
     'processing'        => 'Please wait...',

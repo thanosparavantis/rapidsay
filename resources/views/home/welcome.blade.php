@@ -1,12 +1,12 @@
 @extends('layouts.full-page')
-@section('title', trans('app.name') . ' - ' . trans('app.tagline-short'))
+@section('title', trans('app.tagline'))
 @section('bodyClasses', 'mobile-no-margin')
 
 @section('content')
 
 <div class="features">
     <div class="section">
-        <div class="logo">
+        <div class="app-logo">
             <img src="{{ asset('img/logo.png') }}" alt="{{ trans('app.name') }}">
         </div>
         <h1>{{ trans('home.welcome.title') }}</h1>
@@ -21,7 +21,8 @@
             </div>
         </div>
         <a href="{{ route('register') }}" class="btn green">
-            <i class="fa fa-user-plus space-right" aria-hidden="true"></i>{{ trans('about.buttons.register') }}
+            <i class="fa fa-user-plus space-right" aria-hidden="true"></i>
+            {{ trans('about.buttons.register') }}
         </a>
     </div>
     <div class="section">

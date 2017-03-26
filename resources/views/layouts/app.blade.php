@@ -17,6 +17,8 @@
 
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/alerts.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/animations.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/components/app-logo.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/components/boxes.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/buttons.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/content-group.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/forms.css') }}">
@@ -25,7 +27,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/notifications.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/pagination.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/panel.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/components/tip-box.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/components/point-group.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/tooltip.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/uploader.css') }}">
 
@@ -34,7 +36,8 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/help/help.css') }}">
 
         <link rel="stylesheet" type="text/css" href="{{ asset('css/home/explore.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/home/welcome.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/home/features.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/home/greeting.css') }}">
 
         <link rel="stylesheet" type="text/css" href="{{ asset('css/topic/creator.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/topic/discussion.css') }}">
@@ -50,12 +53,10 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/user/user-preview.css') }}">
 
         {{-- Display --}}
-        @if (request()->path() == "/")
-            <title>@yield('title')</title>
-        @elseif (isset($post))
+        @if (isset($post))
             <title>@raw(str_limit($post->body, 70))</title>
         @else
-            <title>{{ trans('app.name') }} | @yield('title')</title>
+            <title>{{ trans('app.name') }} - @yield('title')</title>
         @endif
 
         <meta name="application-name"                   content="{{ trans('app.name') }}">
@@ -107,9 +108,9 @@
                 <meta name="twitter:description"        content="@inline($user->description)">
                 <meta property="og:description"         content="@inline($user->description)">
             @else
-                <meta name="description"                 content="{{ trans('app.tagline_seo') }}">
-                <meta name="twitter:description"         content="{{ trans('app.tagline_seo') }}">
-                <meta property="og:description"          content="{{ trans('app.tagline_seo') }}">
+                <meta name="description"                 content="{{ trans('app.tagline') }}">
+                <meta name="twitter:description"         content="{{ trans('app.tagline') }}">
+                <meta property="og:description"          content="{{ trans('app.tagline') }}">
             @endif
 
             @if ($user->first_name && $user->last_name)
@@ -129,9 +130,9 @@
             @endif
 
             {{-- Default description --}}
-            <meta name="description"                    content="{{ trans('app.tagline_seo') }}">
-            <meta name="twitter:description"            content="{{ trans('app.tagline_seo') }}">
-            <meta property="og:description"             content="{{ trans('app.tagline_seo') }}">
+            <meta name="description"                    content="{{ trans('app.tagline') }}">
+            <meta name="twitter:description"            content="{{ trans('app.tagline') }}">
+            <meta property="og:description"             content="{{ trans('app.tagline') }}">
         @endif
 
         {{-- Default image --}}

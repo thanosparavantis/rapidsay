@@ -1,0 +1,76 @@
+.tip-box {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.08);
+}
+
+.tip-box > *:not(:last-child) {
+    margin-right: 10px;
+}
+
+.tip-box.blue {
+    background-color: #3498db;
+    border-color: #2283c3;
+}
+
+.tip-box:not(.last-child),
+.splash-box:not(.last-child) {
+    margin-bottom: 20px;
+}
+
+.tip-box:last-child {
+    margin-bottom: 20px;
+}
+
+.tip-box p {
+    font-weight: 700;
+    color: #555;
+}
+
+.tip-box.blue p {
+    color: #fff;
+}
+
+.splash-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: #fff;
+    background-color: #3498db;
+    border: 1px solid #2283c3;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.08);
+}
+
+.splash-box .header {
+    display: flex;
+    align-items: center;
+}
+
+.splash-box .header h1 {
+    margin-bottom: 0;
+}
+
+.splash-box .header .app-logo {
+    margin-right: 10px;
+}
+
+.splash-box .point-group {
+    margin: 20px 0;
+}
+
+.splash-box p,
+.splash-box .btn {
+    font-size: 15px;
+    text-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
+}
+
+@media all and (max-width: 768px) {
+    .splash-box .btn .fa {
+        display: none;
+    }
+}
