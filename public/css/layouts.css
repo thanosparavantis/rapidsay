@@ -28,6 +28,7 @@
     margin: 200px auto;
     width: 80%;
     display: flex;
+    text-align: center;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -71,39 +72,8 @@
         padding-left: 3%;
         padding-right: 3%;
     }
-}
 
-/*
-@media all and (max-width: 1440px) {
-    .navbar .container,
-    .full-page,
-    .dashboard-page,
-    .profile-page,
-    .help-page,
-    .admin-dashboard-page {
-        width: 80%;
+    .status-page {
+        margin: 50px auto 0 auto;
     }
 }
-
-@media all and (max-width: 768px) {
-    .navbar .container,
-    .full-page,
-    .dashboard-page,
-    .profile-page,
-    .help-page,
-    .admin-dashboard-page {
-        width: 100%;
-    }
-
-    .form-page {
-        width: 50%;
-    }
-}
-
-@media all and (max-width: 425px) {
-    .form-page {
-        width: 80%;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-}*/
