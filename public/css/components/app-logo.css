@@ -1,0 +1,20 @@
+.app-logo {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.app-logo.small {
+    padding: 5px;
+}
+
+.app-logo.small img {
+    width: 24px;
+    height: 24px;
+}
+
+.app-logo img {
+    width: 64px;
+    height: 64px;
+    display: block;
+}

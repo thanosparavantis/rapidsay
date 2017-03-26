@@ -28,7 +28,7 @@ function AjaxSearch(paginator)
 
     this.submit = function()
     {
-        if (search.query.val() != "")
+        if (search.query.val() && $.trim(search.query.val()))
         {
             search.results.empty();
 

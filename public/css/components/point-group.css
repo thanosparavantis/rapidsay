@@ -1,0 +1,79 @@
+.point-group,
+.point-group .points {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.point-group p {
+    text-align: center;
+}
+
+.point-group .points:not(:first-child):before,
+.point-group .points p:not(:first-child):before {
+    content: '\2022';
+    padding-right: 10px;
+}
+
+.point-group .points:not(:first-child),
+.point-group .points p:not(:first-child) {
+    padding-left: 10px;
+}
+
+@media all and (max-width: 1024px) {
+    .en .point-group .points:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    .en .point-group .points:last-child:before {
+        content: '';
+        padding-right: 0;
+    }
+
+    .en .point-group .points:last-child {
+        padding-left: 0;
+    }
+}
+
+/* For Greek translation */
+
+body:not(.en) .point-group {
+    flex-direction: column;
+}
+
+body:not(.en) .point-group .points:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+body:not(.en) .point-group .points:last-child:before {
+    content: '';
+    padding-right: 0;
+}
+
+body:not(.en) .point-group .points:last-child {
+    padding-left: 0;
+}
+
+@media all and (max-width: 768px) {
+    .point-group,
+    .point-group .points {
+        flex-direction: column;
+    }
+
+    .point-group .points:not(:first-child):before,
+    .point-group .points p:not(:first-child):before {
+        content: '';
+        padding-right: 0;
+    }
+
+    .point-group .points:not(:first-child),
+    .point-group .points p:not(:first-child) {
+        padding-left: 0;
+    }
+
+    .point-group .points:not(:last-child),
+    .point-group .points p:not(:last-child) {
+        margin-bottom: 10px;
+    }
+}

@@ -9,11 +9,13 @@
         {{-- Identity --}}
         <ul class="identity items-inline with-space">
             <li>
-                @include('partials.profile-picture', ['user' => auth()->user(), 'size' => 'small', 'plain' => true])
+                @include('partials.profile-picture', ['user' => isset($item) ? $item->user : auth()->user(), 'size' => 'small', 'plain' => true])
             </li>
             <li>
-                <h1>{{ auth()->user()->fullName() }}</h1>
+                <h1>{{ isset($item) ? $item->user->fullName() : auth()->user()->fullName() }}</h1>
             </li>
+
+            {{-- Note: When an administrator edits a post, the post creator's identity will be shown. --}}
         </ul>
 
         {{-- Body --}}

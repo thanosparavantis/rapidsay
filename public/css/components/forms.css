@@ -93,7 +93,7 @@ form .field.error {
 }
 
 .form-page .tip {
-    margin: 10px 0;
+    margin: 10px 0 20px 0;
     text-align: center;
     color: #555;
 }
@@ -104,4 +104,10 @@ form .field.error {
 
 .form-page .alert {
     margin-bottom: 30px;
+}
+
+/* Google Recaptcha */
+
+form .g-recaptcha div {
+    margin: auto;
 }
