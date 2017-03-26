@@ -22,7 +22,3 @@
         <p>@parse($user->description)</p>
     </div>
 </header>
-
-@if (auth()->guest())
-    @include('user.partials.profile.register-tip')
-@endif

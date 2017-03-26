@@ -6,7 +6,6 @@ return [
     'reputation'            => 'reputation',
     'subscribers'           => 'subscriber|subscribers',
     'data-loss'             => 'Are you sure you want to discard all changes?',
-    'register-tip'          => 'Create a profile similar to this and subscribe to get notified of :name\'s new posts.',
 
     'profile'                   => [
         'activity'              => 'Activity',
