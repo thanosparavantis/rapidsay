@@ -26,142 +26,172 @@
 
 /* Section */
 
+.features,
+.features .btn {
+    font-size: 17px;
+}
+
 .features .section {
     background-color: #fff;
 }
 
-.features .section h1 {
+.features h1,
+.features h2 {
+    margin-bottom: 0;
+}
+
+.features h1 {
     font-size: 34px;
 }
 
-.features .section h2 {
-    margin-bottom: 0;
+.features h2 {
+    font-size: 27px;
+    font-weight: 400;
     padding: 20px;
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
-    font-size: 27px;
-    font-weight: 400;
 }
 
-.features .section h2.single-border {
+.features .section:first-child + .section h2 {
     border-top: none;
 }
 
-.features .section h2 .fa {
+.features h2 .fa {
     margin-right: 10px;
 }
 
-.features .section p {
-    font-size: 17px;
-    line-height: 24px;
-}
-
-.features .section ul {
+.features ul {
     padding: 30px;
     margin: 0 0 0 30px;
     list-style-type: square;
-    font-size: 19px;
     color: #555;
     line-height: 40px;
-}
-
-/* Welcome, register sections */
-
-.features .section.welcome {
-    display: flex;
-    align-items: stretch;
-    color: #fff;
-    background-color: #3498db;
-}
-
-.features .section.welcome .description h1,
-.features .section.welcome .description p,
-.features .section.welcome .description .buttons .btn.green {
-    text-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
-}
-
-.features .section.welcome .description {
-    padding: 30px;
-}
-
-.features .section.welcome .display {
-    padding: 30px;
-    display: flex;
-    align-items: center;
-    background-color: #bedef4;
-}
-
-.features .section.welcome .display img {
-    width: 72px;
-    height: 72px;
-}
-
-.features .section.welcome .description .buttons {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.features .section.welcome .description .buttons .btn:not(:first-child) {
-    margin-left: 10px;
 }
 
 .features .btn {
     padding: 15px 50px;
 }
 
-.features .section.register {
+/* Welcome, register sections */
+
+.features .section:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    color: #fff;
+    background-color: #3498db;
+}
+
+.features .section:first-child .logo {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.features .section:first-child .logo img {
+    width: 64px;
+    height: 64px;
+}
+
+.features .section:first-child h1,
+.features .section:first-child p,
+.features .section:first-child .green {
+    text-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
+}
+
+.features .point-group {
+    margin: 20px 0 30px 0;
+}
+
+.features .point-group,
+.features .points {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.features .points:not(:first-child):before,
+.features .points p:not(:first-child):before {
+    content: '\2022';
+    padding-right: 10px;
+}
+
+.features .points:not(:first-child),
+.features .points p:not(:first-child) {
+    padding-left: 10px;
+}
+
+.features .section:last-child {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     padding: 50px 80px;
     color: #fff;
     background-color: #e4e4e4;
 }
 
-@media all and (max-width: 580px) {
-    .features .section h1 {
-        font-size: 28px;
+@media all and (max-width: 1024px) {
+    .features .points:not(:last-child) {
+        margin-bottom: 10px;
+    }
+    .features .points:last-child:before {
+        content: '';
+        padding-right: 0;
     }
 
-    .features .section h2 {
-        font-size: 24px;
+    .features .points:last-child {
+        padding-left: 0;
     }
+}
 
-    .features .section .btn.large,
-    .features .section p {
+@media all and (max-width: 768px) {
+    .features,
+    .features .btn {
         font-size: 16px;
     }
 
-    .features .section ul {
-        font-size: 17px;
-        line-height: 35px;
+    .features .section:first-child {
+        text-align: center;
     }
 
-    .features .section.welcome,
-    .features .section.welcome .description .buttons {
+    .features .point-group,
+    .features .points {
         flex-direction: column;
     }
 
-    .features .section.welcome .display {
-        justify-content: center;
+    .features .points:not(:first-child):before,
+    .features .points p:not(:first-child):before {
+        content: '';
+        padding-right: 0;
     }
 
-    .features .section.welcome .description .buttons .btn {
-        width: 100%;
+    .features .points:not(:first-child),
+    .features .points p:not(:first-child) {
+        padding-left: 0;
     }
 
-    .features .section.welcome .description .buttons .btn:not(:first-child) {
-        margin-left: 0;
-        margin-top: 10px;
+    .features .points:not(:last-child),
+    .features .points p:not(:last-child) {
+        margin-bottom: 10px;
     }
 
-    .features .section.register {
-        padding-left: 20px;
-        padding-right: 20px;
+    .features h1 {
+        font-size: 29px;
     }
 
-    .features .section.register .btn {
-        flex: 1;
+    .features h2 {
+        font-size: 24px;
+    }
+
+    .features .btn .fa {
+        display: none;
+    }
+
+    .features .section:last-child {
+        padding: 50px 30px;
     }
 }
