@@ -5,28 +5,34 @@
 @section('content')
 
 <div class="features">
-    <div class="section welcome">
-        <div class="display">
+    <div class="section">
+        <div class="logo">
             <img src="{{ asset('img/logo.png') }}" alt="{{ trans('app.name') }}">
         </div>
-        <div class="description">
-            <h1>{{ trans('home.welcome.title') }}</h1>
-            <p>{{ trans('app.tagline') }}</p>
-            <div class="buttons">
-                <a href="{{ route('register') }}" class="btn green large"><i class="fa fa-user-plus space-right" aria-hidden="true"></i>{{ trans('home.welcome.register') }}</a>
-                <a href="{{ route('login') }}" class="btn white large"><i class="fa fa-sign-in space-right" aria-hidden="true"></i>{{ trans('page.title.login') }}</a>
+        <h1>{{ trans('home.welcome.title') }}</h1>
+        <div class="point-group">
+            <div class="points">
+                <p>{{ trans('about.points.difference') }}</p>
+                <p>{{ trans('about.points.alternative') }}</p>
+            </div>
+            <div class="points">
+                <p>{{ trans('about.points.ratings') }}</p>
+                <p>{{ trans('about.points.reputation') }}</p>
             </div>
         </div>
+        <a href="{{ route('register') }}" class="btn green">
+            <i class="fa fa-user-plus space-right" aria-hidden="true"></i>{{ trans('about.buttons.register') }}
+        </a>
     </div>
     <div class="section">
-        <h2 class="single-border"><i class="fa fa-{{ config('glyphicons.post') }}" aria-hidden="true"></i>{{ trans('home.welcome.section.share.title') }}</h2>
+        <h2><i class="fa fa-{{ config('glyphicons.post') }}" aria-hidden="true"></i>{{ trans('home.welcome.section.share.title') }}</h2>
         <ul>
             <li>{{ trans('home.welcome.section.share.line1') }}</li>
             <li>{{ trans('home.welcome.section.share.line2') }}</li>
             <li>{{ trans('home.welcome.section.share.line3') }}</li>
         </ul>
     </div>
-    <div class="section reverse">
+    <div class="section">
         <h2><i class="fa fa-{{ config('glyphicons.reputation') }}" aria-hidden="true"></i>{{ trans('home.welcome.section.reputation.title') }}</h2>
         <ul>
             <li>{{ trans('home.welcome.section.reputation.line1') }}</li>
@@ -42,7 +48,7 @@
             <li>{{ trans('home.welcome.section.audience.line3') }}</li>
         </ul>
     </div>
-    <div class="section last-border reverse">
+    <div class="section">
         <h2><i class="fa fa-{{config('glyphicons.reply')  }}" aria-hidden="true"></i>{{ trans('home.welcome.section.discussions.title') }}</h2>
         <ul>
             <li>{{ trans('home.welcome.section.discussions.line1') }}</li>
@@ -50,8 +56,10 @@
             <li>{{ trans('home.welcome.section.discussions.line3') }}</li>
         </ul>
     </div>
-    <div class="section register">
-        <a href="{{ route('register') }}" class="btn green large"><i class="fa fa-sign-in space-right" aria-hidden="true"></i>{{ trans('home.welcome.register') }}</a>
+    <div class="section">
+        <a href="{{ route('register') }}" class="btn green">
+            <i class="fa fa-user-plus space-right" aria-hidden="true"></i>{{ trans('about.buttons.register') }}
+        </a>
     </div>
 </div>
 
