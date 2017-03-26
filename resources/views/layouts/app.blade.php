@@ -5,7 +5,49 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width; initial-scale=1.0;" />
         <link rel="shortcut icon" type="image/png" href="{{ asset('img/logo.png') }}">
+
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/normalize.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/layouts.css') }}">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}">
+
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/admin/dashboard.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/admin/report.css') }}">
+
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/components/alerts.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/components/animations.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/components/buttons.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/components/content-group.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/components/forms.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/components/items.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/components/navbar.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/components/notifications.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/components/pagination.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/components/panel.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/components/tip-box.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/components/tooltip.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/components/uploader.css') }}">
+
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/errors/status.css') }}">
+
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/help/help.css') }}">
+
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/home/explore.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/home/welcome.css') }}">
+
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/topic/creator.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/topic/discussion.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/topic/item-bar.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/topic/media-gallery.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/topic/user-content.css') }}">
+
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/user/community-preview.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/user/dashboard.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/user/picture.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/user/profile.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/user/subscription.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/user/user-preview.css') }}">
 
         {{-- Display --}}
         @if (request()->path() == "/")
