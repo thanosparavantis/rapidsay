@@ -45,7 +45,7 @@ $factory->define(Forum\Post::class, function (Faker\Generator $faker) {
     $title = $faker->realText(90);
 
     return [
-        'user_id' => $faker->numberBetween(1, 500),
+        'user_id' => $faker->numberBetween(3, 10),
         'title' => $title,
         'body' => $faker->realText(5000),
         'slug' => str_slug($title),
@@ -54,16 +54,16 @@ $factory->define(Forum\Post::class, function (Faker\Generator $faker) {
 
 $factory->define(Forum\Comment::class, function (Faker\Generator $faker) {
     return [
-        'user_id' => $faker->numberBetween(1, 500),
-        'post_id' => $faker->numberBetween(1, 500),
+        'user_id' => $faker->numberBetween(3, 10),
+        'post_id' => $faker->numberBetween(3, 10),
         'body' => $faker->realText(300),
     ];
 });
 
 $factory->define(Forum\Reply::class, function (Faker\Generator $faker) {
     return [
-        'user_id' => $faker->numberBetween(1, 500),
-        'comment_id' => $faker->numberBetween(1, 500),
+        'user_id' => $faker->numberBetween(3, 10),
+        'comment_id' => $faker->numberBetween(3, 10),
         'body' => $faker->realText(300),
     ];
 });
@@ -86,8 +86,8 @@ $factory->define(Forum\Rating::class, function (Faker\Generator $faker) {
     }
 
     return [
-        'user_id' => $faker->numberBetween(1, 500),
-        'rateable_id' => $faker->numberBetween(1, 500),
+        'user_id' => $faker->numberBetween(3, 10),
+        'rateable_id' => $faker->numberBetween(3, 10),
         'rateable_type' => $rateableType,
     ];
 });

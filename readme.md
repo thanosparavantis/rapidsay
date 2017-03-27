@@ -1,5 +1,5 @@
 # Rapidsay #
-Easy, simple and fast social network.
+The alternative social network.
 
 ## Links: ##
 * www.rapidsay.com

@@ -14,10 +14,11 @@ class CommunityController extends Controller
     {
         if (request()->ajax())
         {
-            $users = User::getCommunityPaginator(auth()->check() && auth()->user()->admin ? true : false); // Include banned users if the user is admin.
+            $users = User::getCommunityPaginator(auth()->check() && auth()->user()->admin); // Include banned users if the user is admin.
 
             return response()->json([
                 'html' => view('home.partials.community.list', ['users' => $users])->render(),
+                'debug' => $users,
                 'end' => !$users->hasMorePages(),
             ]);
         }

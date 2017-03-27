@@ -13,6 +13,7 @@ class User extends Authenticatable implements Redirectable, CanBeSearched
 {
     const NOTIFICATIONS_PER_PAGE         = 30; // The amount of notifications to show per page.
     const ACTIVITY_PER_PAGE              = 20; // The amount of activity items to show per page.
+    const USERS_PER_PAGE                 = 10; // The amount of users to display in the community page.
     const SUBSCRIPTIONS_PER_PAGE         = 10; // The amount of subscriptions to show per page.
     const FEED_POSTS_PER_PAGE            = 10; // The amount of feed posts to show per page.
     const MINUTES_BEFORE_OFFLINE         = 2;  // The amount of minutes before the user goes offline.
@@ -174,7 +175,7 @@ class User extends Authenticatable implements Redirectable, CanBeSearched
         }
 
         // Sort all activity items.
-        $activity = $activity->sortByDesc('created_at');
+        $activity = $activity->sortByDesc('created_at')->all();
 
         // Get the current activity page.
         $currentPage = Paginator::resolveCurrentPage('activity');
@@ -184,7 +185,7 @@ class User extends Authenticatable implements Redirectable, CanBeSearched
 
         // Create new paginator instance.
         return new Paginator(
-            $activity->forPage($currentPage, self::ACTIVITY_PER_PAGE + 1),
+            array_slice($activity, ($currentPage - 1) * self::ACTIVITY_PER_PAGE, self::ACTIVITY_PER_PAGE + 1),
             self::ACTIVITY_PER_PAGE,
             $currentPage,
             ['path' => $path, 'pageName' => 'activity']
@@ -256,13 +257,13 @@ class User extends Authenticatable implements Redirectable, CanBeSearched
 
     public static function scopeGetCommunityPaginator($query, $includeBanned = false)
     {
-        $community = self::getCommunity($includeBanned);
+        $community = self::getCommunity($includeBanned)->all();
         $currentPage = Paginator::resolveCurrentPage();
         $path = Paginator::resolveCurrentPath();
 
         return new Paginator(
-            $community->forPage($currentPage, 11),
-            10,
+            array_slice($community, ($currentPage - 1) * self::USERS_PER_PAGE, self::USERS_PER_PAGE + 1),
+            self::USERS_PER_PAGE,
             $currentPage,
             ['path' => $path]
         );
