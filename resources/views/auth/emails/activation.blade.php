@@ -7,8 +7,6 @@
 <br>
 {{ trans('auth.activation.email.body.welcome') }}
 <br>
-{{ trans('app.tagline') }}
-<br>
 <br>
 {{ trans('auth.activation.email.body.info') }}
 <br>
