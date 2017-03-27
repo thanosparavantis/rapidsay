@@ -19,11 +19,12 @@ class SearchResult
 
     public function getPaginatedResults()
     {
+        $data = $this->data->all();
         $currentPage = Paginator::resolveCurrentPage();
         $path = Paginator::resolveCurrentPath();
 
         return new Paginator(
-            $this->data->forPage($currentPage, self::RESULTS_PER_PAGE + 1),
+            array_slice($data, ($currentPage - 1) * self::RESULTS_PER_PAGE, self::RESULTS_PER_PAGE + 1),
             self::RESULTS_PER_PAGE,
             $currentPage,
             ['path' => $path]

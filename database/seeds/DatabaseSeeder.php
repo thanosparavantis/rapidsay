@@ -11,23 +11,23 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        factory(Forum\User::class, 500)->create()->each(function ($user) {
+        factory(Forum\User::class, 10)->create()->each(function ($user) {
             $user->save();
         });
 
-        factory(Forum\Post::class, 500)->create()->each(function ($post) {
+        factory(Forum\Post::class, 10)->create()->each(function ($post) {
             $post->save();
         });
 
-        factory(Forum\Comment::class, 500)->create()->each(function ($comment) {
+        factory(Forum\Comment::class, 10)->create()->each(function ($comment) {
             $comment->save();
         });
 
-        factory(Forum\Reply::class, 500)->create()->each(function ($reply) {
+        factory(Forum\Reply::class, 10)->create()->each(function ($reply) {
             $reply->save();
         });
 
-        factory(Forum\Rating::class, 500)->create()->each(function ($rating) {
+        factory(Forum\Rating::class, 10)->create()->each(function ($rating) {
             $rating->save();
         });
     }
