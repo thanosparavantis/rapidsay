@@ -2,6 +2,7 @@
 
 namespace Forum;
 
+use DateTime;
 use Forum\Interfaces\Redirectable;
 use Forum\Interfaces\AcceptsImages;
 use Forum\Interfaces\CanBeSearched;
@@ -93,9 +94,15 @@ class Post extends Model implements Redirectable, AcceptsImages, CanBeSearched
 
     public function scopeGetDefaultSearchResults($query)
     {
+        $date = new DateTime;
+        $date->modify('-1 week');
+        $lastWeek = $date->format('Y-m-d H:i:s');
+
         return $query->withCount('ratings')
-        ->orderBy('created_at', 'desc')
-        ->get();
+            ->where('created_at', '>=', $lastWeek)      // Show posts from this week.
+            ->orderBy('ratings_count', 'desc')          // Order posts by ratings.
+            ->orderBy('created_at', 'desc')             // Show newly created posts first.
+            ->get();
     }
 
     public function scopeGetSearchResults($query, $search)
