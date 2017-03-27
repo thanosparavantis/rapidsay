@@ -5,6 +5,7 @@
 }
 
 .community-preview {
+    min-width: 0; /* Fixes word wrap for description. Messy but whatever... */
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -44,11 +45,23 @@
     max-height: 60px;
 }
 
-.community-preview .reputation {
+.community-preview .reputation,
+.community-preview .banned {
     font-size: 15px;
     font-weight: 700;
     margin-bottom: 10px;
+}
+
+.community-preview .reputation {
     color: #C39738;
+}
+
+.community-preview .banned {
+    color: #e75e4b;
+}
+
+.community-preview .description {
+    word-wrap: break-word;
 }
 
 .community-preview .btn ~ .profile {

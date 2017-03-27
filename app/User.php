@@ -254,9 +254,9 @@ class User extends Authenticatable implements Redirectable, CanBeSearched
 
     /* Placement */
 
-    public static function scopeGetCommunityPaginator($query)
+    public static function scopeGetCommunityPaginator($query, $includeBanned = false)
     {
-        $community = self::getCommunity();
+        $community = self::getCommunity($includeBanned);
         $currentPage = Paginator::resolveCurrentPage();
         $path = Paginator::resolveCurrentPath();
 
@@ -268,12 +268,9 @@ class User extends Authenticatable implements Redirectable, CanBeSearched
         );
     }
 
-    public static function scopeGetCommunity($query)
+    public static function scopeGetCommunity($query, $includeBanned = false)
     {
-        // return $query->get()->sort(function ($a, $b) {
-        //     return $a->reputation >= $b->reputation ? -1 : 1;
-        // })->values();
-
+        if (!$includeBanned) $query->where('banned', false);
         return $query->get()->sortByDesc('reputation')->values();
 
         // if ($a->reputation && $b->reputation)
@@ -290,7 +287,7 @@ class User extends Authenticatable implements Redirectable, CanBeSearched
 
     public function placement()
     {
-        $position = self::getCommunity()->where('id', $this->id)->all();
+        $position = self::getCommunity(true)->where('id', $this->id)->all();
         return array_keys($position)[0] + 1;
     }
 
