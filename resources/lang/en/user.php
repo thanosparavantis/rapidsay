@@ -6,6 +6,7 @@ return [
     'reputation'            => 'reputation',
     'subscribers'           => 'subscriber|subscribers',
     'data-loss'             => 'Are you sure you want to discard all changes?',
+    'banned'                => 'Banned',
 
     'profile'                   => [
         'activity'              => 'Activity',

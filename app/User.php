@@ -254,9 +254,9 @@ class User extends Authenticatable implements Redirectable, CanBeSearched
 
     /* Placement */
 
-    public static function scopeGetCommunityPaginator($query)
+    public static function scopeGetCommunityPaginator($query, $includeBanned = false)
     {
-        $community = self::getCommunity();
+        $community = self::getCommunity($includeBanned);
         $currentPage = Paginator::resolveCurrentPage();
         $path = Paginator::resolveCurrentPath();
 
