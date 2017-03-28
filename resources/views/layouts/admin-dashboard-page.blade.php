@@ -6,6 +6,7 @@
 <div class="admin-dashboard-page">
     @include('partials.alerts')
     @yield('content')
+    @include('partials.chat-button')
 </div>
 
 @endsection

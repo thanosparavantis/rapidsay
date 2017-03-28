@@ -18,6 +18,7 @@ Route::post('/feed-tab', ['as' => 'change-feed-tab', 'uses' => 'Home\HomeControl
 Route::get('explore', ['as' => 'explore', 'uses' => 'Home\ExploreController@show',]);
 Route::post('explore', ['as' => 'post-explore', 'uses' => 'Home\ExploreController@search',]);
 Route::get('community', ['as' => 'community', 'uses' => 'Home\CommunityController@show',]);
+Route::get('chat', ['as' => 'chat', 'uses' => 'Home\ChatController@show',]);
 Route::post('locale', ['as' => 'change-locale', 'uses' => 'LocaleController@change']);
 
 // Alerts

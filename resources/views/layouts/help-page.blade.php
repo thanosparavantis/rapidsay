@@ -4,6 +4,7 @@
 @section('body')
 
 @include('partials.navbar')
+
 <div class="help-page">
     @include('partials.alerts')
 
@@ -12,6 +13,8 @@
         @include('help.partials.content')
     </div>
 </div>
+
+@include('partials.chat-button')
 
 @endsection
 
