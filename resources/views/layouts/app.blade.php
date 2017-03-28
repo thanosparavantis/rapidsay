@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ App::getLocale() }}">
+<html lang="{{ App::getLocale() }}" class="@yield('htmlClasses')">
     <head>
         {{-- Configuration --}}
         <meta charset="UTF-8">
@@ -20,6 +20,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/app-logo.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/boxes.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/buttons.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/components/chat.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/content-group.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/forms.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/items.css') }}">
@@ -145,6 +146,7 @@
     <body class="{{ App::getLocale() }} @yield('bodyClasses')" @yield('attributes')>
         @yield('body')
         @include('partials.analytics')
+
         <script src="{{ asset('js/lib/jquery-3.1.1.min.js') }}"></script>
         <script src="{{ asset('js/lib/autosize.min.js') }}"></script>
         <script src="{{ asset('js/Config.js') }}"></script>

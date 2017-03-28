@@ -6,6 +6,7 @@ return [
         'welcome'       => 'Welcome',
         'home'          => 'Home',
         'explore'       => 'Explore',
+        'chat'          => 'Live Chat',
         'notifications' => 'Notifications',
         'community'     => 'Community',
         'login'         => 'Login',

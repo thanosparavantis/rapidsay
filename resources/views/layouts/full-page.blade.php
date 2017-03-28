@@ -7,9 +7,12 @@
     @if (isset($announcements))
         @include('partials.announcements')
     @endif
+
     @include('partials.alerts')
+
     @yield('content')
-    {{-- @include('partials.footer') --}}
+
+    @include('partials.chat-button')
 </div>
 
 @endsection

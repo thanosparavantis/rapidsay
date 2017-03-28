@@ -59,4 +59,7 @@ return [
         'third_none'        => 'No third place',
     ],
 
+    'chat'                  => [
+        'description'       => 'Discuss with other users in real time.',
+    ],
 ];

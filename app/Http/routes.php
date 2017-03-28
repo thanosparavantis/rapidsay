@@ -20,6 +20,9 @@ Route::post('explore', ['as' => 'post-explore', 'uses' => 'Home\ExploreControlle
 Route::get('community', ['as' => 'community', 'uses' => 'Home\CommunityController@show',]);
 Route::post('locale', ['as' => 'change-locale', 'uses' => 'LocaleController@change']);
 
+// Chat
+Route::get('chat', ['as' => 'chat', 'uses' => 'Home\ChatController@show',]);
+
 // Alerts
 Route::post('alert/announcement/close', ['as' => 'close-announcement', 'uses' => 'User\AlertController@closeAnnouncement']);
 

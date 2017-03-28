@@ -7,6 +7,7 @@
     @include('partials.alerts')
     @include('partials.dashboard-navbar')
     @yield('content')
+    @include('partials.chat-button')
 </div>
 
 @endsection
