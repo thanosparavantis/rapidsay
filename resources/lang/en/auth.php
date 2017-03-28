@@ -22,8 +22,8 @@ return [
             'alert'         => 'We have e-mailed you the activation link.',
             'body'          => [
                 'greeting'  => 'Hello <b>:name</b>,',
-                'welcome'   => 'Welcome to ' . trans('app.name') . '.',
-                'info'      => 'Before logging in, your account needs to be activated - so we know it\'s you.',
+                'welcome'   => 'Welcome to ' . trans('app.name') . '! The alternative social network.',
+                'info'      => 'Before logging in, your account needs to be activated, so we know it\'s you.',
                 'link'      => 'Click here to activate your account.',
             ],
         ],
