@@ -25,10 +25,15 @@ class AccountController extends Controller
     public function ban(AdminRequest $request, $userId)
     {
         $user = User::findOrFail($userId);
+        $user->toggleBan();
+        return redirect()->route('user-profile', $user->username)->with('success', $user->isBanned() ? trans('admin.user.banned') : trans('admin.user.unbanned'));
+    }
 
-        $user->banned = $user->banned ? false : true;
-        $user->save();
-        return redirect()->route('user-profile', $user->username)->with('success', $user->banned ? trans('admin.user.banned') : trans('admin.user.unbanned'));
+    public function banIp(AdminRequest $request, $userId)
+    {
+        $user = User::findOrFail($userId);
+        $user->toggleIpBan();
+        return redirect()->route('user-profile', $user->username)->with('success', $user->isBanned() ? trans('admin.user.banned') : trans('admin.user.unbanned'));
     }
 
     public function activate(AdminRequest $request, $userId)

@@ -43,6 +43,8 @@ return [
         'reset'             => 'Generate Password',
         'ban'               => 'Ban',
         'unban'             => 'Unban',
+        'ban-ip'            => 'Ban IP',
+        'unban-ip'          => 'Unban IP',
         'remove'            => 'Remove',
         'reputation'        => 'Reputation',
     ],

@@ -28,3 +28,14 @@
         @endif
     </button>
 </form>
+
+<form action="{{ route('admin-ban-ip', $user->id) }}" method="post">
+    {{ csrf_field() }}
+    <button type="submit" name="submit" class="btn yellow">
+        @if ($user->banned_ip)
+            <i class="fa fa-times space-right" aria-hidden="true"></i>{{ trans('admin.button.unban-ip') }}
+        @else
+            <i class="fa fa-user-times space-right" aria-hidden="true"></i>{{ trans('admin.button.ban-ip') }}
+        @endif
+    </button>
+</form>

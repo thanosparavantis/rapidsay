@@ -8,6 +8,7 @@ use Forum\Interfaces\Redirectable;
 use Forum\Interfaces\CanBeSearched;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Http\Request;
 
 class User extends Authenticatable implements Redirectable, CanBeSearched
 {
@@ -27,6 +28,8 @@ class User extends Authenticatable implements Redirectable, CanBeSearched
         'password',
         'admin',
         'banned',
+        'banned_ip',
+        'banned_ip_address',
         'activated',
         'show_email',
         'show_ratings',
@@ -271,7 +274,7 @@ class User extends Authenticatable implements Redirectable, CanBeSearched
 
     public static function scopeGetCommunity($query, $includeBanned = false)
     {
-        if (!$includeBanned) $query->where('banned', false);
+        if (!$includeBanned) $query->where('banned', false)->where('banned_ip', false);
         return $query->get()->sortByDesc('reputation')->values();
 
         // if ($a->reputation && $b->reputation)
@@ -386,6 +389,52 @@ class User extends Authenticatable implements Redirectable, CanBeSearched
         ->where('activated', true)
         ->where('banned', false)
         ->get();
+    }
+
+    /* Bans and IP Bans */
+
+    public function isBanned()
+    {
+        return $this->banned || $this->isIpBanned();
+    }
+
+    public function isIpBanned()
+    {
+        return $this->banned_ip;
+    }
+
+    public static function isEmailBanned($email)
+    {
+        return self::where('email', $email)->where('banned', true)->count() > 0;
+    }
+
+    public function toggleBan()
+    {
+        $this->banned = !$this->banned;
+        if (!$this->banned) $this->banned_ip = false; // If unbanned, also remove the ip ban.
+        $this->save();
+    }
+
+    public function toggleIpBan()
+    {
+        $this->banned = !$this->banned;
+        $this->banned_ip = !$this->banned_ip;
+        if (!$this->banned_ip) $this->banned_ip_address = null;
+        $this->save();
+    }
+
+    public function storeBannedIpAddress(Request $request)
+    {
+        if ($this->banned_ip)
+        {
+            $this->banned_ip_address = $request->ip();
+            $this->save();
+        }
+    }
+
+    public static function checkRequestForBannedIp(Request $request)
+    {
+        return self::where('banned_ip_address', $request->ip())->count() > 0;
     }
 
     /* Links */
