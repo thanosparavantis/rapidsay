@@ -5,46 +5,8 @@ $(document).ready(function() {
     alerts = new Alert;
     alerts.register();
     alerts.showInternetExplorerAlert();
+    initializeDropdowns();
 });
-
-submitted = false;
-wentBack = false;
-
-function submitOnEnter(event, form, field)
-{
-    if (event.which == 13 && !event.shiftKey)
-    {
-        event.preventDefault();
-
-        if (!submitted)
-        {
-            form.submit();
-            submitted = true;
-
-            setTimeout(function() {
-                submitted = true;
-            }, 1000);
-        }
-    }
-}
-
-function backOnEsc(event, url)
-{
-    if (event.keyCode == 27)
-    {
-        event.preventDefault();
-
-        if (!wentBack)
-        {
-            window.location.href = url;
-            wentBack = true;
-
-            setTimeout(function() {
-                wentBack = false;
-            }, 1000);
-        }
-    }
-}
 
 function initializeImageUploader()
 {
@@ -88,6 +50,23 @@ function initializeImageUploader()
 
             input.val("");
             count.hide();
+        });
+    });
+}
+
+function initializeDropdowns()
+{
+    $(".dropdown").each(function() {
+        dropdown = $(this);
+        button = $(this).find(".button");
+
+        button.click(function(event) {
+            event.preventDefault();
+            $(this).toggleClass("clicked");
+            items = $(this).parent().find(".items");
+            items.slideToggle(200, function() {
+                if ($(this).css('display') == 'block') $(this).css('display', 'flex');
+            });
         });
     });
 }

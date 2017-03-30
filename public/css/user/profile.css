@@ -38,7 +38,8 @@
     margin: 10px auto 0 10px;
 }
 
-.profile header .details .name .btn {
+.profile header .details .name .btn,
+.profile header .details .name .dropdown {
     margin: 10px 0 0 10px;
 }
 
@@ -76,6 +77,7 @@
     }
 
     .profile header .details .name .btn,
+    .profile header .details .name .dropdown,
     .profile header .details .name > div {
         margin: 0;
     }
@@ -99,11 +101,16 @@
 
     .profile header .details .name .buttons,
     .profile header .details .name .btn,
-    .profile header .details .name form {
+    .profile header .details .name .dropdown {
         width: 100%;
     }
 
-    .profile header .details .name .btn:not(:first-child) {
+    .profile header .details .name .dropdown .text {
+        flex: 1;
+    }
+
+    .profile header .details .name .btn:not(:first-child),
+    .profile header .details .name .dropdown:not(:first-child) {
         margin-top: 5px;
         margin-left: 0;
     }

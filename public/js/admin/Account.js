@@ -1,5 +1,27 @@
 $(document).ready(function() {
-    $('#reputation').click(function (event) {
+    form = $("#admin-form");
+
+    $("#activate").click(function (event) {
+        form.attr("action", $(this).attr("data-target"));
+        form.submit();
+    });
+
+    $("#reset").click(function (event) {
+        form.attr("action", $(this).attr("data-target"));
+        form.submit();
+    });
+
+    $("#ban").click(function (event) {
+        form.attr("action", $(this).attr("data-target"));
+        form.submit();
+    });
+
+    $("#ban-ip").click(function (event) {
+        form.attr("action", $(this).attr("data-target"));
+        form.submit();
+    });
+
+    $("#reputation").click(function (event) {
         event.preventDefault();
         button = $(this);
 
@@ -14,7 +36,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: 'POST',
-            url: button.attr('data-href'),
+            url: button.attr('data-target'),
             timeout: 5000,
             data: { reputation: input },
             success: function() {
