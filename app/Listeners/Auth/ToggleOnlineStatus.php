@@ -28,7 +28,8 @@ class ToggleOnlineStatus
     {
         $user = $event->user;
 
-        if (!$user->isOnline()) {
+        if ($user->show_online && !$user->isOnline())
+        {
             $user->setOnline();
         }
     }

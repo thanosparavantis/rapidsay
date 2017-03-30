@@ -4,7 +4,7 @@ namespace Forum\Http\Middleware\User;
 
 use Closure;
 
-class StoreUserActivity
+class UpdateOnlineStatus
 {
     /**
      * Handle an incoming request.

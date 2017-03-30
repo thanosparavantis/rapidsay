@@ -31,7 +31,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \Forum\Http\Middleware\User\CheckBanned::class,
             \Forum\Http\Middleware\VerifyCsrfToken::class,
-            \Forum\Http\Middleware\User\StoreUserActivity::class,
+            \Forum\Http\Middleware\User\UpdateOnlineStatus::class,
         ],
 
         'api' => [
