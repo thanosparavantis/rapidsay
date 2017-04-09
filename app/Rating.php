@@ -4,6 +4,7 @@ namespace Forum;
 
 use Forum\Interfaces\Redirectable;
 use Forum\Traits\UserContentItem;
+use Forum\Events\Topic\RatingDeleted;
 use Illuminate\Database\Eloquent\Model;
 
 class Rating extends Model implements Redirectable
@@ -35,5 +36,14 @@ class Rating extends Model implements Redirectable
     public function getType()
     {
         return $this->rateable->getType();
+    }
+
+    public function delete($user = null)
+    {
+        event(new RatingDeleted(isset($user) ? $user : $this->user, $this));
+
+        //
+
+        parent::delete();
     }
 }

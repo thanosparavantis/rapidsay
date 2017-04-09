@@ -5,7 +5,6 @@ namespace Forum\Http\Controllers\Topic;
 use Auth;
 use Forum\Events\Topic\CommentCreated;
 use Forum\Events\Topic\CommentEdited;
-use Forum\Events\Topic\CommentDeleted;
 use Forum\Post;
 use Forum\Comment;
 use Forum\Traits\UploadsImages;
@@ -129,52 +128,11 @@ class CommentController extends Controller
         // Check if authorized.
         if ($this->authorize('delete', $comment))
         {
-            // Fire comment deleted event.
-            event(new CommentDeleted(auth()->user(), $comment));
-
-            // Delete all comment images.
-            $this->deleteCommentImages($comment);
-
-            // Delete all comment ratings.
-            $this->deleteCommentRatings($comment);
-
             // Delete the comment.
-            $comment->delete();
+            $comment->delete(auth()->user());
 
             // Redirect back with comment deletion success.
             return $post->redirect()->with('success', trans('comment.message.deleted'));
         }
-    }
-
-    /**
-     * Deletes all images (if any) of a comment.
-     */
-    private function deleteCommentImages(Comment $comment)
-    {
-        $comment->images()->each(function ($image) {
-            $image->delete();
-        });
-
-        $comment->replies->each(function ($reply) {
-            $reply->images()->each(function ($image) {
-                $image->delete();
-            });
-        });
-    }
-
-    /**
-     * Deletes all ratings (if any) of a comment.
-     */
-    private function deleteCommentRatings(Comment $comment)
-    {
-        $comment->ratings->each(function ($rating) {
-            $rating->delete();
-        });
-
-        $comment->replies->each(function ($reply) {
-            $reply->ratings->each(function ($rating) {
-                $rating->delete();
-            });
-        });
     }
 }

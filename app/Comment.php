@@ -6,6 +6,7 @@ use Forum\Interfaces\Redirectable;
 use Forum\Interfaces\AcceptsImages;
 use Forum\Traits\Rateable;
 use Forum\Traits\UserContentItem;
+use Forum\Events\Topic\CommentDeleted;
 use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model implements Redirectable, AcceptsImages
@@ -130,5 +131,32 @@ class Comment extends Model implements Redirectable, AcceptsImages
     public function redirect()
     {
         return redirect()->to($this->route());
+    }
+
+    public function delete($user = null)
+    {
+        event(new CommentDeleted(isset($user) ? $user : $this->user, $this));
+
+        $this->images()->each(function ($image) {
+            $image->delete();
+        });
+
+        $this->replies->each(function ($reply) {
+            $reply->images()->each(function ($image) {
+                $image->delete();
+            });
+        });
+
+        $this->ratings->each(function ($rating) {
+            $rating->delete();
+        });
+
+        $this->replies->each(function ($reply) {
+            $reply->ratings->each(function ($rating) {
+                $rating->delete();
+            });
+        });
+
+        parent::delete();
     }
 }

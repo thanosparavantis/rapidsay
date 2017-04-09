@@ -111,6 +111,11 @@ span + .loading {
 
 .document {
     font-size: 15px;
+    word-wrap: break-word;
+}
+
+.document p,
+.document ul {
     line-height: 24px;
 }
 
@@ -144,4 +149,21 @@ span + .loading {
 
 .document .back a:not(:last-child) {
     margin-right: 10px;
+}
+
+@media all and (max-width: 425px) {
+    .document .btn-group .flex-left,
+    .document .btn-group .flex-right {
+        margin-left: inherit !important;
+        margin-right: inherit !important;
+    }
+
+    .document .btn-group {
+        flex-direction: column;
+    }
+
+    .document .btn-group form,
+    .document .btn-group .btn {
+        width: 100%;
+    }
 }

@@ -1,4 +1,4 @@
-<div class="section responsive">
+<div class="section">
     <h2>{{ trans('user.preferences.change_password') }}</h2>
     <form action="{{ route('change-password') }}" method="post" id="change-password">
         {{ csrf_field() }}

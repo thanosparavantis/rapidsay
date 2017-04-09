@@ -10,7 +10,6 @@ use Forum\Jobs\User\UpdateProfilePicture;
 use Forum\Http\Requests\User\ChangePasswordRequest;
 use Forum\Http\Requests\User\UpdateProfileRequest;
 use Forum\Http\Controllers\Controller;
-use Illuminate\Http\UploadedFile;
 
 class PreferencesController extends Controller
 {
@@ -60,12 +59,7 @@ class PreferencesController extends Controller
         if ($request->hasFile('profile_picture'))
         {
             $picture = $request->file('profile_picture');
-            $id = uniqid();
-
-            $this->deleteProfilePictureIfNeeded($user);
-
-            Storage::disk('profile-pictures')->put($id . '.png', file_get_contents($picture->getRealPath()));
-            dispatch(new UpdateProfilePicture($user, $id));
+            $user->updateProfilePicture($picture);
             return true;
         }
 
@@ -96,18 +90,8 @@ class PreferencesController extends Controller
 
     public function deleteProfilePicture()
     {
-        $user = auth()->user();
-        $this->deleteProfilePictureIfNeeded($user);
+        auth()->user()->deleteProfilePicture();
         return redirect()->route('preferences')->with('success', trans('user.preferences.profile_picture_removed'));
-    }
-
-    private function deleteProfilePictureIfNeeded(User $user)
-    {
-        if ($oldId = $user->profile_picture) {
-            Storage::disk('profile-pictures')->delete($oldId . '.png');
-            $user->profile_picture = null;
-            $user->save();
-        }
     }
 
     private function isCurrentPassword($value)

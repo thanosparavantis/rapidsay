@@ -3,12 +3,16 @@
 namespace Forum;
 
 use Cache;
+use Storage;
 use Carbon\Carbon;
 use Forum\Interfaces\Redirectable;
 use Forum\Interfaces\CanBeSearched;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Pagination\Paginator;
+use Forum\Events\User\UserDeleted;
+use Forum\Jobs\User\UpdateProfilePicture;
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 
 class User extends Authenticatable implements Redirectable, CanBeSearched
 {
@@ -447,5 +451,46 @@ class User extends Authenticatable implements Redirectable, CanBeSearched
     public function redirect()
     {
         return redirect()->to($this->route());
+    }
+
+    /* Profile Picture */
+
+    public function updateProfilePicture(UploadedFile $picture)
+    {
+        $this->deleteProfilePicture();
+        $id = uniqid();
+        Storage::disk('profile-pictures')->put($id . '.png', file_get_contents($picture->getRealPath()));
+        dispatch(new UpdateProfilePicture($this, $id));
+    }
+
+    public function deleteProfilePicture()
+    {
+        if ($picture = $this->profile_picture)
+        {
+            Storage::disk('profile-pictures')->delete($picture . '.png');
+            $this->profile_picture = null;
+            $this->save();
+        }
+    }
+
+    public function delete()
+    {
+        event(new UserDeleted($this));
+
+        $this->posts->each(function ($post) {
+            $post->delete();
+        });
+
+        $this->comments->each(function ($comment) {
+            $comment->delete();
+        });
+
+        $this->replies->each(function ($reply) {
+            $reply->delete();
+        });
+
+        $this->deleteProfilePicture();
+
+        parent::delete();
     }
 }

@@ -24,12 +24,16 @@
                 @endif
             </li>
             <li class="{{ $user->isIpBanned() ? 'active' : '' }}" id="ban-ip" data-target="{{ route('admin-ban-ip', $user->id) }}">
-                <i class="fa fa-user-times space-right" aria-hidden="true"></i>
+                <i class="fa fa-laptop space-right" aria-hidden="true"></i>
                 @if ($user->isIpBanned())
                     {{ trans('admin.button.unban-ip') }}
                 @else
                     {{ trans('admin.button.ban-ip') }}
                 @endif
+            </li>
+            <li id="delete-account" data-target="{{ route('admin-delete-account', $user->id) }}" data-confirm="Are you sure you want to delete this account?">
+                <i class="fa fa-trash space-right" aria-hidden="true"></i>
+                Delete
             </li>
         </ul>
     </div>

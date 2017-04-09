@@ -1,4 +1,4 @@
-<div class="section responsive">
+<div class="section">
     <h2>{{ trans('user.preferences.update_profile') }}</h2>
     <form action="{{ route('update-profile') }}" method="post" id="update-preferences" enctype="multipart/form-data">
         {{ csrf_field() }}

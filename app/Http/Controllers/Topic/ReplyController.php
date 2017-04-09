@@ -5,7 +5,6 @@ namespace Forum\Http\Controllers\Topic;
 use Auth;
 use Forum\Events\Topic\ReplyCreated;
 use Forum\Events\Topic\ReplyEdited;
-use Forum\Events\Topic\ReplyDeleted;
 use Forum\ModelHelper;
 use Forum\Comment;
 use Forum\Reply;
@@ -145,40 +144,11 @@ class ReplyController extends Controller
         // Check if authorized.
         if ($this->authorize('delete', $reply))
         {
-            // Fire reply deleted event.
-            event(new ReplyDeleted(auth()->user(), $reply));
-
-            // Delete all reply images.
-            $this->deleteReplyImages($reply);
-
-            // Delete all reply ratings.
-            $this->deleteReplyRatings($reply);
-
             // Delete the reply.
-            $reply->delete();
+            $reply->delete(auth()->user());
 
             // Redirect back with reply deletion success.
             return $comment->redirect()->with('success', trans('reply.message.deleted'));
         }
-    }
-
-    /**
-     * Deletes all images (if any) of a reply.
-     */
-    private function deleteReplyImages(Reply $reply)
-    {
-        $reply->images()->each(function ($image) {
-            $image->delete();
-        });
-    }
-
-    /**
-     * Deletes all ratings (if any) of a reply.
-     */
-    private function deleteReplyRatings(Reply $reply)
-    {
-        $reply->ratings->each(function ($rating) {
-            $rating->delete();
-        });
     }
 }

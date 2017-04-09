@@ -3,7 +3,7 @@ $(document).ready(function() {
 
     registerItems();
 
-    function clickItem(event, item)
+    function clickItem(event, item, callback)
     {
         event.preventDefault();
 
@@ -16,6 +16,8 @@ $(document).ready(function() {
                 dropdowns.register();
                 dropdowns.open(dropdown);
                 registerItems();
+
+                if (callback) callback(data);
             },
             error: function() {
                 console.log("Whoops, something went wrong.");
@@ -25,18 +27,6 @@ $(document).ready(function() {
 
     function registerItems()
     {
-        $("#activate").click(function (event) {
-            clickItem(event, $(this));
-        });
-
-        $("#ban").click(function (event) {
-            clickItem(event, $(this));
-        });
-
-        $("#ban-ip").click(function (event) {
-            clickItem(event, $(this));
-        });
-
         $("#reputation").click(function (event) {
             event.preventDefault();
             button = $(this);
@@ -53,7 +43,6 @@ $(document).ready(function() {
                 data: { reputation: input },
                 success: function(data) {
                     alert(button.attr('data-success'));
-                    console.log(data);
                     $("#placement-count").html(data.placement);
                     $("#reputation-count").html(data.reputation);
                 },
@@ -61,6 +50,30 @@ $(document).ready(function() {
                     alert(button.attr('data-error'));
                 }
             });
+        });
+
+        $("#activate").click(function (event) {
+            clickItem(event, $(this));
+        });
+
+        $("#ban").click(function (event) {
+            clickItem(event, $(this));
+        });
+
+        $("#ban-ip").click(function (event) {
+            clickItem(event, $(this));
+        });
+
+        $("#delete-account").click(function (event) {
+            confirmText = $(this).attr('data-confirm');
+
+            if (confirm(confirmText))
+            {
+                clickItem(event, $(this), function(data) {
+                    alert(data.message);
+                    window.location = data.target;
+                });
+            }
         });
     }
 });

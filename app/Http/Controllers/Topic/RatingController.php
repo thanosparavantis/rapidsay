@@ -6,7 +6,6 @@ use Auth;
 use Forum\ModelHelper;
 use Forum\Rating;
 use Forum\Events\Topic\RatingCreated;
-use Forum\Events\Topic\RatingDeleted;
 use Forum\Http\Requests\Topic\RateRequest;
 use Forum\Http\Controllers\Controller;
 
@@ -34,15 +33,12 @@ class RatingController extends Controller
         // Get authenticated user.
         $user = auth()->user();
 
-        //Get rating model.
+        // Get rating model.
         $rating = $user->ratings()->where('rateable_type', get_class($item))->where('rateable_id', $id)->first();
 
         // If rating exists, remove it.
         if ($rating)
         {
-            // Fire rating deleted event.
-            event(new RatingDeleted(auth()->user(), $rating));
-
             // Delete rating.
             $rating->delete();
         }

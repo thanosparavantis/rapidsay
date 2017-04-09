@@ -80,4 +80,15 @@ class AccountController extends Controller
             'html'      => view('user.partials.profile.actions.administrate', ['user' => $user])->render(),
         ]);
     }
+
+    public function delete(AdminRequest $request, $userId)
+    {
+        $user = User::findOrFail($userId);
+        $user->delete();
+
+        return response()->json([
+            'message'   => 'The user has been deleted.',
+            'target'    => route('home'),
+        ]);
+    }
 }
