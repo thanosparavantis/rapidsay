@@ -1,5 +1,5 @@
 <div class="sidebar">
-    <div class="logo-container">
+    <div class="app-logo">
         <img src="{{ asset('img/logo.png') }}" alt="{{ trans('app.name') }}">
     </div>
     <h1><a href="{{ route('help') }}">{{ trans('help.title') }}</a></h1>
