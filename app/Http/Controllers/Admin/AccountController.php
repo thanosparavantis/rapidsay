@@ -22,37 +22,15 @@ class AccountController extends Controller
         $this->activation = $activation;
     }
 
-    public function ban(AdminRequest $request, $userId)
-    {
-        $user = User::findOrFail($userId);
-        $user->toggleBan();
-        return redirect()->route('user-profile', $user->username)->with('success', $user->isBanned() ? trans('admin.user.banned') : trans('admin.user.unbanned'));
-    }
-
-    public function banIp(AdminRequest $request, $userId)
-    {
-        $user = User::findOrFail($userId);
-        $user->toggleIpBan();
-        return redirect()->route('user-profile', $user->username)->with('success', $user->isBanned() ? trans('admin.user.banned') : trans('admin.user.unbanned'));
-    }
-
     public function activate(AdminRequest $request, $userId)
     {
         $user = User::findOrFail($userId);
 
         $this->activation->manuallyActivateUser($user);
-        return redirect()->route('user-profile', $user->username)->with('success', trans('admin.user.activated'));
-    }
-
-    public function reset(AdminRequest $request, $userId)
-    {
-        $user = User::findOrFail($userId);
-
-        $raw = str_random(8);
-        $hashed = Hash::make($raw);
-        $user->password = $hashed;
-        $user->save();
-        return redirect()->route('user-profile', $user->username)->with('success', trans('admin.user.reset', ['code' => $raw]));
+        return response()->json([
+            'message'   => trans('admin.user.activated'),
+            'html'      => view('user.partials.profile.actions.administrate', ['user' => $user])->render(),
+        ]);
     }
 
     public function reputation(AdminRequest $request, $userId)
@@ -62,15 +40,44 @@ class AccountController extends Controller
         ]);
 
         $reputation = $request->reputation;
+        $updatedReputation = $reputation;
         $user = User::findOrFail($userId);
 
         if ($reputation != 0 && $user->reputation + $reputation >= 0)
         {
+            $updatedReputation += $user->reputation; // $user->reputation holds incorrect value.
             $user->increment('reputation', $reputation);
             $user->save();
             event(new ReputationModified($userId, $reputation));
         }
 
-        return response()->json(['OK']);
+        $user = User::findOrFail($userId);
+
+        return response()->json([
+            'placement'     => number_format($user->placement()),
+            'reputation'    => number_format($updatedReputation),
+        ]);
+    }
+
+    public function ban(AdminRequest $request, $userId)
+    {
+        $user = User::findOrFail($userId);
+        $user->toggleBan();
+
+        return response()->json([
+            'message'   => $user->isBanned() ? trans('admin.user.banned') : trans('admin.user.unbanned'),
+            'html'      => view('user.partials.profile.actions.administrate', ['user' => $user])->render(),
+        ]);
+    }
+
+    public function banIp(AdminRequest $request, $userId)
+    {
+        $user = User::findOrFail($userId);
+        $user->toggleIpBan();
+
+        return response()->json([
+            'message'   => $user->isIpBanned() ? trans('admin.user.banned') : trans('admin.user.unbanned'),
+            'html'      => view('user.partials.profile.actions.administrate', ['user' => $user])->render(),
+        ]);
     }
 }

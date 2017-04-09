@@ -1,4 +1,4 @@
-<div class="dropdown">
+<div class="dropdown" id="admin-actions">
     <div class="text">
         Actions
     </div>
@@ -15,30 +15,22 @@
                 <i class="fa fa-{{ config('glyphicons.reputation') }} space-right" aria-hidden="true"></i>
                 {{ trans('admin.button.reputation') }}
             </li>
-            <li id="reset" data-target="{{ route('admin-reset', $user->id) }}">
-                <i class="fa fa-life-ring space-right" aria-hidden="true"></i>
-                {{ trans('admin.button.reset') }}
-            </li>
             <li class="{{ $user->isBanned() ? 'active' : '' }}" id="ban" data-target="{{ route('admin-ban', $user->id) }}">
+                <i class="fa fa-user-times space-right" aria-hidden="true"></i>
                 @if ($user->isBanned())
-                    <i class="fa fa-times space-right" aria-hidden="true"></i>
                     {{ trans('admin.button.unban') }}
                 @else
-                    <i class="fa fa-user-times space-right" aria-hidden="true"></i>
                     {{ trans('admin.button.ban') }}
                 @endif
             </li>
             <li class="{{ $user->isIpBanned() ? 'active' : '' }}" id="ban-ip" data-target="{{ route('admin-ban-ip', $user->id) }}">
+                <i class="fa fa-user-times space-right" aria-hidden="true"></i>
                 @if ($user->isIpBanned())
-                    <i class="fa fa-times space-right" aria-hidden="true"></i>{{ trans('admin.button.unban-ip') }}
+                    {{ trans('admin.button.unban-ip') }}
                 @else
-                    <i class="fa fa-user-times space-right" aria-hidden="true"></i>{{ trans('admin.button.ban-ip') }}
+                    {{ trans('admin.button.ban-ip') }}
                 @endif
             </li>
         </ul>
     </div>
 </div>
-
-<form action="#" method="post" id="admin-form">
-    {{ csrf_field() }}
-</form>

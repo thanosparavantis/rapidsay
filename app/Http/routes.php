@@ -87,7 +87,7 @@ Route::post('admin/announcement/remove', ['as' => 'admin-announcement-remove', '
 Route::post('admin/ban/{userId}', ['as' => 'admin-ban', 'uses' => 'Admin\AccountController@ban',]);
 Route::post('admin/ban-ip/{userId}', ['as' => 'admin-ban-ip', 'uses' => 'Admin\AccountController@banIp',]);
 Route::post('admin/activate/{userId}', ['as' => 'admin-activate', 'uses' => 'Admin\AccountController@activate',]);
-Route::post('admin/reset/{userId}', ['as' => 'admin-reset', 'uses' => 'Admin\AccountController@reset',]);
+// Route::post('admin/reset/{userId}', ['as' => 'admin-reset', 'uses' => 'Admin\AccountController@reset',]);
 Route::post('admin/reputation/{userId}', ['as' => 'admin-reputation', 'uses' => 'Admin\AccountController@reputation']);
 
 // About

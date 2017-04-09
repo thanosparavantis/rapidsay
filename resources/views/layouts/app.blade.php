@@ -151,9 +151,12 @@
         <script src="{{ asset('js/lib/autosize.min.js') }}"></script>
         <script src="{{ asset('js/Config.js') }}"></script>
 
+        <script src="{{ asset('js/components/Dropdowns.js') }}"></script>
+
         <script src="{{ asset('js/topic/Rate.js') }}"></script>
         <script src="{{ asset('js/user/Alert.js') }}"></script>
         <script src="{{ asset('js/user/Subscribe.js') }}"></script>
+
 
         @if (auth()->check())
             <script src="{{ asset('js/user/AjaxNotificationUpdater.js') }}"></script>

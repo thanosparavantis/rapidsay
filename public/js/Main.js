@@ -1,11 +1,13 @@
-rate = new Rate;
-subscribe = new Subscribe;
-
 $(document).ready(function() {
+    rate = new Rate;
+    subscribe = new Subscribe;
+    
     alerts = new Alert;
     alerts.register();
     alerts.showInternetExplorerAlert();
-    initializeDropdowns();
+
+    dropdowns = new Dropdowns;
+    dropdowns.register();
 });
 
 function initializeImageUploader()
@@ -50,23 +52,6 @@ function initializeImageUploader()
 
             input.val("");
             count.hide();
-        });
-    });
-}
-
-function initializeDropdowns()
-{
-    $(".dropdown").each(function() {
-        dropdown = $(this);
-        button = $(this).find(".button");
-
-        button.click(function(event) {
-            event.preventDefault();
-            $(this).toggleClass("clicked");
-            items = $(this).parent().find(".items");
-            items.slideToggle(200, function() {
-                if ($(this).css('display') == 'block') $(this).css('display', 'flex');
-            });
         });
     });
 }
