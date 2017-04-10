@@ -12,51 +12,51 @@
 */
 
 // Home
-Route::get  (   '/',                                    ['as' => 'home', 'uses' => 'Home\HomeController@show',]);
-Route::post (   '/',                                    ['as' => 'post-home', 'uses' => 'Topic\PostController@create',]);
-Route::post (   '/feed-tab',                            ['as' => 'change-feed-tab', 'uses' => 'Home\HomeController@changeFeedTab']);
-Route::get  (   'explore',                              ['as' => 'explore', 'uses' => 'Home\ExploreController@show',]);
-Route::post (   'explore',                              ['as' => 'post-explore', 'uses' => 'Home\ExploreController@search',]);
-Route::get  (   'community',                            ['as' => 'community', 'uses' => 'Home\CommunityController@show',]);
-Route::get  (   'chat',                                 ['as' => 'chat', 'uses' => 'Home\ChatController@show',]);
-Route::post (   'locale',                               ['as' => 'change-locale', 'uses' => 'LocaleController@change']);
+Route::get  (   '/',                                    ['as' => 'home',                        'uses' => 'Home\HomeController@show',]);
+Route::post (   '/',                                    ['as' => 'post-home',                   'uses' => 'Topic\PostController@create',]);
+Route::post (   '/feed-tab',                            ['as' => 'change-feed-tab',             'uses' => 'Home\HomeController@changeFeedTab']);
+Route::get  (   'explore',                              ['as' => 'explore',                     'uses' => 'Home\ExploreController@show',]);
+Route::post (   'explore',                              ['as' => 'post-explore',                'uses' => 'Home\ExploreController@search',]);
+Route::get  (   'community',                            ['as' => 'community',                   'uses' => 'Home\CommunityController@show',]);
+Route::get  (   'chat',                                 ['as' => 'chat',                        'uses' => 'Home\ChatController@show',]);
+Route::post (   'locale',                               ['as' => 'change-locale',               'uses' => 'LocaleController@change']);
 
 // Alerts
-Route::post (   'alert/announcement/close',             ['as' => 'close-announcement', 'uses' => 'User\AlertController@closeAnnouncement']);
+Route::post (   'alert/announcement/close',             ['as' => 'close-announcement',          'uses' => 'User\AlertController@closeAnnouncement']);
 
 // Post
-Route::get  (   'post/{id}',                            ['as' => 'view-post', 'uses' => 'Topic\PostController@show',]);
-Route::get  (   'post/{id}/edit',                       ['as' => 'edit-post', 'uses' => 'Topic\PostController@showEdit',]);
-Route::post (   'post/{id}/edit',                       ['as' => 'post-edit-post', 'uses' => 'Topic\PostController@edit',]);
-Route::get  (   'post/{id}/delete',                     ['as' => 'delete-post', 'uses' => 'Topic\PostController@delete',]);
+Route::get  (   'post/{id}',                            ['as' => 'view-post',                   'uses' => 'Topic\PostController@show',]);
+Route::get  (   'post/{id}/edit',                       ['as' => 'edit-post',                   'uses' => 'Topic\PostController@showEdit',]);
+Route::post (   'post/{id}/edit',                       ['as' => 'post-edit-post',              'uses' => 'Topic\PostController@edit',]);
+Route::get  (   'post/{id}/delete',                     ['as' => 'delete-post',                 'uses' => 'Topic\PostController@delete',]);
 
 // Comment
-Route::post (   '{postId}/comment',                     ['as' => 'comment', 'uses' => 'Topic\CommentController@comment',]);
-Route::get  (   'comment/{id}/edit',                    ['as' => 'edit-comment', 'uses' => 'Topic\CommentController@showEdit',]);
-Route::post (   'comment/{id}/edit',                    ['as' => 'post-edit-comment', 'uses' => 'Topic\CommentController@edit',]);
-Route::get  (   'comment/{id}/delete',                  ['as' => 'delete-comment', 'uses' => 'Topic\CommentController@delete',]);
+Route::post (   '{postId}/comment',                     ['as' => 'comment',                     'uses' => 'Topic\CommentController@comment',]);
+Route::get  (   'comment/{id}/edit',                    ['as' => 'edit-comment',                'uses' => 'Topic\CommentController@showEdit',]);
+Route::post (   'comment/{id}/edit',                    ['as' => 'post-edit-comment',           'uses' => 'Topic\CommentController@edit',]);
+Route::get  (   'comment/{id}/delete',                  ['as' => 'delete-comment',              'uses' => 'Topic\CommentController@delete',]);
 
 // Reply
-Route::get  (   '{type}/{id}/reply',                    ['as' => 'reply', 'uses' => 'Topic\ReplyController@show',]);
-Route::post (   '{type}/{id}/reply',                    ['as' => 'post-reply', 'uses' => 'Topic\ReplyController@reply',]);
-Route::get  (   'reply/{id}/edit',                      ['as' => 'edit-reply', 'uses' => 'Topic\ReplyController@showEdit',]);
-Route::post (   'reply/{id}/edit',                      ['as' => 'post-edit-reply', 'uses' => 'Topic\ReplyController@edit',]);
-Route::get  (   'reply/{id}/delete',                    ['as' => 'delete-reply', 'uses' => 'Topic\ReplyController@delete',]);
+Route::get  (   '{type}/{id}/reply',                    ['as' => 'reply',                       'uses' => 'Topic\ReplyController@show',]);
+Route::post (   '{type}/{id}/reply',                    ['as' => 'post-reply',                  'uses' => 'Topic\ReplyController@reply',]);
+Route::get  (   'reply/{id}/edit',                      ['as' => 'edit-reply',                  'uses' => 'Topic\ReplyController@showEdit',]);
+Route::post (   'reply/{id}/edit',                      ['as' => 'post-edit-reply',             'uses' => 'Topic\ReplyController@edit',]);
+Route::get  (   'reply/{id}/delete',                    ['as' => 'delete-reply',                'uses' => 'Topic\ReplyController@delete',]);
 
 // Rate
-Route::post (   '{type}/{id}/rate',                     ['as' => 'rate', 'uses' => 'Topic\RatingController@rate',]);
+Route::post (   '{type}/{id}/rate',                     ['as' => 'rate',                        'uses' => 'Topic\RatingController@rate',]);
 
 // Media
-Route::get  (   '{type}/{id}/image/{url}/delete',       ['as' => 'delete-image', 'uses' => 'Topic\MediaController@deleteImage']);
+Route::get  (   '{type}/{id}/image/{url}/delete',       ['as' => 'delete-image',                'uses' => 'Topic\MediaController@deleteImage']);
 
 // Report
-Route::get  (   '{type}/{id}/report',                   ['as' => 'report', 'uses' => 'Topic\ReportController@show']);
-Route::post (   '{type}/{id}/report',                   ['as' => 'post-report', 'uses' => 'Topic\ReportController@create']);
+Route::get  (   '{type}/{id}/report',                   ['as' => 'report',                      'uses' => 'Topic\ReportController@show']);
+Route::post (   '{type}/{id}/report',                   ['as' => 'post-report',                 'uses' => 'Topic\ReportController@create']);
 
 // Auth
-Route::get  (   'login',                                ['as' => 'login', 'uses' => 'Auth\AuthController@showLoginForm',]);
-Route::post (   'login',                                ['as' => 'post-login', 'uses' => 'Auth\AuthController@login',]);
-Route::get  (   'logout',                               ['as' => 'logout', 'uses' => 'Auth\AuthController@logout',]);
+Route::get  (   'login',                                ['as' => 'login',                       'uses' => 'Auth\AuthController@showLoginForm',]);
+Route::post (   'login',                                ['as' => 'post-login',                  'uses' => 'Auth\AuthController@login',]);
+Route::get  (   'logout',                               ['as' => 'logout',                      'uses' => 'Auth\AuthController@logout',]);
 
 Route::get  (   'register',                             ['as' => 'register',                    'uses' => 'Auth\AuthController@showRegistrationForm',]);
 Route::post (   'register',                             ['as' => 'post-register',               'uses' => 'Auth\AuthController@register',]);

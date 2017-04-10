@@ -1,11 +1,11 @@
 <div class="section">
-    <h2>{{ trans('user.preferences.update_profile') }}</h2>
+    <h2>{{ trans('user.preferences.update-profile') }}</h2>
     <form action="{{ route('update-profile') }}" method="post" id="update-preferences" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="content-group">
             <div class="section">
                 <label class="label">
-                    {{ trans('form.label.first_name') }}
+                    {{ trans('form.label.first-name') }}
                     <input type="text" name="first_name" class="field{{$errors->has('first_name') ? ' error' : '' }}" value="{{ auth()->user()->first_name }}" maxlength="35">
                 </label>
                 @if ($errors->has('first_name'))
@@ -14,7 +14,7 @@
             </div>
             <div class="section">
                 <label class="label">
-                    {{ trans('form.label.last_name') }}
+                    {{ trans('form.label.last-name') }}
                     <input type="text" name="last_name" class="field{{$errors->has('last_name') ? ' error' : '' }}" value="{{ auth()->user()->last_name }}" maxlength="35">
                 </label>
                 @if ($errors->has('last_name'))
@@ -37,7 +37,7 @@
                 @include('partials.profile-picture', ['user' => auth()->user()])
                 <div class="upload">
                     <input type="file" name="profile_picture">
-                    @if (auth()->user()->profile_picture)<a href="{{ route('delete-profile-picture') }}">{{ trans('user.preferences.remove_profile_picture') }}</a>@endif
+                    @if (auth()->user()->profile_picture)<a href="{{ route('delete-profile-picture') }}">{{ trans('form.label.remove-profile-picture') }}</a>@endif
                 </div>
             </div>
         </label>

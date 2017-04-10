@@ -4,7 +4,7 @@
 @section('button-text', trans('form.button.login'))
 @section('button-color', 'blue')
 
-@section('tip', trans('form.forgot_password', ['link' => route('password-reset')]))
+@section('tip', trans('form.forgot-password', ['link' => route('password-reset')]))
 
 @section('form')
 
@@ -28,7 +28,7 @@
 
 <label class="label checkbox-container">
     <input type="checkbox" name="remember" class="checkbox">
-    <span>{{ trans('form.label.remember_me') }}</span>
+    <span>{{ trans('form.label.remember-me') }}</span>
 </label>
 
 @endsection

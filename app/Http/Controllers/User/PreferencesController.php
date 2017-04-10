@@ -91,7 +91,7 @@ class PreferencesController extends Controller
     public function deleteProfilePicture()
     {
         auth()->user()->deleteProfilePicture();
-        return redirect()->route('preferences')->with('success', trans('user.preferences.profile_picture_removed'));
+        return redirect()->route('preferences')->with('success', trans('user.preferences.picture-removed'));
     }
 
     private function isCurrentPassword($value)
