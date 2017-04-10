@@ -12,7 +12,10 @@
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}">
 
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/admin/dashboard.css') }}">
+        @if (auth()->check() && auth()->user()->admin)
+            <link rel="stylesheet" type="text/css" href="{{ asset('css/admin/dashboard.css') }}">
+        @endif
+
         <link rel="stylesheet" type="text/css" href="{{ asset('css/admin/report.css') }}">
 
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/alerts.css') }}">
@@ -22,6 +25,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/buttons.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/chat.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/content-group.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/components/dropdowns.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/forms.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/items.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/navbar.css') }}">

@@ -1,4 +1,4 @@
-<div class="dropdown" id="admin-actions">
+<div class="dropdown yellow" id="admin-actions">
     <div class="text">
         {{ trans('admin.button.actions') }}
     </div>

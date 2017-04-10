@@ -1,0 +1,103 @@
+
+/* Default Dropdown */
+
+.dropdown {
+    display: flex;
+    align-items: stretch;
+    font-size: 13px;
+    border: 1px solid transparent;
+}
+
+.dropdown .text,
+.dropdown .button {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    background-color: transparent;
+    font-weight: 700;
+    color: #333;
+    cursor: pointer;
+    justify-content: center;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.03);
+}
+
+.dropdown .text {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+.dropdown .button.clicked {
+    background-color: transparent;
+}
+
+.dropdown .button {
+    border-left: 1px solid transparent;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    height: 100%;
+}
+
+.dropdown .items.show {
+    display: flex;
+}
+
+.dropdown .items {
+    display: none;
+    position: absolute;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    align-items: stretch;
+    border: 1px solid #ddd;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.03);
+}
+
+.dropdown .items li {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    background-color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.dropdown .active {
+    color: #219150;
+}
+
+.dropdown .items li:hover {
+    background-color: #eee;
+}
+
+/* Blue Theme */
+
+.dropdown.blue .text,
+.dropdown.blue .button {
+    color: #fff;
+    background-color: #3498db;
+}
+
+.dropdown.blue .button {
+    border-color: #2283c3;
+}
+
+.dropdown.blue .button.clicked {
+    background-color: #2283c3;
+}
+
+/* Yellow Theme */
+
+.dropdown.yellow .text,
+.dropdown.yellow .button {
+    color: #fff;
+    background-color: #FFAE3E;
+}
+
+.dropdown.yellow .button {
+    border-color: #e68600;
+}
+
+.dropdown.yellow .button.clicked {
+    background-color: #e68600;
+}
