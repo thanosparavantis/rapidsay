@@ -18,11 +18,13 @@ function AjaxNotificationUpdater()
             url: notifications.url,
             timeout: 5000,
             success: function (data) {
-                $("[id=notification-counter]").each(function() {
-                    counter = $(this);
+                $(".notification-holder").each(function() {
+                    counter = $(this).find(".count");
 
-                    if (data.unseen > 0) counter.show();
-                    else counter.hide();
+                    counter.removeClass("visible");
+
+                    if (data.unseen > 0) counter.addClass("visible")
+                    else counter.removeClass("visible");
 
                     counter.html(data.unseen);
                 });

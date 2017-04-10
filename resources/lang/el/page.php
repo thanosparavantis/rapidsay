@@ -7,7 +7,7 @@ return [
         'home'              => 'Αρχική',
         'explore'           => 'Εξερεύνηση',
         'chat'              => 'Ζωντανή Συνομιλία',
-        'notifications'     => 'Ειδοποίησεις',
+        'notifications'     => 'Ειδοποιήσεις',
         'community'         => 'Κοινότητα',
         'login'             => 'Σύνδεση',
         'logout'            => 'Αποσύνδεση',

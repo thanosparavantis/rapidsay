@@ -336,16 +336,16 @@ class User extends Authenticatable implements Redirectable, CanBeSearched
         });
     }
 
-    public function getUnseenNotifications()
+    public function getUnreadNotifications()
     {
         return $this->notifications()
         ->where('seen', false)
         ->get();
     }
 
-    public function getUnseenNotificationsCount()
+    public function getUnreadNotificationCount()
     {
-        return $this->getUnseenNotifications()->count();
+        return $this->getUnreadNotifications()->count();
     }
 
     /* Generic Alert */

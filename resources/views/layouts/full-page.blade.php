@@ -3,6 +3,7 @@
 @section('body')
 
 @include('partials.navbar')
+
 <div class="full-page">
     @if (isset($announcements))
         @include('partials.announcements')
