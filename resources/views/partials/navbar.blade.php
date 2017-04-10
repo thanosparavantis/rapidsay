@@ -1,3 +1,6 @@
+
+{{-- Desktop Navigation --}}
+
 <nav class="navbar">
     <div class="wrapper">
         <ul class="items-inline">
@@ -72,6 +75,8 @@
     </div>
 </nav>
 
+{{-- Mobile Navigation --}}
+
 <nav class="navbar mobile" id="mobile-navbar">
     <div class="wrapper">
         <ul class="items-inline">
@@ -92,6 +97,8 @@
         </ul>
     </div>
 </nav>
+
+{{-- Mobile Expanded Menu --}}
 
 <div class="navbar-menu">
     @if (auth()->check())
