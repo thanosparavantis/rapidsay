@@ -87,7 +87,7 @@ class AccountController extends Controller
         $user->delete();
 
         return response()->json([
-            'message'   => 'The user has been deleted.',
+            'message'   => trans('admin.user.delete.success'),
             'target'    => route('home'),
         ]);
     }

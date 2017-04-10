@@ -31,7 +31,7 @@
                     {{ trans('admin.button.ban-ip') }}
                 @endif
             </li>
-            <li id="delete-account" data-target="{{ route('admin-delete-account', $user->id) }}" data-confirm="Are you sure you want to delete this account?">
+            <li id="delete-account" data-target="{{ route('admin-delete-account', $user->id) }}" data-confirm="{{ trans('admin.user.delete.prompt') }}">
                 <i class="fa fa-trash space-right" aria-hidden="true"></i>
                 {{ trans('admin.button.delete') }}
             </li>

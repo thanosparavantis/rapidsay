@@ -12,6 +12,10 @@ return [
             'success'       => 'Reputation has been modified successfully.',
             'error'         => 'Could not add reputation.',
         ],
+        'delete' => [
+            'prompt'        => 'Are you sure you want to delete this account?',
+            'success'       => 'The account has been deleted.',
+        ],
     ],
 
     'stats' => [
