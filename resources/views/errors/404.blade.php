@@ -5,6 +5,14 @@
 
 <h1>{{ trans('error.404.title') }}</h1>
 <p>{{ trans('error.404.message') }}</p>
-<a href="{{ route('home') }}" class="btn large extend green">{{ trans('page.title.home') }}</a>
+
+@endsection
+
+@section('actions')
+
+<a href="{{ route('home') }}" class="btn green">
+    <i class="fa fa-home space-right" aria-hidden="true"></i>
+    {{ trans('page.title.home') }}
+</a>
 
 @endsection

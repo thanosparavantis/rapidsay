@@ -4,7 +4,7 @@ return [
 
     '503'                       => [
         'title'                 => 'Maintenance',
-        'message'               => 'We are currently doing some background work, please try again later.',
+        'message'               => 'Rapidsay is currently unavailable, please try again later.',
     ],
 
     '403'                       => [

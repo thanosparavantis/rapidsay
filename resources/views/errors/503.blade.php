@@ -1,5 +1,5 @@
 @extends('layouts.status-page')
-@section('title', 'Maintenance')
+@section('title', trans('error.503.title'))
 
 @section('content')
 
