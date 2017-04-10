@@ -2,7 +2,7 @@
 
 return [
 
-    'title'                 => [
+    'title' => [
         'welcome'           => 'Καλοσωρίσατε',
         'home'              => 'Αρχική',
         'explore'           => 'Εξερεύνηση',

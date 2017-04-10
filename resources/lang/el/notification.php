@@ -5,32 +5,32 @@ return [
     'edited'                => 'τροποποιήθηκε',
     'deleted'               => 'διαγράφηκε',
 
-    'post'                  => [
+    'post' => [
         'create'            => ':someone δημοσίευσε την ανάρτηση :reference.',
         'edit'              => 'Το :reference τροποποιήθηκε από έναν διαχειριστή.',
         'delete'            => 'Το :reference διαγράφηκε από έναν διαχειριστή.',
     ],
-    'comment'               => [
+    'comment' => [
         'create'            => ':someone σχολίασε το :reference.',
         'edit'              => 'Το :reference τροποποιήθηκε από έναν διαχειριστή.',
         'delete'            => 'Το :reference διαγράφηκε από έναν διαχειριστή.',
     ],
-    'reply'                 => [
+    'reply' => [
         'create'            => ':someone απάντησε στο :reference.',
         'edit'              => 'Το :reference τροποποιήθηκε από έναν διαχειριστή.',
         'delete'            => 'Το :reference διαγράφηκε από έναν διαχειριστή.',
     ],
-    'rating'                => [
+    'rating' => [
         'create'            => ':someone έδωσε βαθμό στο :reference.',
     ],
-    'subscriber'            => [
+    'subscriber' => [
         'create'            => ':someone έγινε συνδρομητής :reference.',
     ],
-    'report'                => [
+    'report' => [
         'accept'            => 'Η αναφορά σας σχετικά με το :reference έγινε δεκτή, το περιεχόμενο :extra.',
         'deny'              => 'Η αναφορά σας σχετικά με το :reference απορρίφθηκε επειδή δεν βρήκαμε κάτι που παραβιάζει τους κανόνες χρήσης.',
     ],
-    'reputation'            => [
+    'reputation' => [
         'increase'          => 'Συγχαρητήρια, η φήμη σας αυξήθηκε κατά <strong>:extra</strong>.',
         'decrease'          => 'Η φήμη σας μειώθηκε κατά <strong>:extra</strong>.',
     ]

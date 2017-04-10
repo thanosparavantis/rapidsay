@@ -2,17 +2,17 @@
 
 return [
 
-    '503'                       => [
+    '503' => [
         'title'                 => 'Maintenance',
         'message'               => 'Rapidsay is currently unavailable, please try again later.',
     ],
 
-    '403'                       => [
+    '403' => [
         'title'                 => 'Unauthorized',
         'message'               => 'You are not authorized to make this request.',
     ],
 
-    '404'                       => [
+    '404' => [
         'title'                 => 'Not Found',
         'message'               => 'The requested page could not be found.',
     ],

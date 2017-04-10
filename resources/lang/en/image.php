@@ -2,7 +2,7 @@
 
 return [
     'count'               => 'image|images',
-    'tooltip'             => [
+    'tooltip' => [
         'upload'          => 'Upload an image',
         'delete'          => 'Delete this image',
     ]

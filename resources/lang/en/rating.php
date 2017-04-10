@@ -3,7 +3,7 @@
 return [
     'count'                 => 'rating|ratings',
 
-    'button'                => [
+    'button' => [
         'rate'              => 'Rate',
         'rated'             => 'Rated',
     ],

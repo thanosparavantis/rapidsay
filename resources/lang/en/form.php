@@ -32,5 +32,4 @@ return [
         'change-password'           => 'Change Password',
         'delete-account'            => 'Delete Account',
     ],
-
 ];

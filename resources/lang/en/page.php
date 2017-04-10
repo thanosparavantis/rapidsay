@@ -2,7 +2,7 @@
 
 return [
 
-    'title'                 => [
+    'title' => [
         'welcome'           => 'Welcome',
         'home'              => 'Home',
         'explore'           => 'Explore',
