@@ -1,6 +1,6 @@
 <?php
 
-namespace Forum\Http\Controllers\User;
+namespace Forum\Http\Controllers\User\Dashboard;
 
 use Auth;
 use Forum\Events\User\Subscribed;
@@ -32,7 +32,7 @@ class SubscriptionController extends Controller
         }
         else
         {
-            return view('user.subscriptions');
+            return view('user.dashboard.subscriptions');
         }
     }
 

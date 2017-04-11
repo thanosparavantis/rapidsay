@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'user'              => 'user',
+    'profile'           => 'user',
     'email'             => 'envelope',
     'post'              => 'book',
     'image'             => 'camera',
@@ -12,7 +12,7 @@ return [
     'subscriber'        => 'rss',
     'time'              => 'clock-o',
     'edit'              => 'pencil-square-o',
-    'delete'            => 'trash-o',
+    'delete'            => 'trash',
     'embed'             => 'file-code-o',
     'notifications'     => 'bell-o',
     'placement'         => 'trophy',
@@ -29,7 +29,7 @@ return [
     'decline'           => 'times',
     'formatting'        => 'font',
     'home'              => 'home',
-    'preferences'       => 'cog',
+    'dashboard'         => 'cog',
     'login'             => 'sign-in',
     'register'          => 'user-plus',
     'logout'            => 'sign-out',
@@ -38,4 +38,7 @@ return [
     'community'         => 'trophy',
     'menu'              => 'bars',
     'close'             => 'times',
+    'language'          => 'globe',
+    'privacy'           => 'shield',
+    'password'          => 'unlock-alt',
 ];

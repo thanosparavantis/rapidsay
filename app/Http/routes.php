@@ -19,7 +19,6 @@ Route::get  (   'explore',                              ['as' => 'explore',     
 Route::post (   'explore',                              ['as' => 'post-explore',                'uses' => 'Home\ExploreController@search',]);
 Route::get  (   'community',                            ['as' => 'community',                   'uses' => 'Home\CommunityController@show',]);
 Route::get  (   'chat',                                 ['as' => 'chat',                        'uses' => 'Home\ChatController@show',]);
-Route::post (   'locale',                               ['as' => 'change-locale',               'uses' => 'LocaleController@change']);
 
 // Alerts
 Route::post (   'alert/announcement/close',             ['as' => 'close-announcement',          'uses' => 'User\AlertController@closeAnnouncement']);
@@ -70,16 +69,19 @@ Route::post (   'password/reset',                       ['as' => 'post-password-
 Route::get  (   'user/{username}',                      ['as' => 'user-profile',                'uses' => 'User\ProfileController@show']);
 Route::get  (   'notifications',                        ['as' => 'notifications',               'uses' => 'User\NotificationController@show']);
 Route::post (   'notifications',                        ['as' => 'post-notifications',          'uses' => 'User\NotificationController@update']);
-Route::get  (   'preferences',                          ['as' => 'preferences',                 'uses' => 'User\PreferencesController@show']);
-Route::post (   'preferences/update-profile',           ['as' => 'update-profile',              'uses' => 'User\PreferencesController@updateProfile']);
-Route::post (   'preferences/change-password',          ['as' => 'change-password',             'uses' => 'User\PreferencesController@changePassword']);
-Route::get  (   'preferences/delete-profile-picture',   ['as' => 'delete-profile-picture',      'uses' => 'User\PreferencesController@deleteProfilePicture']);
-Route::get  (   'subscriptions',                        ['as' => 'subscriptions',               'uses' => 'User\SubscriptionController@show']);
-Route::get  (   'privacy',                              ['as' => 'privacy',                     'uses' => 'User\PrivacyController@show']);
-Route::post (   'privacy',                              ['as' => 'update-privacy',              'uses' => 'User\PrivacyController@update']);
-Route::post (   'subscribe/{userId}',                   ['as' => 'subscribe',                   'uses' => 'User\SubscriptionController@subscribe']);
-Route::get  (   'account/delete',                       ['as' => 'delete-account',              'uses' => 'User\AccountController@showDelete']);
-Route::post (   'account/delete',                       ['as' => 'post-delete-account',         'uses' => 'User\AccountController@delete']);
+Route::get  (   'dashboard',                            ['as' => 'dashboard',                   'uses' => 'User\Dashboard\ProfileController@show']);
+Route::post (   'dashboard',                            ['as' => 'post-update-profile',         'uses' => 'User\Dashboard\ProfileController@update']);
+Route::get  (   'dashboard/delete-profile-picture',     ['as' => 'delete-profile-picture',      'uses' => 'User\Dashboard\ProfileController@deleteProfilePicture']);
+Route::get  (   'dashboard/change-password',            ['as' => 'change-password',             'uses' => 'User\Dashboard\PasswordController@show']);
+Route::post (   'dashboard/change-password',            ['as' => 'post-change-password',        'uses' => 'User\Dashboard\PasswordController@update']);
+Route::get  (   'dashboard/privacy',                    ['as' => 'privacy',                     'uses' => 'User\Dashboard\PrivacyController@show']);
+Route::post (   'dashboard/privacy',                    ['as' => 'post-privacy',                'uses' => 'User\Dashboard\PrivacyController@update']);
+Route::get  (   'dashboard/delete-account',             ['as' => 'delete-account',              'uses' => 'User\Dashboard\AccountDeletionController@show']);
+Route::post (   'dashboard/delete-account',             ['as' => 'post-delete-account',         'uses' => 'User\Dashboard\AccountDeletionController@delete']);
+Route::get  (   'dashboard/subscriptions',              ['as' => 'subscriptions',               'uses' => 'User\Dashboard\SubscriptionController@show']);
+Route::get  (   'dashboard/language',                   ['as' => 'language',                    'uses' => 'User\Dashboard\LanguageController@show']);
+Route::post (   'language',                             ['as' => 'post-language',               'uses' => 'User\Dashboard\LanguageController@update']);
+Route::post (   'subscribe/{userId}',                   ['as' => 'subscribe',                   'uses' => 'User\Dashboard\SubscriptionController@subscribe']);
 
 // Admin
 Route::get  (   'admin/dashboard',                      ['as' => 'admin-dashboard',             'uses' => 'Admin\DashboardController@show']);

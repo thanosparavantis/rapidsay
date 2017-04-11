@@ -1,22 +1,22 @@
 <?php
 
-namespace Forum\Http\Controllers\User;
+namespace Forum\Http\Controllers\User\Dashboard;
 
 use Illuminate\Http\Request;
 
 use Forum\Http\Requests;
 use Forum\Http\Controllers\Controller;
 
-class AccountController extends Controller
+class AccountDeletionController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-    public function showDelete()
+    public function show()
     {
-        return view('user.delete');
+        return view('user.dashboard.delete-account');
     }
 
     public function delete(Request $request)

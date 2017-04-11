@@ -8,6 +8,46 @@ return [
     'data-loss'                     => 'Are you sure you want to discard all changes?',
     'banned'                        => 'Banned',
 
+    'dashboard' => [
+        'section' => [
+            'account'               => 'Account',
+            'other'                 => 'Other',
+        ],
+
+        'tips' => [
+            'update-profile'        => 'Customize your profile and write a short bio.',
+            'change-password'       => 'Change the password you use to login on your account.',
+            'privacy'               => 'Control notifications and what others see about you.',
+            'subscriptions'         => 'The list of people you are subscribed to.',
+            'language'              => 'Rapidsay is currently available in <strong>' . count(config('languages')) . '</strong> different languages.',
+        ],
+
+        'account-deletion'          => '<p>You are about to <strong>permanently delete your account</strong>. By doing so, any data associated with it will be gone forever.</p>
+                                        <ul>
+                                            <li>All of your posts, comments and ratings will be deleted.</li>
+                                            <li>Your preferences, placement, reputation, subscribers and subscriptions will be gone.</li>
+                                            <li>The images you have uploaded will be deleted.</li>
+                                            <li>Your profile page will no longer exist.</li>
+                                            <li>You will no longer receive email notifications.</li>
+                                        </ul>
+                                        <p>After deletion, you will not be able to log in with your account credentials. <strong>This action cannot be undone</strong>, are you sure you want to proceed?</p>',
+
+        'button' => [
+            'delete-account'        => 'Yes, delete my account now',
+            'back'                  => 'Go Back',
+            'change-password'       => 'Change Password',
+            'save-changes'          => 'Save Changes',
+        ],
+
+        'message' => [
+            'profile-updated'       => 'Your profile has been updated.',
+            'picture-removed'       => 'Your profile picture has been removed.',
+            'password-changed'      => 'Your password has been changed.',
+            'incorrect-password'    => 'The current password you provided is not correct.',
+            'email-notifications'   => 'Email notifications have been turned off.',
+        ],
+    ],
+
     'profile' => [
         'activity'                  => 'Activity',
         'empty'                     => 'No recent activity',
@@ -18,13 +58,6 @@ return [
 
     'notifications' => [
         'none'                      => 'You don\'t have any notifications at this time.',
-    ],
-
-    'preferences' => [
-        'update-profile'            => 'Update Profile',
-        'change-password'           => 'Change Password',
-        'picture-removed'           => 'Your profile picture has been removed.',
-        'updated'                   => 'Your preferences have been updated.',
     ],
 
     'privacy' => [
@@ -53,12 +86,6 @@ return [
         'private'                   => 'This section is only visible to you.',
     ],
 
-    'password' => [
-        'same'                      => 'Your new password cannot be the same as the current one.',
-        'updated'                   => 'Your password has been updated, make sure to use the new one next time you login.',
-        'incorrect'                 => 'The current password you provided is not correct.'
-    ],
-
     'subscription' => [
         'none'                      => 'No subscriptions found',
         'subscribed'                => 'You are now subscribed to :name.',
@@ -78,22 +105,6 @@ return [
             'about-link'            => 'Click here to view your notifications.',
             'unsubscribe'           => 'If you don\'t want to receive these emails, :link.',
             'unsubscribe-link'      => 'click here to unsubscribe',
-        ],
-    ],
-
-    'delete' => [
-        'text'                      => '<p>You are about to <strong>permanently delete your account</strong>. By doing so, any data associated with it will be gone forever.</p>
-                                        <ul>
-                                            <li>All of your posts, comments and ratings will be deleted.</li>
-                                            <li>Your preferences, placement, reputation, subscribers and subscriptions will be gone.</li>
-                                            <li>The images you have uploaded will be deleted.</li>
-                                            <li>Your profile page will no longer exist.</li>
-                                            <li>You will no longer receive email notifications.</li>
-                                        </ul>
-                                        <p>After deletion, you will not be able to log in with your account credentials. <strong>This action cannot be undone</strong>, are you sure you want to proceed?</p>',
-        'button' => [
-            'proceed'               => 'Yes, delete my account now',
-            'back'                  => 'Go Back',
         ],
     ],
 ];

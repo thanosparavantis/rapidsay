@@ -36,8 +36,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('preferences') }}" class="{{ request()->route()->getName() == 'preferences' ?  'active' : '' }}" title="{{ trans('page.title.preferences') }}">
-                        <i class="fa fa-{{ config('glyphicons.preferences') }}" aria-hidden="true"></i>
+                    <a href="{{ route('dashboard') }}" class="{{ request()->route()->getName() == 'dashboard' ?  'active' : '' }}" title="{{ trans('page.title.dashboard') }}">
+                        <i class="fa fa-{{ config('glyphicons.dashboard') }}" aria-hidden="true"></i>
                     </a>
                 </li>
                 <li>
@@ -137,9 +137,9 @@
     @endif
 
     @if (auth()->check())
-        <a href="{{ route('preferences') }}" class="item">
-            <i class="fa fa-{{ config('glyphicons.preferences') }}" aria-hidden="true"></i>
-            {{ trans('page.title.preferences') }}
+        <a href="{{ route('dashboard') }}" class="item">
+            <i class="fa fa-{{ config('glyphicons.dashboard') }}" aria-hidden="true"></i>
+            {{ trans('page.title.dashboard') }}
         </a>
         <a href="{{ route('notifications') }}" class="item">
             <div class="notification-holder">

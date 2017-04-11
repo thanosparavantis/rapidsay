@@ -3,7 +3,10 @@
 
 @section('content')
 
-<form action="{{ route('update-privacy') }}" method="post" class="content">
+<h1>{{ trans('page.title.privacy') }}</h1>
+<p class="tip">{{ trans('user.dashboard.tips.privacy') }}</p>
+
+<form action="{{ route('post-privacy') }}" method="post" id="privacy-form">
     {{ csrf_field() }}
 
     <label class="label checkbox-container">
@@ -29,10 +32,17 @@
         <span>{{ trans('user.privacy.online.title') }}</span>
     </label>
     <label class="checkbox-help" for="show-online">{{ trans('user.privacy.online.description') }}</label>
-
-    <button type="submit" name="submit" class="btn blue">
-        <i class="fa fa-lock space-right" aria-hidden="true"></i>{{ trans('user.privacy.update') }}
-    </button>
 </form>
+
+@endsection
+
+@section('buttons')
+
+<div class="buttons">
+    <button type="submit" name="submit" class="btn green flex-left" id="privacy-button">
+        <i class="fa fa-check-circle-o space-right" aria-hidden="true"></i>
+        {{ trans('user.dashboard.button.save-changes') }}
+    </button>
+</div>
 
 @endsection

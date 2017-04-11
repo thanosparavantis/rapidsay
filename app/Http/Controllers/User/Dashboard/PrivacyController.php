@@ -1,6 +1,6 @@
 <?php
 
-namespace Forum\Http\Controllers\User;
+namespace Forum\Http\Controllers\User\Dashboard;
 
 use Forum\User;
 use Forum\Http\Requests\User\UpdatePrivacyRequest;
@@ -17,7 +17,7 @@ class PrivacyController extends Controller
     public function show()
     {
         $this->checkForEmailNotificationsUpdate();
-        return view('user.privacy');
+        return view('user.dashboard.privacy');
     }
 
     public function update(UpdatePrivacyRequest $request)
@@ -83,22 +83,11 @@ class PrivacyController extends Controller
         $user = auth()->user();
         $email = request()->email_notifications;
 
-        if (isset($email) && ($email === "true" || $email === "false") )
+        if (isset($email) && $email === "false" && $user->email_notifications)
         {
-            if ($email === "true")
-            {
-                $email = true;
-            }
-            else
-            {
-                $email = false;
-            }
-
-            if ($user->email_notifications != $email)
-            {
-                $user->email_notifications = $email;
-                $user->save();
-            }
+            $user->email_notifications = false;
+            $user->save();
+            request()->session()->flash('success', trans('user.dashboard.message.email-notifications'));
         }
     }
 }
