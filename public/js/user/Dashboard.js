@@ -1,5 +1,6 @@
 $(document).ready(function() {
     profileForm = $("#profile-form");
+    profileDescription = $("#description");
     profileButton = $("#profile-button");
 
     passwordForm = $("#password-form");
@@ -10,6 +11,8 @@ $(document).ready(function() {
 
     languageForm = $("#lang-form");
     languageButton = $("#lang-button");
+
+    if (profileDescription.length) autosize(profileDescription);
 
     if (profileForm.length && profileButton.length)
     {

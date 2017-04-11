@@ -3,6 +3,7 @@
 @section('body')
 
 @include('partials.navbar')
+
 <div class="dashboard-page">
 
     @include('partials.alerts')
@@ -52,6 +53,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{ route('help') }}" class="{{ request()->route()->getName() == 'help' ? 'active' : '' }}">
+                        <i class="fa fa-{{ config('glyphicons.help') }} space-right" aria-hidden="true"></i>
+                        {{ trans('page.title.help-center') }}
+                    </a>
+                </li>
+                <li>
                     <a href="{{ route('logout') }}">
                         <i class="fa fa-{{ config('glyphicons.logout') }} space-right" aria-hidden="true"></i>
                         {{ trans('page.title.logout') }}
@@ -63,10 +70,11 @@
             <div class="body">
                 @yield('content')
             </div>
-            
+
             @yield('buttons')
         </div>
     </div>
+</div>
 
 @endsection
 

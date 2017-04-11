@@ -12,6 +12,7 @@ return [
         'login'             => 'Login',
         'logout'            => 'Log Out',
         'help'              => 'Help',
+        'help-center'       => 'Help Center',
         'password_reset'    => 'Password Reset',
         'password_new'      => 'New Password',
         'register'          => 'Register',

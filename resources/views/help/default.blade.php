@@ -1,5 +1,5 @@
 @extends('layouts.help-page')
-@section('title', trans('help.title'))
+@section('title', trans('page.title.help-center'))
 
 @section('content')
 

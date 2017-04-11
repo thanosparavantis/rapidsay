@@ -96,6 +96,7 @@
     display: flex;
     flex-direction: column;
     flex: 1;
+    overflow: hidden;
 }
 
 .dashboard-page .main .profile-picture-update .upload input {
@@ -120,6 +121,17 @@
 
 .dashboard-page .buttons {
     border-top: 1px solid #ddd;
+}
+
+@media all and (max-width: 625px) {
+    .dashboard-page .dashboard-panel {
+        flex-direction: column;
+    }
+
+    .dashboard-page .menu {
+        flex: 1;
+        width: 100%;
+    }
 }
 
 /*.dashboard-page h2 {

@@ -153,6 +153,7 @@
 
         <script src="{{ asset('js/lib/jquery-3.1.1.min.js') }}"></script>
         <script src="{{ asset('js/lib/autosize.min.js') }}"></script>
+        <script src="{{ asset('js/lib/jquery-visible.min.js') }}"></script>
         <script src="{{ asset('js/Config.js') }}"></script>
 
         <script src="{{ asset('js/Dropdowns.js') }}"></script>

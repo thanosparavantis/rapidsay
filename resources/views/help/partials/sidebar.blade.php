@@ -2,7 +2,7 @@
     <div class="app-logo">
         <img src="{{ asset('img/logo.png') }}" alt="{{ trans('app.name') }}">
     </div>
-    <h1><a href="{{ route('help') }}">{{ trans('help.title') }}</a></h1>
+    <h1><a href="{{ route('help') }}">{{ trans('page.title.help-center') }}</a></h1>
     <ul class="sections">
         <li>@include('help.partials.sections.account')</li>
         <li>@include('help.partials.sections.profile')</li>

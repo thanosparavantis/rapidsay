@@ -29,7 +29,7 @@ class AccountController extends Controller
         $this->activation->manuallyActivateUser($user);
         return response()->json([
             'message'   => trans('admin.user.activated'),
-            'html'      => view('user.partials.profile.actions.administrate', ['user' => $user])->render(),
+            'html'      => view('user.partials.profile.administrate', ['user' => $user])->render(),
         ]);
     }
 
@@ -66,7 +66,7 @@ class AccountController extends Controller
 
         return response()->json([
             'message'   => $user->isBanned() ? trans('admin.user.banned') : trans('admin.user.unbanned'),
-            'html'      => view('user.partials.profile.actions.administrate', ['user' => $user])->render(),
+            'html'      => view('user.partials.profile.administrate', ['user' => $user])->render(),
         ]);
     }
 
@@ -77,7 +77,7 @@ class AccountController extends Controller
 
         return response()->json([
             'message'   => $user->isIpBanned() ? trans('admin.user.banned') : trans('admin.user.unbanned'),
-            'html'      => view('user.partials.profile.actions.administrate', ['user' => $user])->render(),
+            'html'      => view('user.partials.profile.administrate', ['user' => $user])->render(),
         ]);
     }
 

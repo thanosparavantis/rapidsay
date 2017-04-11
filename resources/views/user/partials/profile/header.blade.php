@@ -9,10 +9,8 @@
                         @if (auth()->user()->id != $user->id)
                             @include('user.partials.subscription.button')
                             @if (auth()->user()->admin)
-                                @include('user.partials.profile.actions.administrate')
+                                @include('user.partials.profile.administrate')
                             @endif
-                        @else
-                            @include('user.partials.profile.actions.manage')
                         @endif
                     </div>
                 @endif

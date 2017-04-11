@@ -12,6 +12,7 @@ return [
         'login'             => 'Σύνδεση',
         'logout'            => 'Αποσύνδεση',
         'help'              => 'Βοήθεια',
+        'help-center'       => 'Κέντρο Βοήθειας',
         'password_reset'    => 'Επαναφορά Κωδικού',
         'password_new'      => 'Νέος Κωδικός',
         'register'          => 'Εγγραφή',

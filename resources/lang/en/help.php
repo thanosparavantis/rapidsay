@@ -2,9 +2,7 @@
 
 return [
 
-    'title'                         => 'Help Center',
     'login'                         => 'You may need to be <a href="' . route('login') . '">logged in</a>, in order to follow the instructions included on this help page.',
-
     'greeting'                      => '<p>Hello! welcome to our help center. Here you can find answers to frequently asked questions.</p>
                                         <p>In case you need additional help, or can\'t find what you are looking for, feel free to send an email at <a href="mailto:' . env('MAIL_USERNAME') . '">' . env('MAIL_USERNAME') . '</a>.</p>',
 
