@@ -9,7 +9,7 @@ function Alert()
             button = element.find(".close");
 
             button.click(function (event) {
-                alert.click(element);
+                alert.click($(this).parent());
                 alert.submit($(this));
             });
         });
