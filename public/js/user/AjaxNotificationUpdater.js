@@ -8,7 +8,7 @@ function AjaxNotificationUpdater()
     {
         setInterval(function() {
             notifications.update();
-        }, 5000);
+        }, 60000);
     }
 
     this.update = function()

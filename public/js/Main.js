@@ -1,13 +1,17 @@
 $(document).ready(function() {
     rate = new Rate;
     subscribe = new Subscribe;
-    
+
     alerts = new Alert;
     alerts.register();
     alerts.showInternetExplorerAlert();
 
     dropdowns = new Dropdowns;
     dropdowns.register();
+
+    $("#guest-lang-select").on('change', function() {
+        $("#guest-lang-form").submit();
+    });
 });
 
 function initializeImageUploader()

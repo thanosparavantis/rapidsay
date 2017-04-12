@@ -64,4 +64,35 @@
     </div>
 </div>
 
+<div class="mini-footer">
+    <ul class="items-inline with-large-space">
+        <li>
+            <a href="{{ route('help') }}">
+                {{ trans('page.title.help') }}
+            </a>
+        </li>
+        <li>
+            <a href="{{ route('terms-of-use') }}">
+                {{ trans('about.terms-of-use') }}
+            </a>
+        </li>
+        <li>
+            <a href="{{ route('privacy-policy') }}">
+                {{ trans('about.privacy-policy') }}
+            </a>
+        </li>
+        <li class="flex-left">
+            <form action="{{ route('post-language') }}" method="post" id="guest-lang-form">
+                {{ csrf_field() }}
+                <select name="locale" class="select" id="guest-lang-select">
+                    <option selected disabled hidden>{{ trans('form.label.language') }}</option>
+                    @foreach(config('languages') as $lang => $language)
+                        <option value="{{ $lang }}" {{ app()->isLocale($lang) ? 'selected' : '' }}>{{ $language }}</option>
+                    @endforeach
+                </select>
+            </form>
+        </li>
+    </ul>
+</div>
+
 @endsection
