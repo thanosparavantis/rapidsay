@@ -22,6 +22,12 @@
                     {{ trans('page.title.community') }}
                 </a>
             </li>
+            <li>
+                <a href="{{ route('chat') }}" class="{{ request()->route()->getName() == 'chat' ? 'active' : '' }}">
+                    <i class="fa fa-{{ config('glyphicons.chat') }} space-right" aria-hidden="true"></i>
+                    {{ trans('page.title.chat') }}
+                </a>
+            </li>
         </ul>
         <ul class="items-inline flex-left">
             @if (auth()->check())
@@ -106,7 +112,7 @@
 
 <div class="navbar-menu">
     @if (auth()->check())
-        <a href="{{ route('user-profile', auth()->user()->username) }}" class="item">
+        <a href="{{ route('user-profile', auth()->user()->username) }}">
             @include('partials.profile-picture', [
                 'user' => auth()->user(),
                 'size' => 'medium',
@@ -116,43 +122,43 @@
         </a>
     @endif
 
-    <a href="{{ route('explore') }}" class="item">
+    <a href="{{ route('explore') }}">
         <i class="fa fa-{{ config('glyphicons.explore') }}" aria-hidden="true"></i>
         {{ trans('page.title.explore') }}
     </a>
-    <a href="{{ route('community') }}" class="item">
+    <a href="{{ route('community') }}">
         <i class="fa fa-{{ config('glyphicons.community') }}" aria-hidden="true"></i>
         {{ trans('page.title.community') }}
     </a>
 
     @if (auth()->guest())
-        <a href="{{ route('help') }}" class="item">
+        <a href="{{ route('help') }}">
             <i class="fa fa-{{ config('glyphicons.help') }}" aria-hidden="true"></i>
             {{ trans('page.title.help') }}
         </a>
-        <a href="{{ route('login') }}" class="item">
+        <a href="{{ route('login') }}">
             <i class="fa fa-{{ config('glyphicons.login') }}" aria-hidden="true"></i>
             {{ trans('page.title.login') }}
         </a>
-        <a href="{{ route('register') }}" class="item">
+        <a href="{{ route('register') }}">
             <i class="fa fa-{{ config('glyphicons.register') }}" aria-hidden="true"></i>
             {{ trans('page.title.register') }}
         </a>
     @endif
 
     @if (auth()->check())
-        <a href="{{ route('dashboard') }}" class="item">
+        <a href="{{ route('dashboard') }}">
             <i class="fa fa-{{ config('glyphicons.dashboard') }}" aria-hidden="true"></i>
             {{ trans('page.title.dashboard') }}
         </a>
-        <a href="{{ route('notifications') }}" class="item">
+        <a href="{{ route('notifications') }}">
             <div class="notification-holder">
                 <i class="fa fa-{{ config('glyphicons.notifications') }}" aria-hidden="true"></i>
                 <div class="count {{ auth()->user()->getUnreadNotificationCount() > 0 ? 'visible' : '' }}">{{ auth()->user()->getUnreadNotificationCount() }}</div>
             </div>
             {{ trans('page.title.notifications') }}
         </a>
-        <a href="{{ route('logout') }}" class="item">
+        <a href="{{ route('logout') }}">
             <i class="fa fa-{{ config('glyphicons.logout') }}" aria-hidden="true"></i>
             {{ trans('page.title.logout') }}
         </a>

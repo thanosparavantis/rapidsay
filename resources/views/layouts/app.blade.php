@@ -12,11 +12,6 @@
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}">
 
-        @if (auth()->check() && auth()->user()->admin)
-            <link rel="stylesheet" type="text/css" href="{{ asset('css/admin/dashboard.css') }}">
-        @endif
-
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/admin/report.css') }}">
 
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/alerts.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/animations.css') }}">
@@ -54,6 +49,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/user/dashboard.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/user/picture.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/user/profile.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/user/report.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/user/subscription.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/user/user-preview.css') }}">
 

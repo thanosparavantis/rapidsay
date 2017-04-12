@@ -28,12 +28,12 @@
 <div class="buttons">
     @if (Cache::has('announcement'))
         <button class="btn red flex-left" id="announcement-button">
-            <i class="fa fa-times space-right" aria-hidden="true"></i>
+            <i class="fa fa-{{ config('glyphicons.close') }} space-right" aria-hidden="true"></i>
             {{ trans('user.dashboard.button.remove-announcement') }}
         </button>
     @else
         <button class="btn green flex-left" id="announcement-button">
-            <i class="fa fa-check-circle-o space-right" aria-hidden="true"></i>
+            <i class="fa fa-{{ config('glyphicons.save') }} space-right" aria-hidden="true"></i>
             {{ trans('user.dashboard.button.add-announcement') }}
         </button>
     @endif

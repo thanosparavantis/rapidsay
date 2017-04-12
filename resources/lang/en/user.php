@@ -80,7 +80,7 @@ return [
 
         'ratings' => [
             'title'                 => 'Show content I have rated on my profile.',
-            'description'           => 'This means that the ratings section on your profile, which includes all of the posts, comments and replies you have rated will be publicly available.',
+            'description'           => 'This means that the activity on your profile will include all of the posts and comments you have rated.',
         ],
 
         'online' => [

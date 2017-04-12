@@ -12,8 +12,6 @@
     @include('partials.alerts')
 
     @yield('content')
-
-    @include('partials.chat-button')
 </div>
 
 @endsection

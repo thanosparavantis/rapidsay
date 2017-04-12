@@ -40,7 +40,7 @@
 
 <div class="buttons">
     <button type="submit" name="submit" class="btn green flex-left" id="privacy-button">
-        <i class="fa fa-check-circle-o space-right" aria-hidden="true"></i>
+        <i class="fa fa-{{ config('glyphicons.save') }} space-right" aria-hidden="true"></i>
         {{ trans('user.dashboard.button.save-changes') }}
     </button>
 </div>

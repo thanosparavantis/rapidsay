@@ -13,7 +13,7 @@
         </li>
         <li class="flex-left">
             <button class="btn red" id="deny-report-button-{{ $report->id }}" data-target="{{ route('post-deny-report', $report->id) }}">
-                <i class="fa fa-times space-right" aria-hidden="true"></i>
+                <i class="fa fa-{{ config('glyphicons.times') }} space-right" aria-hidden="true"></i>
                 {{ trans('report.button.deny') }}
             </button>
         </li>

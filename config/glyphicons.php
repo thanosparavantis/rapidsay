@@ -38,8 +38,12 @@ return [
     'explore'           => 'map-o',
     'community'         => 'trophy',
     'menu'              => 'bars',
+    'save'              => 'check-circle-o',
     'close'             => 'times',
     'language'          => 'globe',
     'privacy'           => 'shield',
     'password'          => 'unlock-alt',
+    'chat'              => 'comments',
+    'document'          => 'file-text-o',
+    'data'              => 'database',
 ];
