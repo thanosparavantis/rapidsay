@@ -8,7 +8,7 @@ function AjaxNotificationUpdater()
     {
         setInterval(function() {
             notifications.update();
-        }, 60000);
+        }, 5000);
     }
 
     this.update = function()
@@ -18,7 +18,7 @@ function AjaxNotificationUpdater()
             url: notifications.url,
             timeout: 5000,
             success: function (data) {
-                $(".notification-holder").each(function() {
+                $("[class*='notification-holder'][href*='" + notifications.url + "']").each(function() {
                     counter = $(this).find(".count");
 
                     counter.removeClass("visible");

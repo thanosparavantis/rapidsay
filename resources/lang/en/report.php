@@ -2,6 +2,7 @@
 
 return [
     'count'                 => 'report|reports',
+    'none'                  => 'Good news, there aren\'t any pending reports!',
 
     'creator' => [
         'description'       => 'You have chosen to report :type. Please tell us a little bit more about it, in the text area below.',
@@ -16,6 +17,7 @@ return [
         'report'            => 'Report',
         'submit'            => 'Submit Report',
         'back'              => 'Go Back',
+        'deny'              => 'Deny Report',
     ],
 
     'about' => [

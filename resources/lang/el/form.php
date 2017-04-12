@@ -12,7 +12,7 @@ return [
         'first-name'                => 'Όνομα',
         'last-name'                 => 'Επίθετο',
         'description'               => 'Περιγραφή',
-        'picture'                   => 'Φωτογραφία',
+        'profile-picture'           => 'Φωτογραφία Προφίλ',
         'email'                     => 'Διεύθυνση Email',
         'password'                  => 'Κωδικός',
         'password-confirmation'     => 'Επαλήθευση κωδικού',

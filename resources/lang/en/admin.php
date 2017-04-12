@@ -18,30 +18,6 @@ return [
         ],
     ],
 
-    'stats' => [
-        'users'             => 'user|users',
-        'posts'             => 'post|posts',
-        'images'            => 'image|images',
-        'ratings'           => 'rating|ratings',
-    ],
-
-    'announcement' => [
-        'title'             => 'Announcement',
-        'hint'              => 'Type the translation key to be displayed...',
-        'create'            => 'The announcement is now visible in the home page.',
-        'delete'            => 'The announcement has been deleted.',
-    ],
-
-    'reports' => [
-        'title'             => 'Reports',
-        'none'              => 'No reports found',
-    ],
-
-    'report' => [
-        'content'           => 'Content',
-        'description'       => 'Description',
-    ],
-
     'button' => [
         'actions'           => 'Actions',
         'activate'          => 'Activate',

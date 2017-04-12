@@ -26,7 +26,7 @@ class SubscriptionController extends Controller
             $subscriptions = auth()->user()->getSubscriptionPaginator();
 
             return response()->json([
-                'html' => view('user.partials.subscription.list', ['subscriptions' => $subscriptions])->render(),
+                'html' => view('user.partials.subscription.content', ['subscriptions' => $subscriptions])->render(),
                 'end' => !$subscriptions->hasMorePages(),
             ]);
         }

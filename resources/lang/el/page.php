@@ -25,6 +25,8 @@ return [
         'subscriptions'     => 'Συνδρομές',
         'language'          => 'Γλώσσα',
         'report'            => 'Αναφορά',
+        'announcement'      => 'Ανακοίνωση',
+        'reports'           => 'Αναφορές',
     ],
 
 ];

@@ -36,8 +36,12 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('dashboard') }}" class="{{ request()->route()->getName() == 'dashboard' ?  'active' : '' }}" title="{{ trans('page.title.dashboard') }}">
+                    <a href="{{ route('dashboard') }}" class="{{ auth()->user()->admin ? 'notification-holder' : '' }} {{ request()->route()->getName() == 'dashboard' ?  'active' : '' }}" title="{{ trans('page.title.dashboard') }}">
                         <i class="fa fa-{{ config('glyphicons.dashboard') }}" aria-hidden="true"></i>
+
+                        @if (auth()->user()->admin)
+                            <div class="count {{ Forum\Report::getPendingCount() > 0 ? 'visible' : '' }}">{{ Forum\Report::getPendingCount() }}</div>
+                        @endif
                     </a>
                 </li>
                 <li>

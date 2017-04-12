@@ -80,14 +80,15 @@ Route::get  (   'dashboard/delete-account',             ['as' => 'delete-account
 Route::post (   'dashboard/delete-account',             ['as' => 'post-delete-account',         'uses' => 'User\Dashboard\AccountDeletionController@delete']);
 Route::get  (   'dashboard/subscriptions',              ['as' => 'subscriptions',               'uses' => 'User\Dashboard\SubscriptionController@show']);
 Route::get  (   'dashboard/language',                   ['as' => 'language',                    'uses' => 'User\Dashboard\LanguageController@show']);
+Route::get  (   'dashboard/announcement',               ['as' => 'announcement',                'uses' => 'Admin\AnnouncementController@show']);
+Route::post (   'dashboard/announcement',               ['as' => 'post-announcement',           'uses' => 'Admin\AnnouncementController@update']);
+Route::post (   'dashboard/announcement/remove',        ['as' => 'post-remove-announcement',    'uses' => 'Admin\AnnouncementController@remove']);
+Route::get  (   'dashboard/reports',                    ['as' => 'reports',                     'uses' => 'Admin\ReportsController@show']);
+Route::post (   'dashboard/reports/deny/{id}',          ['as' => 'post-deny-report',            'uses' => 'Admin\ReportsController@deny']);
 Route::post (   'language',                             ['as' => 'post-language',               'uses' => 'User\Dashboard\LanguageController@update']);
 Route::post (   'subscribe/{userId}',                   ['as' => 'subscribe',                   'uses' => 'User\Dashboard\SubscriptionController@subscribe']);
 
 // Admin
-Route::get  (   'admin/dashboard',                      ['as' => 'admin-dashboard',             'uses' => 'Admin\DashboardController@show']);
-Route::post (   'admin/report/deny/{id}',               ['as' => 'admin-report-deny',           'uses' => 'Admin\DashboardController@denyReport']);
-Route::post (   'admin/announce',                       ['as' => 'admin-announce',              'uses' => 'Admin\DashboardController@announce']);
-Route::post (   'admin/announcement/remove',            ['as' => 'admin-announcement-remove',   'uses' => 'Admin\DashboardController@removeAnnouncement']);
 Route::post (   'admin/activate/{userId}',              ['as' => 'admin-activate',              'uses' => 'Admin\AccountController@activate',]);
 Route::post (   'admin/reputation/{userId}',            ['as' => 'admin-reputation',            'uses' => 'Admin\AccountController@reputation']);
 Route::post (   'admin/ban/{userId}',                   ['as' => 'admin-ban',                   'uses' => 'Admin\AccountController@ban',]);

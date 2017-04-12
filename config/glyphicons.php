@@ -23,6 +23,7 @@ return [
     'status'            => 'info-circle',
     'public'            => 'globe',
     'private'           => 'lock',
+    'announcement'      => 'bullhorn',
     'report'            => 'flag',
     'administration'    => 'pencil-square-o',
     'accept'            => 'check',

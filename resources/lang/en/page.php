@@ -25,5 +25,7 @@ return [
         'subscriptions'     => 'Subscriptions',
         'language'          => 'Language',
         'report'            => 'Report',
+        'announcement'      => 'Announcement',
+        'reports'           => 'Reports',
     ],
 ];

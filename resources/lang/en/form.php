@@ -12,7 +12,7 @@ return [
         'first-name'                => 'First Name',
         'last-name'                 => 'Last Name',
         'description'               => 'Description',
-        'picture'                   => 'Picture',
+        'profile-picture'           => 'Profile Picture',
         'email'                     => 'Email Address',
         'password'                  => 'Password',
         'password-confirmation'     => 'Confirm password',

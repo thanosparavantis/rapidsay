@@ -11,6 +11,7 @@ return [
     'dashboard' => [
         'section' => [
             'account'               => 'Account',
+            'administrate'          => 'Administrate',
             'other'                 => 'Other',
         ],
 
@@ -20,6 +21,8 @@ return [
             'privacy'               => 'Control notifications and what others see about you.',
             'subscriptions'         => 'The list of people you are subscribed to.',
             'language'              => 'Rapidsay is currently available in <strong>' . count(config('languages')) . '</strong> different languages.',
+            'announcement'          => 'Display a website wide announcement.',
+            'reports'               => 'View the list of pending reports from the community.',
         ],
 
         'account-deletion'          => '<p>You are about to <strong>permanently delete your account</strong>. By doing so, any data associated with it will be gone forever.</p>
@@ -37,6 +40,8 @@ return [
             'back'                  => 'Go Back',
             'change-password'       => 'Change Password',
             'save-changes'          => 'Save Changes',
+            'add-announcement'      => 'Add Announcement',
+            'remove-announcement'   => 'Remove Announcement',
         ],
 
         'message' => [
@@ -45,6 +50,8 @@ return [
             'password-changed'      => 'Your password has been changed.',
             'incorrect-password'    => 'The current password you provided is not correct.',
             'email-notifications'   => 'Email notifications have been turned off.',
+            'announcement-added'    => 'The announcement has been added.',
+            'announcement-removed'  => 'The announcement has been removed.',
         ],
     ],
 

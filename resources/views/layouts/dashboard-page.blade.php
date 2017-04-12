@@ -38,6 +38,23 @@
                 </li>
             </ul>
 
+            @if (auth()->user()->admin)
+                <h2>{{ trans('user.dashboard.section.administrate') }}</h2>
+                <ul>
+                    <a href="{{ route('announcement') }}" class="{{ request()->route()->getName() == 'announcement' ? 'active' : '' }}">
+                        <i class="fa fa-{{ config('glyphicons.announcement') }} space-right" aria-hidden="true"></i>
+                        {{ trans('page.title.announcement') }}
+                    </a>
+                    <a href="{{ route('reports') }}" class="{{ request()->route()->getName() == 'reports' ? 'active' : '' }}">
+                        <i class="fa fa-{{ config('glyphicons.report') }} space-right" aria-hidden="true"></i>
+                        {{ trans('page.title.reports') }}
+                        @if (Forum\Report::getPendingCount() > 0)
+                            <i class="fa fa-exclamation-circle flex-left" aria-hidden="true" id="report-note"></i>
+                        @endif
+                    </a>
+                </ul>
+            @endif
+
             <h2>{{ trans('user.dashboard.section.other') }}</h2>
             <ul>
                 <li>

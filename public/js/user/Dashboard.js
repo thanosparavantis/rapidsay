@@ -12,6 +12,9 @@ $(document).ready(function() {
     languageForm = $("#lang-form");
     languageButton = $("#lang-button");
 
+    announcementForm = $("#announcement-form");
+    announcementButton = $("#announcement-button");
+
     if (profileDescription.length) autosize(profileDescription);
 
     if (profileForm.length && profileButton.length)
@@ -40,6 +43,13 @@ $(document).ready(function() {
         languageButton.click(function(event) {
             event.preventDefault();
             if (languageForm[0].checkValidity()) languageForm.submit();
+        });
+    }
+    else if (announcementForm.length && announcementButton.length)
+    {
+        announcementButton.click(function(event) {
+            event.preventDefault();
+            if (announcementForm[0].checkValidity()) announcementForm.submit();
         });
     }
 });

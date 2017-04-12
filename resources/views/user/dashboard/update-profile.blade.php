@@ -12,7 +12,7 @@
         <div class="section">
             <label class="label">
                 {{ trans('form.label.first-name') }}
-                <input type="text" name="first_name" class="field{{$errors->has('first_name') ? ' error' : '' }}" value="{{ auth()->user()->first_name }}" maxlength="35">
+                <input type="text" name="first_name" class="field{{$errors->has('first_name') ? ' error' : '' }}" value="{{ auth()->user()->first_name }}" maxlength="35" autofocus>
             </label>
             @if ($errors->has('first_name'))
                 <span class="error">{{ $errors->first('first_name') }}</span>
@@ -38,7 +38,7 @@
     @endif
 
     <label class="label">
-        {{ trans('form.label.picture') }}
+        {{ trans('form.label.profile-picture') }}
         <div class="profile-picture-update">
             @include('partials.profile-picture', ['user' => auth()->user()])
             <div class="upload">

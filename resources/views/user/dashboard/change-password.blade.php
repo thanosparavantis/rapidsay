@@ -10,7 +10,7 @@
     {{ csrf_field() }}
     <label class="label">
         {{ trans('form.label.password-new') }}
-        <input type="password" name="password" class="field{{$errors->has('password') ? ' error' : '' }}" required>
+        <input type="password" name="password" class="field{{$errors->has('password') ? ' error' : '' }}" required autofocus>
     </label>
     @if ($errors->has('password'))
         <span class="error">{{ $errors->first('password') }}</span>

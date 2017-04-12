@@ -56,15 +56,6 @@
     flex: 1;
 }
 
-.dashboard-page .main h1 + .tip {
-    margin-bottom: 20px;
-}
-
-.dashboard-page .main p:not(.tip),
-.dashboard-page .main ul {
-    line-height: 24px;
-}
-
 .dashboard-page .main .field,
 .dashboard-page .main .select {
     max-width: 400px;
@@ -109,18 +100,27 @@
 
 /* Body and Buttons */
 
-.dashboard-page .body,
-.dashboard-page .buttons {
+.dashboard-page .main > .body,
+.dashboard-page .main > .buttons {
     padding: 20px;
     background-color: #fff;
 }
 
-.dashboard-page .body {
+.dashboard-page .main > .body {
     flex: 1;
 }
 
-.dashboard-page .buttons {
+.dashboard-page .main > .buttons {
     border-top: 1px solid #ddd;
+}
+
+.dashboard-page .main .body h1 + .tip {
+    margin-bottom: 20px;
+}
+
+.dashboard-page .main .body > p:not(.tip),
+.dashboard-page .main .body > ul {
+    line-height: 24px;
 }
 
 @media all and (max-width: 625px) {
