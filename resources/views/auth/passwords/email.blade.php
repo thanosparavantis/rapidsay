@@ -1,7 +1,7 @@
 @extends('layouts.form-page')
 @section('title', trans('page.title.password_reset'))
 @section('action', route('post-password-reset-email'))
-@section('button-text', trans('form.button.send_reset'))
+@section('button-text', trans('form.button.send-reset'))
 @section('button-color', 'blue')
 
 @section('form')

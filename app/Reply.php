@@ -6,6 +6,7 @@ use Forum\Interfaces\AcceptsImages;
 use Forum\Interfaces\Redirectable;
 use Forum\Traits\Rateable;
 use Forum\Traits\UserContentItem;
+use Forum\Events\Topic\ReplyDeleted;
 use Illuminate\Database\Eloquent\Model;
 
 class Reply extends Model implements Redirectable, AcceptsImages
@@ -92,5 +93,20 @@ class Reply extends Model implements Redirectable, AcceptsImages
     public function redirect()
     {
         return redirect()->to($this->route());
+    }
+
+    public function delete($user = null)
+    {
+        event(new ReplyDeleted(isset($user) ? $user : $this->user, $this));
+
+        $this->images()->each(function ($image) {
+            $image->delete();
+        });
+
+        $this->ratings->each(function ($rating) {
+            $rating->delete();
+        });
+
+        parent::delete();
     }
 }

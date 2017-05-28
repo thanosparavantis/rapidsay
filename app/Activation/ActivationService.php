@@ -47,15 +47,11 @@ class ActivationService
     {
         $activation = $this->repository->get($user);
 
-        if ($activation)
-        {
-            $user->activated = true;
-            $user->save();
-            $this->repository->delete($activation->token);
-            return $user;
-        }
+        $user->activated = true;
+        $user->save();
+        if ($activation) $this->repository->delete($activation->token);
 
-        return null;
+        return $user;
     }
 
     public function shouldSend($user)

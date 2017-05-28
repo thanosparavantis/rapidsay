@@ -42,6 +42,10 @@ class EventServiceProvider extends ServiceProvider
             'Forum\Listeners\Admin\SendReplyEditNotification',
         ],
 
+        'Forum\Events\User\UserDeleted' => [
+            'Forum\Listeners\User\DeleteUserNotifications',
+        ],
+
         'Forum\Events\Topic\PostDeleted' => [
             'Forum\Listeners\Admin\SendPostDeletedNotification',
             'Forum\Listeners\Topic\DeletePostNotifications',

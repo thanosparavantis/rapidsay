@@ -2,6 +2,8 @@
 
 @section('body')
 
+@include('partials.navbar')
+
 <div class="form-page">
     @include('partials.greeting')
     <p class="tip">@yield('tip')</p>

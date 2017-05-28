@@ -17,11 +17,14 @@ class CheckBanned
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check() && Auth::user()->banned)
+        if (auth()->check() && auth()->user()->isBanned())
         {
-            Auth::logout();
+            if (auth()->user()->isIpBanned()) auth()->user()->storeBannedIpAddress($request);
+            auth()->logout();
+            
             return redirect()->route('login')->with('error', trans('auth.banned'));
         }
+
         return $next($request);
     }
 }

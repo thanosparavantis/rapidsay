@@ -1,14 +1,14 @@
 <?php
 
 return [
-    'points'            => [
+    'points' => [
         'difference'    => 'Differenciate yourself',
         'alternative'   => 'Join an alternative social network',
         'ratings'       => 'Gain ratings at your posts',
         'reputation'    => 'Build reputation',
     ],
 
-    'buttons'           => [
+    'buttons' => [
         'register'      => 'Register with our highly interactive network',
     ],
 

@@ -1,0 +1,39 @@
+.report-preview .user-content {
+    margin: 20px 0;
+}
+
+.report:not(:first-child) {
+    margin-top: 20px;
+}
+
+.report {
+    border: 1px solid #ddd;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.03);
+}
+
+.report > .header {
+    padding: 20px;
+}
+
+.report > .header .name {
+    font-weight: 700;
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+}
+
+.report > .body {
+    padding: 0 20px 20px 20px;
+    font-size: 15px;
+    line-height: 24px;
+    word-wrap: break-word;
+}
+
+.report > .user-content {
+    margin-top: 0 !important;
+    box-shadow: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    background-color: #eee;
+}

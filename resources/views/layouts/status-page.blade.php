@@ -3,8 +3,17 @@
 @section('body')
 
 <div class="status-page">
-    <img src="{{ asset('img/logo.png') }}" width="96" height="96">
-    @yield('content')
+    <div class="main">
+        <div class="header">
+            <img src="{{ asset('img/logo.png') }}">
+        </div>
+        <div class="body">
+            @yield('content')
+        </div>
+    </div>
+    <div class="actions">
+        @yield('actions')
+    </div>
 </div>
 
 @endsection

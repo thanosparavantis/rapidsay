@@ -4,6 +4,8 @@ namespace Forum\Http\Controllers\Auth;
 
 use Forum\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use Illuminate\Http\Request;
+use Forum\User;
 
 class PasswordController extends Controller
 {
@@ -18,7 +20,9 @@ class PasswordController extends Controller
     |
     */
 
-    use ResetsPasswords;
+    use ResetsPasswords {
+        sendResetLinkEmail as protected traitSendResetLinkEmail;
+    }
 
     protected $redirectTo = '/';
 
@@ -30,5 +34,15 @@ class PasswordController extends Controller
     public function __construct()
     {
         $this->middleware($this->guestMiddleware());
+    }
+
+    public function sendResetLinkEmail(Request $request)
+    {
+        if (User::checkRequestForBannedIp($request))
+            return redirect()->back()->with('error', trans('auth.banned-ip'));
+        else if (User::isEmailBanned($request->email))
+            return redirect()->back()->with('error', trans('auth.banned-email'));
+
+        return $this->traitSendResetLinkEmail($request);
     }
 }

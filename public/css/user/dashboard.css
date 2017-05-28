@@ -1,4 +1,140 @@
-.dashboard-page h2 {
+
+/* General */
+
+.dashboard-page .dashboard-panel {
+    display: flex;
+}
+
+/* Menu */
+
+.dashboard-page .menu {
+    width: 250px;
+    padding: 20px;
+    background-color: #3498db;
+}
+
+.dashboard-page .menu h2,
+.dashboard-page .menu a {
+    color: #fff;
+    text-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-page .menu h2 {
+    border-bottom: 1px solid #1f74ad;
+    padding-bottom: 5px;
+}
+
+.dashboard-page .menu h2:not(:first-child) {
+    margin-top: 15px;
+}
+
+.dashboard-page .menu ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.dashboard-page .menu a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 10px 10px 10px 15px;
+}
+
+.dashboard-page .menu a.active,
+.dashboard-page .menu a:hover {
+    background-color: #52a7e0;
+}
+
+/* Main */
+
+.dashboard-page .main {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex: 1;
+}
+
+.dashboard-page .main .field,
+.dashboard-page .main .select {
+    max-width: 400px;
+}
+
+.dashboard-page .main .content-group {
+    max-width: 420px;
+}
+
+.dashboard-page .main .content-group .section .field {
+    width: 100%;
+}
+
+.dashboard-page .main .profile-picture-update {
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.03);
+}
+
+.dashboard-page .main .profile-picture-update .profile-picture-container {
+    margin-right: 20px;
+}
+
+.dashboard-page .main .profile-picture-update .upload {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+}
+
+.dashboard-page .main .profile-picture-update .upload input {
+    cursor: pointer;
+}
+
+.dashboard-page .main .profile-picture-update .upload a {
+    margin-top: 5px;
+}
+
+/* Body and Buttons */
+
+.dashboard-page .main > .body,
+.dashboard-page .main > .buttons {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.dashboard-page .main > .body {
+    flex: 1;
+}
+
+.dashboard-page .main > .buttons {
+    border-top: 1px solid #ddd;
+}
+
+.dashboard-page .main .body h1 + .tip {
+    margin-bottom: 20px;
+}
+
+.dashboard-page .main .body > p:not(.tip),
+.dashboard-page .main .body > ul {
+    line-height: 24px;
+}
+
+@media all and (max-width: 625px) {
+    .dashboard-page .dashboard-panel {
+        flex-direction: column;
+    }
+
+    .dashboard-page .menu {
+        flex: 1;
+        width: 100%;
+    }
+}
+
+/*.dashboard-page h2 {
     padding-bottom: 5px;
     border-bottom: 1px solid #ddd;
 }
@@ -59,4 +195,4 @@
     .preferences-buttons {
         display: none;
     }
-}
+}*/

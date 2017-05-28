@@ -8,6 +8,7 @@ use Forum\Interfaces\AcceptsImages;
 use Forum\Interfaces\CanBeSearched;
 use Forum\Traits\Rateable;
 use Forum\Traits\UserContentItem;
+use Forum\Events\Topic\PostDeleted;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model implements Redirectable, AcceptsImages, CanBeSearched
@@ -195,5 +196,50 @@ class Post extends Model implements Redirectable, AcceptsImages, CanBeSearched
     public function redirect()
     {
         return redirect()->to($this->route());
+    }
+
+    public function delete($user = null)
+    {
+        event(new PostDeleted(isset($user) ? $user : $this->user, $this));
+
+        // Delete all post images.
+
+        $this->images()->each(function ($image) {
+            $image->delete();
+        });
+
+        $this->comments->each(function ($comment) {
+            $comment->images()->each(function ($image) {
+                $image->delete();
+            });
+
+            $comment->replies->each(function ($reply) {
+                $reply->images()->each(function ($image) {
+                    $image->delete();
+                });
+            });
+        });
+
+        // Delete all post ratings.
+
+        $this->ratings->each(function ($rating) {
+            $rating->delete();
+        });
+
+        $this->comments->each(function ($comment) {
+            $comment->ratings->each(function ($rating) {
+                $rating->delete();
+            });
+
+            $comment->replies->each(function ($reply) {
+                $reply->ratings->each(function ($rating) {
+                    $rating->delete();
+                });
+            });
+        });
+
+        // Call default delete.
+
+        parent::delete();
     }
 }

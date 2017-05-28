@@ -14,10 +14,10 @@
     </div>
 </div>
 
-@include('partials.chat-button')
-
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('js/help/Help.js') }}"></script>
+
+<script src="{{ asset('js/help/Help.js') }}"></script>
+
 @endsection

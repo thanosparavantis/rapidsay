@@ -1,50 +1,18 @@
-rate = new Rate;
-subscribe = new Subscribe;
-
 $(document).ready(function() {
+    rate = new Rate;
+    subscribe = new Subscribe;
+
     alerts = new Alert;
     alerts.register();
     alerts.showInternetExplorerAlert();
+
+    dropdowns = new Dropdowns;
+    dropdowns.register();
+
+    $("#guest-lang-select").on('change', function() {
+        $("#guest-lang-form").submit();
+    });
 });
-
-submitted = false;
-wentBack = false;
-
-function submitOnEnter(event, form, field)
-{
-    if (event.which == 13 && !event.shiftKey)
-    {
-        event.preventDefault();
-
-        if (!submitted)
-        {
-            form.submit();
-            submitted = true;
-
-            setTimeout(function() {
-                submitted = true;
-            }, 1000);
-        }
-    }
-}
-
-function backOnEsc(event, url)
-{
-    if (event.keyCode == 27)
-    {
-        event.preventDefault();
-
-        if (!wentBack)
-        {
-            window.location.href = url;
-            wentBack = true;
-
-            setTimeout(function() {
-                wentBack = false;
-            }, 1000);
-        }
-    }
-}
 
 function initializeImageUploader()
 {

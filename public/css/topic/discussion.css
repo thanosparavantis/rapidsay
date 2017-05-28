@@ -5,3 +5,7 @@
 .discussion h2 + .user-content {
     margin-top: 0;
 }
+
+.discussion .user-content + .pager {
+    margin-top: 20px;
+}

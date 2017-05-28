@@ -22,12 +22,18 @@ class AuthController extends Controller
 
     public function __construct(ActivationService $activation)
     {
-        $this->middleware($this->guestMiddleware(), ['except' => ['logout']]);
+        $this->middleware($this->guestMiddleware(), [
+            'except' => [ 'logout' ]
+        ]);
+
         $this->activation = $activation;
     }
 
     public function register(Request $request)
     {
+        if (User::checkRequestForBannedIp($request))
+            return $this->handleBannedIp();
+
         $validator = $this->validator($request->all());
 
         if ($validator->fails()) {
@@ -41,17 +47,22 @@ class AuthController extends Controller
 
     public function authenticated(Request $request, $user)
     {
-        if ($user->banned || !$user->activated)
+        $user->storeBannedIpAddress($request);
+
+        $banned = $user->isBanned();
+        $previouslyIpBanned = User::checkRequestForBannedIp($request);
+        $notActivated = !$user->activated;
+
+        if ($banned || $previouslyIpBanned || $notActivated)
         {
             auth()->logout();
 
-            if ($user->banned) {
+            if ($banned)
                 return $this->handleBannedLogin($user);
-            }
-
-            if (!$user->activated) {
+            else if ($previouslyIpBanned)
+                return $this->handleBannedIp();
+            else
                 return $this->handleActivationLogin($user);
-            }
         }
 
         return redirect()->intended($this->redirectPath());
@@ -60,6 +71,11 @@ class AuthController extends Controller
     private function handleBannedLogin($user)
     {
         return redirect()->route('login')->with('error', trans('auth.banned'));
+    }
+
+    private function handleBannedIp()
+    {
+        return redirect()->back()->with('error', trans('auth.banned-ip'));
     }
 
     private function handleActivationLogin($user)

@@ -1,4 +1,4 @@
-@if (Cache::has('announcement') && !auth()->user()->hasClosedAnnouncement())
+@if ((auth()->guest() && Cache::has('announcement')) || (auth()->check() && Cache::has('announcement') && !auth()->user()->hasClosedAnnouncement()))
     <div class="alert">
         <div class="icon">
             <i class="fa fa-{{ config('glyphicons.status') }}" aria-hidden="true"></i>

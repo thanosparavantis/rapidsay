@@ -1,8 +1,5 @@
-.label {
-    font-weight: 700;
-    cursor: pointer;
-    display: block;
-}
+
+/* General Input */
 
 input,
 select,
@@ -13,6 +10,14 @@ textarea {
 
 textarea {
     resize: vertical;
+}
+
+/* Label and Fields */
+
+.label {
+    font-weight: 700;
+    cursor: pointer;
+    display: block;
 }
 
 .field {
@@ -36,6 +41,26 @@ textarea {
     background-color: #f2f2f2;
 }
 
+/* Dropdown Select */
+
+.select {
+    display: block;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    background-color: transparent;
+    margin: 5px 0 10px 0;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.03);
+    transition: border-color 0.1s, box-shadow 0.1s;
+}
+
+.select:focus {
+    border-color: #4fc3fc;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+}
+
+/* Invisible Upload Button */
+
 .custom-uploader {
     width: 0.1px;
     height: 0.1px;
@@ -44,6 +69,8 @@ textarea {
     position: absolute;
     z-index: -1;
 }
+
+/* Checkbox */
 
 select,
 .checkbox {
@@ -59,6 +86,8 @@ form .checkbox-container {
 form .checkbox-container .checkbox {
     margin-right: 5px;
 }
+
+/* Field and Checkbox help */
 
 form .field-help,
 form .checkbox-help {
@@ -81,6 +110,8 @@ form .field-help {
     margin-bottom: 7px;
 }
 
+/* Error */
+
 form span.error {
     font-weight: 700;
     color: #CC0000;
@@ -92,10 +123,11 @@ form .field.error {
     border: 1px solid #CC0000;
 }
 
+/* Form page tip */
+
 .form-page .tip {
     margin: 10px 0 20px 0;
     text-align: center;
-    color: #555;
 }
 
 .form-page .checkbox-container {

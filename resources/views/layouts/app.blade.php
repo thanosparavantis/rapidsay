@@ -12,8 +12,6 @@
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}">
 
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/admin/dashboard.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/admin/report.css') }}">
 
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/alerts.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/animations.css') }}">
@@ -22,6 +20,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/buttons.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/chat.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/content-group.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/components/dropdowns.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/forms.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/items.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/components/navbar.css') }}">
@@ -50,6 +49,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/user/dashboard.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/user/picture.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/user/profile.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/user/report.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/user/subscription.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/user/user-preview.css') }}">
 
@@ -149,11 +149,14 @@
 
         <script src="{{ asset('js/lib/jquery-3.1.1.min.js') }}"></script>
         <script src="{{ asset('js/lib/autosize.min.js') }}"></script>
+        <script src="{{ asset('js/lib/jquery-visible.min.js') }}"></script>
         <script src="{{ asset('js/Config.js') }}"></script>
 
+        <script src="{{ asset('js/Dropdowns.js') }}"></script>
         <script src="{{ asset('js/topic/Rate.js') }}"></script>
         <script src="{{ asset('js/user/Alert.js') }}"></script>
         <script src="{{ asset('js/user/Subscribe.js') }}"></script>
+
 
         @if (auth()->check())
             <script src="{{ asset('js/user/AjaxNotificationUpdater.js') }}"></script>

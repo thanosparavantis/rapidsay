@@ -1,222 +1,170 @@
 .navbar {
-    background-color: #333;
-    width: 100%;
+    display: flex;
+    align-items: center;
     position: fixed;
     top: 0;
-    z-index: 5;
+    width: 100%;
+    background-color: #333;
+    height: 55px;
+    z-index: 10;
 }
 
-.navbar .container {
+.navbar,
+.navbar a {
+    font-size: 15px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar .wrapper {
     margin: auto;
+    flex: 1;
     display: flex;
+    align-items: center;
 }
 
 .navbar .items-inline {
     flex-wrap: nowrap;
 }
 
-.navbar .menu {
-    flex: 1;
+.navbar .items-inline li:not(:last-child) {
+    margin-right: 10px;
 }
 
-.navbar .logo {
-    padding: 13px 20px;
-    font-weight: 700;
-}
-
-.navbar.christmas .logo {
-    padding-left: 40px;
-    background: url("../../img/christmas-tree.png");
-    background-size: 40px 38px;
-    background-repeat: no-repeat;
-}
-
-.navbar .toggle-menu {
-    cursor: pointer;
-}
-
-.navbar li {
-    white-space: nowrap;
-}
-
-.navbar a,
-.navbar .toggle-menu {
-    padding: 13px 10px;
-    display: block;
-    color: #fff;
-    transition: background-color 0.1s;
-}
-
-.navbar .with-picture a {
-    padding: 7px 10px;
-    height: 100%;
+.navbar .items-inline li > div,
+.navbar .items-inline li > a {
+    padding: 0 10px;
+    height: 35px;
     display: flex;
     align-items: center;
+    border-radius: 3px;
+    font-weight: 700;
+    transition: background-color 0.1s;
+    vertical-align: middle;
+}
+
+.navbar .items-inline li > a.active,
+.navbar .items-inline li > a:hover {
+    background-color: #666;
+}
+
+.navbar .profile-picture-container {
+    margin-right: 8px;
+}
+
+.navbar .profile-picture {
+    background-color: #fff;
+}
+
+.navbar-menu .notification-holder,
+.navbar .notification-holder {
+    position: relative;
+}
+
+.navbar-menu .notification-holder .count,
+.navbar .notification-holder .count {
+    display: none;
+    position: absolute;
+    font-size: 10px;
+    background-color: #e75e4b;
+    padding: 3px;
+    border-radius: 50%;
+    bottom: 0;
+    right: 0;
+    animation: unread 2s infinite;
+}
+
+@keyframes unread {
+    0% {
+        bottom: 0;
+    }
+
+    50% {
+        bottom: 3px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+.navbar-menu .notification-holder .count.visible,
+.navbar .notification-holder .count.visible {
+    display: block;
+}
+
+.navbar.mobile {
+    display: none;
+}
+
+.navbar.mobile #menu-toggle #close {
+    display: none;
+}
+
+.navbar.mobile #menu-toggle.toggled {
+    background-color: #666;
+}
+
+.navbar.mobile #menu-toggle.toggled #open {
+    display: none;
+}
+
+.navbar.mobile #menu-toggle.toggled #close {
+    display: block;
+}
+
+.navbar-menu {
+    display: none;
+    flex-wrap: wrap;
+    align-items: stretch;
+    z-index: 9;
+    position: fixed;
+    width: 100%;
+    height: calc(100% - 55px);
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 55px;
+}
+
+.navbar-menu .fa {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.navbar-menu .profile-picture {
+    margin-bottom: 10px;
+}
+
+.navbar-menu a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-}
-
-.navbar .with-picture .profile-picture-container {
-    margin-right: 5px;
-}
-
-.navbar .with-picture .profile-picture {
-    background-color: #eee;
-}
-
-.navbar .menu a:hover,
-.navbar .toggle-menu:hover {
-    background-color: #545454;
-}
-
-.navbar a:hover {
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 30px;
+    flex: 1 1 30%;
     text-decoration: none;
 }
 
-.navbar .toggle-menu {
-    display: none !important;
+.navbar-menu a:hover {
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
-.navbar .menu a.active,
-.navbar .toggle-menu.active {
-    background-color: #6d6d6d;
-}
-
-.navbar select {
-    background-color: transparent;
-    color: #fff;
-    padding: 0 10px;
-    margin: 0 10px;
-    border: 1px solid #ddd;
-    outline: 0;
-    cursor: pointer;
-}
-
-.navbar option {
-    color: #333;
-}
-
-.navbar .count {
-    display: inline;
-    font-weight: 700;
-    background-color: #0398e2;
-    border-radius: 3px;
-    padding: 2px;
-}
-
-.navbar .toggle-menu.active .count {
-    display: none;
-}
-
-.navbar .mobile-only {
-    display: none;
-}
-
-.navbar .menu li:nth-child(1) {
-    order: 1;
-}
-
-.navbar .menu li:nth-child(2) {
-    order: 2;
-}
-
-.navbar .menu li:nth-child(3) {
-    order: 3;
-}
-
-.navbar .menu li:nth-child(4) {
-    order: 4;
-}
-
-.navbar .menu li:nth-child(5) {
-    order: 5;
-}
-
-.navbar .menu li:nth-child(6) {
-    order: 6;
-}
-
-.navbar .menu li:nth-child(7) {
-    order: 7;
-}
-
-.navbar .menu li:nth-child(8) {
-    order: 8;
+@media all and (max-device-width: 1024px) {
+    .navbar:not(.mobile),
+    .navbar:not(.mobile) a {
+        font-size: 14px;
+    }
 }
 
 @media all and (max-device-width: 768px) {
-    .navbar .main {
-        flex: 1;
-    }
-
-    .navbar .menu {
-        display: none;
-    }
-
-    .navbar .toggle-menu {
-        display: flex !important;
-        align-items: center;
-    }
-
-    .navbar select {
-        margin: 10px 0;
-    }
-
-    .navbar.expanded .container {
-        flex-direction: column;
-    }
-
-    .navbar.expanded .menu {
+    .navbar.mobile {
         display: flex;
-        flex: 1;
-        flex-direction: column;
     }
 
-    .navbar.expanded .menu li {
-        text-align: center;
-        width: 100%;
-    }
-
-    .navbar.expanded .menu .flex-left {
-        margin-left: 0;
-    }
-
-    .navbar.expanded select {
-        margin: 10px 0;
-    }
-
-    .navbar .mobile-only {
-        display: inline-block;
-    }
-
-    .navbar .menu li:nth-child(1) {
-        order: 3;
-    }
-
-    .navbar .menu li:nth-child(2) {
-        order: 4;
-    }
-
-    .navbar .menu li:nth-child(3) {
-        order: 5;
-    }
-
-    .navbar .menu li:nth-child(4) {
-        order: 1;
-    }
-
-    .navbar .menu li:nth-child(5) {
-        order: 2;
-    }
-
-    .navbar .menu li:nth-child(6) {
-        order: 6;
-    }
-
-    .navbar .menu li:nth-child(7) {
-        order: 7;
-    }
-
-    .navbar .menu li:nth-child(8) {
-        order: 8;
+    .navbar:not(.mobile) {
+        display: none;
     }
 }

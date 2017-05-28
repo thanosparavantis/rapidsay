@@ -1,14 +1,66 @@
-.status-page h1 {
-    font-size: 44px;
+.status-page {
+    margin: 50px 20px 20px 20px;
+}
+
+.status-page .main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.status-page .main .header {
+    padding-right: 15px;
+    margin-right: 15px;
+    border-right: 1px dotted #aaa;
+}
+
+.status-page .main .header img {
+    display: block;
+    width: 72px;
+    height: 72px;
+}
+
+.status-page .main .body h1 {
+    font-size: 30px;
     font-weight: 400;
-    margin-top: 20px;
+    margin-top: 0;
 }
 
-.status-page p {
+.status-page .main .body p {
     color: #555;
-    font-size: 24px;
+    font-size: 19px;
 }
 
-.status-page .btn {
-    margin-top: 40px;
+.status-page .actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px auto auto auto;
+    max-width: 300px;
+}
+
+.status-page .actions .btn {
+    width: 100%;
+}
+
+.status-page .actions .btn:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+@media all and (max-width: 768px) {
+    .status-page {
+
+    }
+
+    .status-page .main {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .status-page .main .header {
+        border-right: 0;
+        padding-right: 0;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
 }

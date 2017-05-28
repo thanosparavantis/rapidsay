@@ -23,9 +23,9 @@
             @can ('edit', $item)
                 <li class="flex-left">
                     @if ($item instanceof Forum\Comment)
-                        <a href="{{ route('edit-' . $item->getType(), $item->id) }}?page={{ $item->getExactPage() }}#comment-{{ $item->id }}" class="btn gray">
+                        <a href="{{ route('edit-' . $item->getType(), $item->id) }}?page={{ $item->getExactPage() }}&comment-{{ $item->id }}-page={{ $item->getReplyPaginator()->currentPage() }}#comment-{{ $item->id }}" class="btn gray">
                     @elseif ($item instanceof Forum\Reply)
-                        <a href="{{ route('edit-' . $item->getType(), $item->id) }}?page={{ $item->comment->getExactPage() }}&comment-{{ $item->id }}-page={{ $item->getExactPage() }}#reply-{{ $item->id }}" class="btn gray">
+                        <a href="{{ route('edit-' . $item->getType(), $item->id) }}?page={{ $item->comment->getExactPage() }}&comment-{{ $item->comment->id }}-page={{ $item->getExactPage() }}#reply-{{ $item->id }}" class="btn gray">
                     @else
                         <a href="{{ route('edit-' . $item->getType(), $item->id) }}" class="btn gray">
                     @endif

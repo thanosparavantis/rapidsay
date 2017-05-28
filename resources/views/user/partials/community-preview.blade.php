@@ -5,7 +5,7 @@
         <p class="reputation">
             <i class="fa fa-{{ config('glyphicons.reputation') }} space-right" aria-hidden="true"></i>{{ number_format($user->reputation) }}
         </p>
-        @if (auth()->check() && auth()->user()->admin && $user->banned)
+        @if (auth()->check() && auth()->user()->admin && $user->isBanned())
             <p class="banned"><i class="fa fa-user-times space-right" aria-hidden="true"></i>{{ trans('user.banned') }}</p>
         @endif
         @if ($user->description)

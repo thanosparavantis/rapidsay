@@ -19,16 +19,15 @@ class NotificationController extends Controller
 
     public function show()
     {
-        $user = auth()->user();
-        $notifications = $user->getNotificationPaginator();
-        $unseen = $user->getUnseenNotifications();
-
         if (request()->ajax())
         {
+            $user = auth()->user();
+            $notifications = $user->getNotificationPaginator();
+            $unread = $user->getUnreadNotifications();
             $user->seeNotifications();
 
             return response()->json([
-                'html' => view('user.partials.notification.content', ['notifications' => $notifications, 'unseen' => $unseen])->render(),
+                'html' => view('user.partials.notification.content', ['notifications' => $notifications, 'unread' => $unread])->render(),
                 'end' => !$notifications->hasMorePages(),
             ]);
         }
@@ -41,7 +40,7 @@ class NotificationController extends Controller
     public function update(Request $request)
     {
         return response()->json([
-            'unseen' => auth()->user()->getUnseenNotificationsCount(),
+            'unseen' => auth()->user()->getUnreadNotificationCount(),
         ]);
     }
 }

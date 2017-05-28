@@ -1,7 +1,7 @@
 @extends('layouts.form-page')
 @section('title', trans('page.title.password_new'))
 @section('action', route('post-password-reset'))
-@section('button-text', trans('form.button.password_reset'))
+@section('button-text', trans('form.button.password-reset'))
 @section('button-color', 'blue')
 
 @section('form')
@@ -25,7 +25,7 @@
 @endif
 
 <label class="label">
-    {{ trans('form.label.password_confirmation') }}
+    {{ trans('form.label.password-confirmation') }}
     <input type="password" name="password_confirmation" class="field{{$errors->has('password_confirmation') ? ' error' : '' }}" required>
 </label>
 @if ($errors->has('password_confirmation'))

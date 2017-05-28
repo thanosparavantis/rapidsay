@@ -8,7 +8,6 @@ use Forum\Http\Requests\Topic\PostRequest;
 use Forum\Http\Requests\Topic\PostEditRequest;
 use Forum\Events\Topic\PostCreated;
 use Forum\Events\Topic\PostEdited;
-use Forum\Events\Topic\PostDeleted;
 use Forum\Http\Controllers\Controller;
 
 /**
@@ -161,66 +160,12 @@ class PostController extends Controller
         // Check if authorized.
         if ($this->authorize('delete', $post))
         {
-            // Fire post deleted event.
-            event(new PostDeleted(auth()->user(), $post));
-
-            // Delete all post images.
-            $this->deletePostImages($post);
-
-            // Delete all post ratings.
-            $this->deletePostRatings($post);
-
             // Delete the post.
-            $post->delete();
+            $post->delete(auth()->user());
 
             // Redirect with post deletion success.
             return $this->redirectHomeWithDeletionSuccess();
         }
-    }
-
-
-    /**
-     * Deletes all images (if any) of a post.
-     */
-    private function deletePostImages(Post $post)
-    {
-        $post->images()->each(function ($image) {
-            $image->delete();
-        });
-
-        $post->comments->each(function ($comment) {
-            $comment->images()->each(function ($image) {
-                $image->delete();
-            });
-
-            $comment->replies->each(function ($reply) {
-                $reply->images()->each(function ($image) {
-                    $image->delete();
-                });
-            });
-        });
-    }
-
-    /**
-     * Deletes all ratings (if any) of a post.
-     */
-    private function deletePostRatings(Post $post)
-    {
-        $post->ratings->each(function ($rating) {
-            $rating->delete();
-        });
-
-        $post->comments->each(function ($comment) {
-            $comment->ratings->each(function ($rating) {
-                $rating->delete();
-            });
-
-            $comment->replies->each(function ($reply) {
-                $reply->ratings->each(function ($rating) {
-                    $rating->delete();
-                });
-            });
-        });
     }
 
     /**

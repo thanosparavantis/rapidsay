@@ -1,16 +1,22 @@
-navbar = $(".navbar");
-expander = $(".navbar .toggle-menu");
-menu = $(".navbar .menu");
+$(document).ready(function() {
+    navbar = $("#mobile-navbar");
+    toggle = $("#menu-toggle");
+    menu = $(".navbar-menu");
 
-firstCount = $(".first-count");
-firstCountVisible = firstCount.is(":visible");
+    toggle.click(function(event) {
+        toggle.toggleClass("toggled");
+        menu.slideToggle({
+            duration: 400,
+            step: function() {
+                $(this).css('display', 'flex');
+            }
+        });
+    });
 
-expander.click(function (event) {
-    event.preventDefault();
-    navbar.toggleClass('expanded');
-
-    if (firstCountVisible)
-    {
-        firstCount.toggle();
-    }
+    $('body').bind('touchstart touchmove', function(event) {
+        if (toggle.hasClass("toggled"))
+            $(this).css('max-width', '100%').css('overflow', 'hidden');
+        else
+            $(this).css('max-width', 'auto').css('overflow', 'auto');
+    });
 });

@@ -20,29 +20,11 @@ class Report extends Model implements Redirectable
         return $this->morphTo();
     }
 
-    public function getTitle()
-    {
-        return $this->reportable->title;
-    }
-
-    public function getPreview()
-    {
-        if (isset($this->reportable->title))
-        {
-            return str_limit($this->reportable->title, 1000);
-        }
-        else
-        {
-            return str_limit($this->reportable->body, 1000);
-        }
-    }
-
     public function scopePendingPaginator($query)
     {
         return $query->where('status', 'pending')
         ->orderBy('created_at', 'desc')
-        ->simplePaginate($this->REPORTS_PER_PAGE)
-        ->fragment('reports');
+        ->simplePaginate($this->REPORTS_PER_PAGE);
     }
 
     public static function getPendingCount()

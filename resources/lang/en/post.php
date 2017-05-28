@@ -2,8 +2,8 @@
 
 return [
 
-    'count'                 => 'post|posts',
-    'button'                => [
+    'count'                     => 'post|posts',
+    'button' => [
         'post'                  => 'Post',
         'embed'                 => 'Embed',
         'edit'                  => 'Edit',
@@ -12,21 +12,21 @@ return [
         'finish_editing'        => 'Edit Post',
     ],
 
-    'edited'                => 'edited',
-    'register'              => 'Sign up for an account to create posts, comments and give ratings to content.',
-    'rated'                 => 'Rated by :name.',
-    'recommended'           => 'Similar post',
-    'comments'              => 'Comments',
+    'edited'                    => 'edited',
+    'register'                  => 'Sign up for an account to create posts, comments and give ratings to content.',
+    'rated'                     => 'Rated by :name.',
+    'recommended'               => 'Similar post',
+    'comments'                  => 'Comments',
 
-    'message'               => [
-        'edited'            => 'The post has been edited.',
-        'deleted'           => 'The post has been deleted.',
-        'image-limit'       => 'You cannot upload more than 10 images.',
-        'discard'           => 'Are you sure you want to discard your post?',
-        'confirm-delete'    => 'Are you sure you want to delete this post? This action cannot be undone.',
+    'message' => [
+        'edited'                => 'The post has been edited.',
+        'deleted'               => 'The post has been deleted.',
+        'image-limit'           => 'You cannot upload more than 10 images.',
+        'discard'               => 'Are you sure you want to discard your post?',
+        'confirm-delete'        => 'Are you sure you want to delete this post? This action cannot be undone.',
     ],
 
-    'creator'               => [
+    'creator' => [
         'body'                  => 'Write a new post...',
         'help'                  => 'Special formatting',
         'image'                 => 'Upload Images',

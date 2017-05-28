@@ -81,6 +81,17 @@
     background-color: #e4e4e4;
 }
 
+.mini-footer {
+    border-top: 1px solid #ccc;
+    background-color: #e4e4e4;
+    padding: 10px 20px;
+}
+
+.mini-footer .select {
+    margin: 0;
+    background-color: #fff;
+}
+
 @media all and (max-width: 768px) {
     .features,
     .features .btn {
@@ -105,5 +116,18 @@
 
     .features .section:last-child {
         padding: 50px 30px;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .mini-footer .items-inline {
+        justify-content: center;
+    }
+    .mini-footer .flex-left {
+        margin-left: 0 !important;
+    }
+
+    .mini-footer li:last-child {
+        width: 100%;
     }
 }

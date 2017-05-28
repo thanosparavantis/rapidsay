@@ -4,7 +4,7 @@
 @section('button-text', trans('form.button.register'))
 @section('button-color', 'green')
 
-@section('tip', trans('form.already_registered', ['link' => route('login')]))
+@section('tip', trans('form.already-registered', ['link' => route('login')]))
 
 @section('form')
 
@@ -36,7 +36,7 @@
 @endif
 
 <label class="label">
-    {{ trans('form.label.password_confirmation') }}
+    {{ trans('form.label.password-confirmation') }}
     <input type="password" name="password_confirmation" class="field{{$errors->has('password_confirmation') ? ' error' : '' }}" required>
 </label>
 

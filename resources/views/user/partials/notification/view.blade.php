@@ -1,4 +1,4 @@
-<div class="notification items-inline{{ $unseen->contains($notification) ? ' unseen' : '' }}">
+<div class="notification items-inline {{ $unread->contains($notification) ? 'unseen' : '' }}">
     <div class="body">
         @if ($notification->from_id)
             @include('partials.profile-picture', ['user' => Forum\User::find($notification->from_id), 'size' => 'small'])

@@ -3,18 +3,15 @@
 
     @if ($item instanceof Forum\Post)
 
-    {{-- If post, focus on comment form. --}}
     <a href="{{ $item->route() }}#comment-creator" class="btn blue">
 
     @elseif ($item instanceof Forum\Comment)
 
-    {{-- If comment, get the page and position of the comment. --}}
-    <a href="{{ route('reply', [$item->getType(), $item->id]) }}?page={{ $item->getExactPage() }}#comment-{{ $item->id }}" class="btn blue">
+    <a href="{{ route('reply', [$item->getType(), $item->id]) }}?page={{ $item->getExactPage() }}&comment-{{ $item->id }}-page={{ $item->getReplyPaginator()->currentPage() }}#comment-{{ $item->id }}" class="btn blue">
 
     @else
 
-    {{-- If reply, get the page, comment page and position of the reply. --}}
-    <a href="{{ route('reply', [$item->getType(), $item->id]) }}?page={{ $item->comment->getExactPage() }}&comment-{{ $item->id }}-page={{ $item->getExactPage() }}#reply-{{ $item->id }}" class="btn blue">
+    <a href="{{ route('reply', [$item->getType(), $item->id]) }}?page={{ $item->comment->getExactPage() }}&comment-{{ $item->comment->id }}-page={{ $item->getExactPage() }}#reply-{{ $item->id }}" class="btn blue">
 
     @endif
 

@@ -16,6 +16,8 @@ return [
     'failed'                => 'These credentials do not match our records.',
     'throttle'              => 'Too many login attempts. Please try again in :seconds seconds.',
     'banned'                => 'This account has been banned because of a Terms of Use violation.',
+    'banned-ip'             => 'This IP address has been banned because of a Terms of Use violation.',
+    'banned-email'          => 'This email address has been banned because of a Terms of Use violation.',
     'activation'            => [
         'email'             => [
             'subject'       => 'Account activation',

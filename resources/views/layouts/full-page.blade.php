@@ -3,6 +3,7 @@
 @section('body')
 
 @include('partials.navbar')
+
 <div class="full-page">
     @if (isset($announcements))
         @include('partials.announcements')
@@ -11,8 +12,6 @@
     @include('partials.alerts')
 
     @yield('content')
-
-    @include('partials.chat-button')
 </div>
 
 @endsection
